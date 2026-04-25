@@ -1,0 +1,15 @@
+1774806017 /home/cidigital/projects/aula_(28_e_29)_march/lab9/alu_12bit_tb.v
+1774789952 /home/cidigital/projects/aula_(28_e_29)_march/lab8/subtrator.v
+1774785110 /home/cidigital/projects/aula_(28_e_29)_march/lab7/4bit_ula_behav.v
+1774790167 /home/cidigital/projects/aula_(28_e_29)_march/lab8/somador_cla.v
+1774806155 /home/cidigital/projects/aula_(28_e_29)_march/lab9/8bit_alu.v
+1774728613 /home/cidigital/projects/aula_(28_e_29)_march/lab6/4bit_ula_behav.v
+1774806223 /home/cidigital/projects/aula_(28_e_29)_march/lab9/alu12bit.v
+1774804109 /home/cidigital/projects/aula_(28_e_29)_march/lab9/4bit_ula_behav.v
+1774808360 /home/cidigital/projects/aula_(28_e_29)_march/lab9/alu_8bit_tb.v
+1774805615 /home/cidigital/projects/aula_(28_e_29)_march/lab9/12bit_alu.v
+1774805346 /home/cidigital/projects/aula_(28_e_29)_march/lab9/8bit_alu_tb.v
+1774729655 /home/cidigital/projects/aula_(28_e_29)_march/lab6/4bit_ula_behav_tb.v
+1774790060 /home/cidigital/projects/aula_(28_e_29)_march/lab8/4bit_ula_behav.v
+1774785204 /home/cidigital/projects/aula_(28_e_29)_march/lab7/4bit_ula_behav_tb.v
+1774786746 /home/cidigital/projects/aula_(28_e_29)_march/lab8/4bit_ula_behav_tb.v

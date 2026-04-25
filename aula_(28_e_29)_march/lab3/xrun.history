@@ -1,0 +1,110 @@
+#e1(28Mar2026:11:47:06): source ./xcelium.d/env.d/env.history.28Mar2026_11_47_06
+s1(28Mar2026:11:47:06):  xrun somador_cla.v somador_cla_tb.v 
+#e2(28Mar2026:11:47:38): source ./xcelium.d/env.d/env.history.28Mar2026_11_47_38
+s2(28Mar2026:11:47:38):  xrun somador_cla.v somador_cla_tb.v 
+#e3(28Mar2026:11:48:39): source ./xcelium.d/env.d/env.history.28Mar2026_11_48_39
+s3(28Mar2026:11:48:39):  xrun somador_cla.v somador_cla_tb.v 
+#e4(28Mar2026:11:50:06): source ./xcelium.d/env.d/env.history.28Mar2026_11_50_06
+s4(28Mar2026:11:50:06):  xrun somador_cla.v somador_cla_tb.v 
+#e5(28Mar2026:11:50:35): source ./xcelium.d/env.d/env.history.28Mar2026_11_50_35
+s5(28Mar2026:11:50:35):  xrun somador_cla.v somador_cla_tb.v 
+#e6(28Mar2026:11:51:32): source ./xcelium.d/env.d/env.history.28Mar2026_11_51_32
+s6(28Mar2026:11:51:32):  xrun somador_cla.v somador_cla_tb.v 
+#e7(28Mar2026:11:52:07): source ./xcelium.d/env.d/env.history.28Mar2026_11_52_07
+s7(28Mar2026:11:52:07):  xrun somador_cla.v somador_cla_tb.v 
+#e8(28Mar2026:11:52:59): source ./xcelium.d/env.d/env.history.28Mar2026_11_52_59
+s8(28Mar2026:11:52:59):  xrun somador_cla.v somador_cla_tb.v 
+#e9(28Mar2026:11:54:21): source ./xcelium.d/env.d/env.history.28Mar2026_11_54_21
+s9(28Mar2026:11:54:21):  xrun somador_cla.v somador_cla_tb.v 
+#e10(28Mar2026:11:55:21): source ./xcelium.d/env.d/env.history.28Mar2026_11_55_21
+s10(28Mar2026:11:55:21):  xrun counter.v counter_test.v 
+#e11(28Mar2026:11:55:24): source ./xcelium.d/env.d/env.history.28Mar2026_11_55_24
+s11(28Mar2026:11:55:24):  xrun somador_cla.v somador_cla_tb.v 
+#e12(28Mar2026:11:55:28): source ./xcelium.d/env.d/env.history.28Mar2026_11_55_28
+s12(28Mar2026:11:55:28):  xrun somador_cla.v somador_cla_tb.v 
+#e13(28Mar2026:11:55:40): source ./xcelium.d/env.d/env.history.28Mar2026_11_55_40
+s13(28Mar2026:11:55:40):  xrun somador_cla.v somador_cla_tb.v 
+#e14(28Mar2026:11:56:53): source ./xcelium.d/env.d/env.history.28Mar2026_11_56_53
+s14(28Mar2026:11:56:53):  xrun somador_cla.v somador_cla_tb.v 
+#e15(28Mar2026:11:57:21): source ./xcelium.d/env.d/env.history.28Mar2026_11_57_21
+s15(28Mar2026:11:57:21):  xrun somador_cla.v somador_cla_tb.v 
+#e16(28Mar2026:11:57:51): source ./xcelium.d/env.d/env.history.28Mar2026_11_57_51
+s16(28Mar2026:11:57:51):  xrun somador_cla.v somador_cla_tb.v 
+#e17(28Mar2026:12:01:14): source ./xcelium.d/env.d/env.history.28Mar2026_12_01_14
+s17(28Mar2026:12:01:14):  xrun somador_cla.v somador_cla_tb.v 
+#e18(28Mar2026:12:01:36): source ./xcelium.d/env.d/env.history.28Mar2026_12_01_36
+s18(28Mar2026:12:01:36):  xrun somador_cla.v somador_cla_tb.v 
+#e19(28Mar2026:12:02:43): source ./xcelium.d/env.d/env.history.28Mar2026_12_02_43
+s19(28Mar2026:12:02:43):  xrun somador_cla.v somador_cla_tb.v 
+#e20(28Mar2026:12:03:55): source ./xcelium.d/env.d/env.history.28Mar2026_12_03_55
+s20(28Mar2026:12:03:55):  xrun somador_cla.v somador_cla_tb.v 
+#e21(28Mar2026:12:04:30): source ./xcelium.d/env.d/env.history.28Mar2026_12_04_30
+s21(28Mar2026:12:04:30):  xrun somador_cla.v somador_cla_tb.v 
+#e22(28Mar2026:12:05:26): source ./xcelium.d/env.d/env.history.28Mar2026_12_05_26
+s22(28Mar2026:12:05:26):  xrun somador_cla.v somador_cla_tb.v 
+#e23(28Mar2026:12:06:12): source ./xcelium.d/env.d/env.history.28Mar2026_12_06_12
+s23(28Mar2026:12:06:12):  xrun somador_cla.v somador_cla_tb.v 
+#e24(28Mar2026:12:07:01): source ./xcelium.d/env.d/env.history.28Mar2026_12_07_01
+s24(28Mar2026:12:07:01):  xrun somador_cla.v somador_cla_tb.v 
+#e25(28Mar2026:12:08:01): source ./xcelium.d/env.d/env.history.28Mar2026_12_08_01
+s25(28Mar2026:12:08:01):  xrun somador_cla.v somador_cla_tb.v 
+#e26(28Mar2026:12:08:34): source ./xcelium.d/env.d/env.history.28Mar2026_12_08_34
+s26(28Mar2026:12:08:34):  xrun counter.v counter_test.v -gui -access +rwc 
+#e27(28Mar2026:12:09:00): source ./xcelium.d/env.d/env.history.28Mar2026_12_09_00
+s27(28Mar2026:12:09:00):  xrun somador_cla somador_cla_tb -gui -access +rwc 
+#e28(28Mar2026:12:09:24): source ./xcelium.d/env.d/env.history.28Mar2026_12_09_24
+s28(28Mar2026:12:09:24):  xrun somador_cla.v somador_cla_tb.v -gui -access +rwc 
+#e29(28Mar2026:13:12:24): source ./xcelium.d/env.d/env.history.28Mar2026_13_12_24
+s29(28Mar2026:13:12:24):  xrun somador_subtrator_cla.v somador_subtrator_cla_tb.v -gui -access +rwc 
+#e30(28Mar2026:13:12:47): source ./xcelium.d/env.d/env.history.28Mar2026_13_12_47
+s30(28Mar2026:13:12:47):  xrun somador_subtrator_cla.v somador_subtrator_cla_tb.v -gui -access +rwc 
+#e31(28Mar2026:13:13:15): source ./xcelium.d/env.d/env.history.28Mar2026_13_13_15
+s31(28Mar2026:13:13:15):  xrun somador_subtrator_cla.v somador_subtrator_cla_tb.v -gui -access +rwc 
+#e32(28Mar2026:13:16:19): source ./xcelium.d/env.d/env.history.28Mar2026_13_16_19
+s32(28Mar2026:13:16:19):  xrun somador_subtrator_cla.v somador_subtrator_cla_tb.v -gui -access +rwc 
+#e33(28Mar2026:13:19:59): source ./xcelium.d/env.d/env.history.28Mar2026_13_19_59
+s33(28Mar2026:13:19:59):  xrun somador_subtrator_cla.v somador_subtrator_cla_tb.v 
+#e34(28Mar2026:13:21:29): source ./xcelium.d/env.d/env.history.28Mar2026_13_21_29
+s34(28Mar2026:13:21:29):  xrun somador_subtrator_cla.v somador_subtrator_cla_tb.v 
+#e35(28Mar2026:13:32:11): source ./xcelium.d/env.d/env.history.28Mar2026_13_32_11
+s35(28Mar2026:13:32:11):  xrun somador_subtrator_cla.v somador_subtrator_cla_tb.v 
+#e36(28Mar2026:13:42:48): source ./xcelium.d/env.d/env.history.28Mar2026_13_42_48
+s36(28Mar2026:13:42:48):  xrun somador_cla.v somador_subtrator.v somador_subtrator_tb.v 
+#e37(28Mar2026:13:45:51): source ./xcelium.d/env.d/env.history.28Mar2026_13_45_51
+s37(28Mar2026:13:45:51):  xrun somador_cla.v somador_subtrator.v somador_subtrator_tb.v 
+#e38(28Mar2026:13:46:24): source ./xcelium.d/env.d/env.history.28Mar2026_13_46_24
+s38(28Mar2026:13:46:24):  xrun somador_cla.v subtrator.v subtrator_tb.v 
+#e39(28Mar2026:13:46:38): source ./xcelium.d/env.d/env.history.28Mar2026_13_46_38
+s39(28Mar2026:13:46:38):  xrun somador_cla.v somador_subtrator.v somador_subtrator_tb.v 
+#e40(28Mar2026:13:46:44): source ./xcelium.d/env.d/env.history.28Mar2026_13_46_44
+s40(28Mar2026:13:46:44):  xrun somador_cla.v subtrator.v subtrator_tb.v 
+#e41(28Mar2026:13:47:12): source ./xcelium.d/env.d/env.history.28Mar2026_13_47_12
+s41(28Mar2026:13:47:12):  xrun somador_cla.v subtrator.v subtrator_tb.v 
+#e42(28Mar2026:13:48:03): source ./xcelium.d/env.d/env.history.28Mar2026_13_48_03
+s42(28Mar2026:13:48:03):  xrun somador_cla.v subtrator.v subtrator_tb.v 
+#e43(28Mar2026:13:48:31): source ./xcelium.d/env.d/env.history.28Mar2026_13_48_31
+s43(28Mar2026:13:48:31):  xrun somador_cla.v subtrator.v subtrator_tb.v 
+#e44(28Mar2026:13:53:01): source ./xcelium.d/env.d/env.history.28Mar2026_13_53_01
+s44(28Mar2026:13:53:01):  xrun somador_cla.v subtrator.v subtrator_tb.v 
+#e45(28Mar2026:13:53:19): source ./xcelium.d/env.d/env.history.28Mar2026_13_53_19
+s45(28Mar2026:13:53:19):  xrun somador_cla.v subtrator.v subtrator_tb.v 
+#e46(28Mar2026:13:54:01): source ./xcelium.d/env.d/env.history.28Mar2026_13_54_01
+s46(28Mar2026:13:54:01):  xrun somador_cla.v subtrator.v subtrator_tb.v 
+#e47(28Mar2026:13:57:48): source ./xcelium.d/env.d/env.history.28Mar2026_13_57_48
+s47(28Mar2026:13:57:48):  xrun somador_cla.v subtrator.v subtrator_tb.v 
+#e48(28Mar2026:13:59:19): source ./xcelium.d/env.d/env.history.28Mar2026_13_59_19
+s48(28Mar2026:13:59:19):  xrun somador_cla.v subtrator.v subtrator_tb.v 
+#e49(28Mar2026:14:08:00): source ./xcelium.d/env.d/env.history.28Mar2026_14_08_00
+s49(28Mar2026:14:08:00):  xrun somador_cla.v subtrator.v subtrator_tb.v 
+#e50(28Mar2026:14:08:11): source ./xcelium.d/env.d/env.history.28Mar2026_14_08_11
+s50(28Mar2026:14:08:11):  xrun somador_cla.v subtrator.v subtrator_tb.v 
+#e51(28Mar2026:14:08:49): source ./xcelium.d/env.d/env.history.28Mar2026_14_08_49
+s51(28Mar2026:14:08:49):  xrun somador_cla.v subtrator.v subtrator_tb.v 
+#e52(28Mar2026:14:09:04): source ./xcelium.d/env.d/env.history.28Mar2026_14_09_04
+s52(28Mar2026:14:09:04):  xrun somador_cla.v subtrator.v subtrator_tb.v 
+#e53(28Mar2026:14:10:49): source ./xcelium.d/env.d/env.history.28Mar2026_14_10_49
+s53(28Mar2026:14:10:49):  xrun somador_cla.v subtrator.v subtrator_tb.v 
+#e54(28Mar2026:14:11:45): source ./xcelium.d/env.d/env.history.28Mar2026_14_11_45
+s54(28Mar2026:14:11:45):  xrun somador_subtrator_cla.v somador_subtrator_cla_tb.v -gui -access +rwc 
+#e55(28Mar2026:14:12:01): source ./xcelium.d/env.d/env.history.28Mar2026_14_12_01
+s55(28Mar2026:14:12:01):  xrun somador_cla.v subtrator.v subtrator_tb.v -gui -access +rwc 

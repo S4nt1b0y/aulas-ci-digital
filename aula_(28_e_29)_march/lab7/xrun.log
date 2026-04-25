@@ -1,0 +1,78 @@
+xrun(64): 25.03-s010: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s010: Started on Mar 29, 2026 at 08:54:06 -03
+xrun
+	4bit_ula_behav.v
+	4bit_ula_behav_tb.v
+	-gui
+	-access +rwc
+file: 4bit_ula_behav.v
+	module worklib.ula:v
+		errors: 0, warnings: 0
+file: 4bit_ula_behav_tb.v
+	module worklib.moduleName:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		moduleName
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.ula:v <0x0a48ef2c>
+			streams:   1, words:  4818
+		worklib.moduleName:v <0x6114f480>
+			streams:   4, words: 37421
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		             Instances  Unique
+		Modules:             2       2
+		Registers:           9       9
+		Scalar wires:        4       -
+		Vectored wires:      4       -
+		Always blocks:       1       1
+		Initial blocks:      1       1
+		Pseudo assignments:  3       -
+	Writing initial simulation snapshot: worklib.moduleName:v
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /apps/cds/installs/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm moduleName.ula_i.A moduleName.ula_i.B moduleName.ula_i.C moduleName.ula_i.N moduleName.ula_i.V moduleName.ula_i.Z moduleName.ula_i.resultado moduleName.ula_i.seletor moduleName.ula_i.temp_result
+Created probe 1
+xcelium> run
+PASSOU teste1
+PASSOU teste2
+PASSOU teste3
+PASSOU teste4
+PASSOU teste5
+PASSOU teste6
+PASSOU teste7
+PASSOU teste8
+PASSOU teste9
+PASSOU teste Soma sem overflow
+Flags: C=0 V=0 Z=0 N=0
+PASSOU teste Soma com carry
+Flags: C=1 V=1 Z=0 N=1
+PASSOU teste Subtração normal
+Flags: C=0 V=0 Z=0 N=0
+PASSOU teste Subtração com underflow
+Flags: C=0 V=1 Z=0 N=0
+RESULTADO NÃO ZERO
+Flags: C=0 V=0 Z=0 N=0
+Flags: C=0 V=0 Z=0 N=0
+PASSOU teste LSL
+Flags: C=0 V=0 Z=0 N=0
+PASSOU teste LSR
+Flags: C=0 V=0 Z=0 N=0
+PASSOU teste XOR
+Flags: C=0 V=0 Z=0 N=0
+PASSOU teste NOR
+Flags: C=0 V=0 Z=0 N=0
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	25.03-s010: Exiting on Mar 29, 2026 at 08:57:07 -03  (total: 00:03:01)

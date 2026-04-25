@@ -1,0 +1,9 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+somador_cla.v
+somador_cla_tb.v
+-gui
+-access
++rwc

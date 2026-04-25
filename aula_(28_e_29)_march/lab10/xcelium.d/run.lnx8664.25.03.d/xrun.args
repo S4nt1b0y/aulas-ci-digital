@@ -1,0 +1,16 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-timescale
+1ns/1ps
+4bit_reg_file.v
+4bit_reg.v
+4bit_ula_behav.v
+demux12_4bits.v
+mux21_4bits.v
+datapath.v
+datapath_tb.v
+-gui
+-access
++rwc

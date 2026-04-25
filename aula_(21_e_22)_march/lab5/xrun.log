@@ -1,0 +1,78 @@
+xrun(64): 25.03-s010: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s010: Started on Mar 22, 2026 at 09:51:06 -03
+xrun
+	alu.v
+	alu_test.v
+	-gui
+	-access +rwc
+file: alu.v
+	module worklib.alu:v
+		errors: 0, warnings: 0
+file: alu_test.v
+	module worklib.alu_test:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		alu_test
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.alu:v <0x67f05023>
+			streams:   2, words:   673
+		worklib.alu_test:v <0x667946c2>
+			streams:   5, words: 14224
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		             Instances  Unique
+		Modules:             2       2
+		Registers:           6       6
+		Scalar wires:        1       -
+		Vectored wires:      4       -
+		Always blocks:       1       1
+		Initial blocks:      1       1
+		Cont. assignments:   1       1
+		Pseudo assignments:  3       -
+	Writing initial simulation snapshot: worklib.alu_test:v
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /apps/cds/installs/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm alu_test.alu_inst.a_is_zero alu_test.alu_inst.alu_out alu_test.alu_inst.in_a alu_test.alu_inst.in_b alu_test.alu_inst.opcode
+Created probe 1
+xcelium> run
+At time 1 opcode=000 in_a=01000010 in_b=10000110 a_is_zero=0 alu_out=01000010
+At time 2 opcode=001 in_a=01000010 in_b=10000110 a_is_zero=0 alu_out=01000010
+At time 3 opcode=010 in_a=01000010 in_b=10000110 a_is_zero=0 alu_out=11001000
+At time 4 opcode=011 in_a=01000010 in_b=10000110 a_is_zero=0 alu_out=00000010
+At time 5 opcode=100 in_a=01000010 in_b=10000110 a_is_zero=0 alu_out=11000100
+At time 6 opcode=101 in_a=01000010 in_b=10000110 a_is_zero=0 alu_out=10000110
+At time 7 opcode=110 in_a=01000010 in_b=10000110 a_is_zero=0 alu_out=01000010
+At time 8 opcode=111 in_a=01000010 in_b=10000110 a_is_zero=0 alu_out=01000010
+At time 9 opcode=111 in_a=00000000 in_b=10000110 a_is_zero=1 alu_out=00000000
+TEST PASSED
+Simulation complete via $finish(1) at time 9 NS + 0
+./alu_test.v:57     $finish;
+xcelium> scope -set alu_test.alu_inst
+xcelium> ^C
+xcelium> ^C
+xcelium> ^C
+xcelium> ^C
+xcelium> ^C
+xcelium> ^C
+xcelium> ^C
+xcelium> ^C
+xcelium> ^C
+xcelium> ^C
+xcelium> ^C
+xcelium> ^C
+xcelium> ^C
+xcelium> ^C
+xcelium> ^C
+xcelium> ^C
+xcelium> xmsim: *W,NCTERM: Simulation received SIGTERM signal from process 6899, user id 1001 (/usr/bin/bash).
+TOOL:	xrun(64)	25.03-s010: Exiting on Mar 22, 2026 at 11:07:03 -03  (total: 01:15:57)

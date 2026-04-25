@@ -1,0 +1,59 @@
+xrun(64): 25.03-s010: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s010: Started on Mar 28, 2026 at 12:09:24 -03
+xrun
+	somador_cla.v
+	somador_cla_tb.v
+	-gui
+	-access +rwc
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		somador_cla_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.somador_cla_tb:v <0x02208371>
+			streams:   5, words:  4751
+		worklib.somador_cla:v <0x119c5adf>
+			streams:  56, words: 12944
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              2       2
+		Registers:            7       7
+		Scalar wires:        55       -
+		Expanded wires:       8       1
+		Vectored wires:       4       -
+		Initial blocks:       1       1
+		Cont. assignments:   55       9
+		Pseudo assignments:   3       -
+	Writing initial simulation snapshot: worklib.somador_cla_tb:v
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /apps/cds/installs/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm somador_cla_tb.carry_in somador_cla_tb.carry_out somador_cla_tb.operandA somador_cla_tb.operandB somador_cla_tb.result
+Created probe 1
+xcelium> run
+TESTE PASSOU
+TESTE PASSOU
+TESTE PASSOU
+TESTE PASSOU
+TESTE PASSOU
+TESTE PASSOU
+TESTE PASSOU
+TESTE PASSOU
+TESTE PASSOU
+TESTE PASSOU
+Simulation complete via $finish(1) at time 100 NS + 0
+./somador_cla_tb.v:33         $finish;
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> ^C
+xcelium> xmsim: *W,NCTERM: Simulation received SIGTERM signal from process 5558, user id 1001 (/usr/bin/bash).
+^C
+xcelium> TOOL:	xrun(64)	25.03-s010: Exiting on Mar 28, 2026 at 13:05:57 -03  (total: 00:56:33)

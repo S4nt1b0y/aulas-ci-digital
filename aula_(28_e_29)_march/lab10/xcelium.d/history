@@ -1,0 +1,13 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(29Mar2026:12:08:50):( xrun 4bit_reg_file.v 4bit_reg.v 4bit_ula_behav.v demux12_4bits.v mux21_4bits.v datapath.v datapath_tb.v -gui -access +rwc )&&(./xcelium.d/env.d/env.history.29Mar2026_12_08_50)
+s2::(29Mar2026:12:09:09):( xrun 4bit_reg_file.v 4bit_reg.v 4bit_ula_behav.v demux12_4bits.v mux21_4bits.v datapath.v datapath_tb.v -gui -access +rwc )&&(./xcelium.d/env.d/env.history.29Mar2026_12_09_09)
+s3::(29Mar2026:12:09:46):( xrun -timescale 1ns/1ps4 bit_reg_file.v 4bit_reg.v 4bit_ula_behav.v demux12_4bits.v mux21_4bits.v datapath.v datapath_tb.v -gui -access +rwc )&&(./xcelium.d/env.d/env.history.29Mar2026_12_09_46)
+s4::(29Mar2026:12:10:02):( xrun -timescale 1ns/1ps 4bit_reg_file.v 4bit_reg.v 4bit_ula_behav.v demux12_4bits.v mux21_4bits.v datapath.v datapath_tb.v -gui -access +rwc )&&(./xcelium.d/env.d/env.history.29Mar2026_12_10_02)
+s5::(29Mar2026:12:10:49):( xrun -timescale 1ns/1ps 4bit_reg_file.v 4bit_reg.v 4bit_ula_behav.v demux12_4bits.v mux21_4bits.v datapath.v datapath_tb.v -gui -access +rwc )&&(./xcelium.d/env.d/env.history.29Mar2026_12_10_49)
+s6::(29Mar2026:12:11:40):( xrun -timescale 1ns/1ps 4bit_reg_file.v 4bit_reg.v 4bit_ula_behav.v demux12_4bits.v mux21_4bits.v datapath.v datapath_tb.v -gui -access +rwc )&&(./xcelium.d/env.d/env.history.29Mar2026_12_11_40)
+s7::(29Mar2026:12:39:57):( xrun -timescale 1ns/1ps 4bit_reg_file.v 4bit_reg.v 4bit_ula_behav.v demux12_4bits.v mux21_4bits.v datapath.v datapath_tb.v )&&(./xcelium.d/env.d/env.history.29Mar2026_12_39_57)
+s8::(29Mar2026:12:40:40):( xrun -timescale 1ns/1ps 4bit_reg_file.v 4bit_reg.v 4bit_ula_behav.v demux12_4bits.v mux21_4bits.v datapath.v datapath_tb.v -gui -access +rwc )&&(./xcelium.d/env.d/env.history.29Mar2026_12_40_40)
+s9::(29Mar2026:13:44:48):( xrun -timescale 1ns/1ps 4bit_reg_file.v 4bit_reg.v 4bit_ula_behav.v demux12_4bits.v mux21_4bits.v datapath.v datapath_tb.v -gui -access +rwc )&&(./xcelium.d/env.d/env.history.29Mar2026_13_44_48)

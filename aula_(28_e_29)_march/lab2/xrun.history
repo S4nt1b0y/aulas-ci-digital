@@ -1,0 +1,56 @@
+#e1(28Mar2026:11:47:06): source ./xcelium.d/env.d/env.history.28Mar2026_11_47_06
+s1(28Mar2026:11:47:06):  xrun somador_cla.v somador_cla_tb.v 
+#e2(28Mar2026:11:47:38): source ./xcelium.d/env.d/env.history.28Mar2026_11_47_38
+s2(28Mar2026:11:47:38):  xrun somador_cla.v somador_cla_tb.v 
+#e3(28Mar2026:11:48:39): source ./xcelium.d/env.d/env.history.28Mar2026_11_48_39
+s3(28Mar2026:11:48:39):  xrun somador_cla.v somador_cla_tb.v 
+#e4(28Mar2026:11:50:06): source ./xcelium.d/env.d/env.history.28Mar2026_11_50_06
+s4(28Mar2026:11:50:06):  xrun somador_cla.v somador_cla_tb.v 
+#e5(28Mar2026:11:50:35): source ./xcelium.d/env.d/env.history.28Mar2026_11_50_35
+s5(28Mar2026:11:50:35):  xrun somador_cla.v somador_cla_tb.v 
+#e6(28Mar2026:11:51:32): source ./xcelium.d/env.d/env.history.28Mar2026_11_51_32
+s6(28Mar2026:11:51:32):  xrun somador_cla.v somador_cla_tb.v 
+#e7(28Mar2026:11:52:07): source ./xcelium.d/env.d/env.history.28Mar2026_11_52_07
+s7(28Mar2026:11:52:07):  xrun somador_cla.v somador_cla_tb.v 
+#e8(28Mar2026:11:52:59): source ./xcelium.d/env.d/env.history.28Mar2026_11_52_59
+s8(28Mar2026:11:52:59):  xrun somador_cla.v somador_cla_tb.v 
+#e9(28Mar2026:11:54:21): source ./xcelium.d/env.d/env.history.28Mar2026_11_54_21
+s9(28Mar2026:11:54:21):  xrun somador_cla.v somador_cla_tb.v 
+#e10(28Mar2026:11:55:21): source ./xcelium.d/env.d/env.history.28Mar2026_11_55_21
+s10(28Mar2026:11:55:21):  xrun counter.v counter_test.v 
+#e11(28Mar2026:11:55:24): source ./xcelium.d/env.d/env.history.28Mar2026_11_55_24
+s11(28Mar2026:11:55:24):  xrun somador_cla.v somador_cla_tb.v 
+#e12(28Mar2026:11:55:28): source ./xcelium.d/env.d/env.history.28Mar2026_11_55_28
+s12(28Mar2026:11:55:28):  xrun somador_cla.v somador_cla_tb.v 
+#e13(28Mar2026:11:55:40): source ./xcelium.d/env.d/env.history.28Mar2026_11_55_40
+s13(28Mar2026:11:55:40):  xrun somador_cla.v somador_cla_tb.v 
+#e14(28Mar2026:11:56:53): source ./xcelium.d/env.d/env.history.28Mar2026_11_56_53
+s14(28Mar2026:11:56:53):  xrun somador_cla.v somador_cla_tb.v 
+#e15(28Mar2026:11:57:21): source ./xcelium.d/env.d/env.history.28Mar2026_11_57_21
+s15(28Mar2026:11:57:21):  xrun somador_cla.v somador_cla_tb.v 
+#e16(28Mar2026:11:57:51): source ./xcelium.d/env.d/env.history.28Mar2026_11_57_51
+s16(28Mar2026:11:57:51):  xrun somador_cla.v somador_cla_tb.v 
+#e17(28Mar2026:12:01:14): source ./xcelium.d/env.d/env.history.28Mar2026_12_01_14
+s17(28Mar2026:12:01:14):  xrun somador_cla.v somador_cla_tb.v 
+#e18(28Mar2026:12:01:36): source ./xcelium.d/env.d/env.history.28Mar2026_12_01_36
+s18(28Mar2026:12:01:36):  xrun somador_cla.v somador_cla_tb.v 
+#e19(28Mar2026:12:02:43): source ./xcelium.d/env.d/env.history.28Mar2026_12_02_43
+s19(28Mar2026:12:02:43):  xrun somador_cla.v somador_cla_tb.v 
+#e20(28Mar2026:12:03:55): source ./xcelium.d/env.d/env.history.28Mar2026_12_03_55
+s20(28Mar2026:12:03:55):  xrun somador_cla.v somador_cla_tb.v 
+#e21(28Mar2026:12:04:30): source ./xcelium.d/env.d/env.history.28Mar2026_12_04_30
+s21(28Mar2026:12:04:30):  xrun somador_cla.v somador_cla_tb.v 
+#e22(28Mar2026:12:05:26): source ./xcelium.d/env.d/env.history.28Mar2026_12_05_26
+s22(28Mar2026:12:05:26):  xrun somador_cla.v somador_cla_tb.v 
+#e23(28Mar2026:12:06:12): source ./xcelium.d/env.d/env.history.28Mar2026_12_06_12
+s23(28Mar2026:12:06:12):  xrun somador_cla.v somador_cla_tb.v 
+#e24(28Mar2026:12:07:01): source ./xcelium.d/env.d/env.history.28Mar2026_12_07_01
+s24(28Mar2026:12:07:01):  xrun somador_cla.v somador_cla_tb.v 
+#e25(28Mar2026:12:08:01): source ./xcelium.d/env.d/env.history.28Mar2026_12_08_01
+s25(28Mar2026:12:08:01):  xrun somador_cla.v somador_cla_tb.v 
+#e26(28Mar2026:12:08:34): source ./xcelium.d/env.d/env.history.28Mar2026_12_08_34
+s26(28Mar2026:12:08:34):  xrun counter.v counter_test.v -gui -access +rwc 
+#e27(28Mar2026:12:09:00): source ./xcelium.d/env.d/env.history.28Mar2026_12_09_00
+s27(28Mar2026:12:09:00):  xrun somador_cla somador_cla_tb -gui -access +rwc 
+#e28(28Mar2026:12:09:24): source ./xcelium.d/env.d/env.history.28Mar2026_12_09_24
+s28(28Mar2026:12:09:24):  xrun somador_cla.v somador_cla_tb.v -gui -access +rwc 

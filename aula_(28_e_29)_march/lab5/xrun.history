@@ -1,0 +1,28 @@
+#e1(28Mar2026:14:39:05): source ./xcelium.d/env.d/env.history.28Mar2026_14_39_05
+s1(28Mar2026:14:39:05):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e2(28Mar2026:14:39:34): source ./xcelium.d/env.d/env.history.28Mar2026_14_39_34
+s2(28Mar2026:14:39:34):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e3(28Mar2026:14:40:09): source ./xcelium.d/env.d/env.history.28Mar2026_14_40_09
+s3(28Mar2026:14:40:09):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e4(28Mar2026:14:40:37): source ./xcelium.d/env.d/env.history.28Mar2026_14_40_37
+s4(28Mar2026:14:40:37):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e5(28Mar2026:14:41:01): source ./xcelium.d/env.d/env.history.28Mar2026_14_41_01
+s5(28Mar2026:14:41:01):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e6(28Mar2026:14:42:02): source ./xcelium.d/env.d/env.history.28Mar2026_14_42_02
+s6(28Mar2026:14:42:02):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e7(28Mar2026:14:42:44): source ./xcelium.d/env.d/env.history.28Mar2026_14_42_44
+s7(28Mar2026:14:42:44):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e8(28Mar2026:14:43:56): source ./xcelium.d/env.d/env.history.28Mar2026_14_43_56
+s8(28Mar2026:14:43:56):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 
+#e9(28Mar2026:14:47:57): source ./xcelium.d/env.d/env.history.28Mar2026_14_47_57
+s9(28Mar2026:14:47:57):  xrun somador_cla.v subtrator.v subtrator_tb.v -gui -access +rwc 
+#e10(28Mar2026:14:48:03): source ./xcelium.d/env.d/env.history.28Mar2026_14_48_03
+s10(28Mar2026:14:48:03):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 
+#e11(28Mar2026:14:48:20): source ./xcelium.d/env.d/env.history.28Mar2026_14_48_20
+s11(28Mar2026:14:48:20):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 
+#e12(28Mar2026:15:14:02): source ./xcelium.d/env.d/env.history.28Mar2026_15_14_02
+s12(28Mar2026:15:14:02):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 
+#e13(28Mar2026:15:17:31): source ./xcelium.d/env.d/env.history.28Mar2026_15_17_31
+s13(28Mar2026:15:17:31):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e14(28Mar2026:15:17:43): source ./xcelium.d/env.d/env.history.28Mar2026_15_17_43
+s14(28Mar2026:15:17:43):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 

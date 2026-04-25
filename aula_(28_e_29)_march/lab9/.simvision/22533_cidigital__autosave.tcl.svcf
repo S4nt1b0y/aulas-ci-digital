@@ -1,0 +1,238 @@
+
+#
+# Preferences
+#
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set plugin-enable-groupscope 0
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Design Browser windows
+#
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 730x500+261+33}] != ""} {
+    window geometry "Design Browser 1" 730x500+261+33
+}
+window target "Design Browser 1" on
+browser using {Design Browser 1}
+browser set \
+    -signalsort name
+browser timecontrol set -lock 0
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x1027+0+32}] != ""} {
+    window geometry "Waveform 1" 1920x1027+0+32
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar select designbrowser
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 175 \
+    -units ps \
+    -valuewidth 75
+waveform baseline set -time 0
+
+set id [waveform add -signals  {
+	{simulator::alu_8bit_tb.dut.A[7:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::alu_8bit_tb.dut.B[7:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.C
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.C4
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.G0
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.G1
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.N
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.P0
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.P1
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.V
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.Z
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.carry_in
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.generated_out
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.propagated_out
+	} ]
+set id [waveform add -signals  {
+	{simulator::alu_8bit_tb.dut.result_high[3:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::alu_8bit_tb.dut.result_low[3:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::alu_8bit_tb.dut.resultado[7:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::alu_8bit_tb.dut.seletor[3:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::alu_8bit_tb.dut.ula_higher.A[3:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::alu_8bit_tb.dut.ula_higher.B[3:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_higher.C
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_higher.N
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_higher.V
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_higher.WIDTH
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_higher.Z
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_higher.carry_in
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_higher.carry_out_somador_cla
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_higher.carry_out_subtrator_cla
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_higher.generated_out
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_higher.generated_sub
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_higher.generated_sum
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_higher.propagated_out
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_higher.propagated_sub
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_higher.propagated_sum
+	} ]
+set id [waveform add -signals  {
+	{simulator::alu_8bit_tb.dut.ula_higher.result_somador_cla[3:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::alu_8bit_tb.dut.ula_higher.result_subtrator_cla[3:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::alu_8bit_tb.dut.ula_higher.resultado[3:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::alu_8bit_tb.dut.ula_higher.seletor[3:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::alu_8bit_tb.dut.ula_lower.A[3:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::alu_8bit_tb.dut.ula_lower.B[3:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_lower.C
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_lower.N
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_lower.V
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_lower.WIDTH
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_lower.Z
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_lower.carry_in
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_lower.carry_out_somador_cla
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_lower.carry_out_subtrator_cla
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_lower.generated_out
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_lower.generated_sub
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_lower.generated_sum
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_lower.propagated_out
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_lower.propagated_sub
+	} ]
+set id [waveform add -signals  {
+	simulator::alu_8bit_tb.dut.ula_lower.propagated_sum
+	} ]
+set id [waveform add -signals  {
+	{simulator::alu_8bit_tb.dut.ula_lower.result_somador_cla[3:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::alu_8bit_tb.dut.ula_lower.result_subtrator_cla[3:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::alu_8bit_tb.dut.ula_lower.resultado[3:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::alu_8bit_tb.dut.ula_lower.seletor[3:0]}
+	} ]
+
+waveform xview limits 0 200000ps
+
+#
+# Waveform Window Links
+#
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 730x250+261+564
+
+#
+# Layout selection
+#

@@ -1,0 +1,9 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-timescale
+1ns/1ps
+4bit_ula_behav.v
+8bit_alu.v
+alu_8bit_tb.v

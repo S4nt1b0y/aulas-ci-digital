@@ -1,0 +1,10 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+driver.v
+driver_test.v
+-gui
+-access
++rwc
+-s

@@ -1,0 +1,8 @@
+#e1(21Mar2026:16:44:00): source ./xcelium.d/env.d/env.history.21Mar2026_16_44_00
+s1(21Mar2026:16:44:00):  xrun driver.v driver_test.v -gui -access +rwc 
+#e2(21Mar2026:16:47:19): source ./xcelium.d/env.d/env.history.21Mar2026_16_47_19
+s2(21Mar2026:16:47:19):  xrun driver.v driver_test.v -gui -access +rwc 
+#e3(21Mar2026:16:51:41): source ./xcelium.d/env.d/env.history.21Mar2026_16_51_41
+s3(21Mar2026:16:51:41):  xrun driver.v driver_test.v -gui -access +rwc "-s " 
+#e4(21Mar2026:16:54:39): source ./xcelium.d/env.d/env.history.21Mar2026_16_54_39
+s4(21Mar2026:16:54:39):  xrun driver.v driver_test.v -gui -access +rwc 

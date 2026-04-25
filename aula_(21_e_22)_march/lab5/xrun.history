@@ -1,0 +1,2 @@
+#e1(22Mar2026:09:51:06): source ./xcelium.d/env.d/env.history.22Mar2026_09_51_06
+s1(22Mar2026:09:51:06):  xrun alu.v alu_test.v -gui -access +rwc 

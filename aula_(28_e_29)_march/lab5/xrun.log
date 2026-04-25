@@ -1,0 +1,52 @@
+xrun(64): 25.03-s010: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s010: Started on Mar 28, 2026 at 15:17:43 -03
+xrun
+	4bit_ula_behav.v
+	4bit_ula_behav_tb.v
+	-gui
+	-access +rwc
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		moduleName
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.moduleName:v <0x130ad1e9>
+			streams:   4, words: 11979
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		             Instances  Unique
+		Modules:             2       2
+		Registers:           4       4
+		Vectored wires:      4       -
+		Always blocks:       1       1
+		Initial blocks:      1       1
+		Pseudo assignments:  3       -
+	Writing initial simulation snapshot: worklib.moduleName:v
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /apps/cds/installs/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm moduleName.A moduleName.B moduleName.resultado moduleName.seletor
+Created probe 1
+xcelium> run
+PASSOU teste1
+PASSOU teste2
+PASSOU teste3
+PASSOU teste4
+PASSOU teste5
+PASSOU teste5
+PASSOU teste5
+PASSOU teste5
+PASSOU teste5
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> ^C
+xcelium> exit
+...Regained control from SimVision
+-------------------------------------
+TOOL:	xrun(64)	25.03-s010: Exiting on Mar 28, 2026 at 15:23:35 -03  (total: 00:05:52)

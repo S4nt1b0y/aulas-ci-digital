@@ -1,0 +1,2 @@
+#e1(12Apr2026:10:19:06): source ./xcelium.d/env.d/env.history.12Apr2026_10_19_06
+s1(12Apr2026:10:19:06):  xrun -timescale 1ns/1ps counter.v counter_tb.v 

@@ -1,0 +1,11 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-timescale
+1ns/1ps
+flipflop_udp.v
+flipflop_udp_tb.v
+-gui
+-access
++rwc

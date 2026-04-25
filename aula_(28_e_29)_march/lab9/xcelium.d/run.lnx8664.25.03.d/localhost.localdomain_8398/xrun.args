@@ -1,0 +1,12 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+somador_cla.v
+subtrator.v
+4bit_ula_behav.v
+4bit_ula_behav_tb.v
+-gui
+-access
++rwc
+-s

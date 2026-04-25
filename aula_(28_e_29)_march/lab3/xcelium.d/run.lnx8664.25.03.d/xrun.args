@@ -1,0 +1,10 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+somador_cla.v
+subtrator.v
+subtrator_tb.v
+-gui
+-access
++rwc

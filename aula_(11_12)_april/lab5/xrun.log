@@ -1,0 +1,35 @@
+xrun(64): 25.03-s010: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s010: Started on Apr 12, 2026 at 10:19:05 -03
+xrun
+	-timescale 1ns/1ps
+	counter.v
+	counter_tb.v
+file: counter.v
+	module worklib.counter:v
+		errors: 0, warnings: 0
+file: counter_tb.v
+	module worklib.counter_tb:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		counter_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.counter:v <0x36516616>
+			streams:   0, words:     0
+		worklib.counter_tb:v <0x51c6e95c>
+			streams:   1, words:  1408
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:               7       7
+		Scalar wires:            5       -
+		Vectored wires:          1       -
+		Always blocks:           2       2
+		Initial blocks:          1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.counter_tb:v
+TOOL:	xrun(64)	25.03-s010: Exiting on Apr 12, 2026 at 10:19:47 -03  (total: 00:00:42)

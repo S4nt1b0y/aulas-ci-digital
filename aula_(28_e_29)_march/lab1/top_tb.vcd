@@ -1,0 +1,162 @@
+$date
+	Sat Mar 28 10:13:27 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module top_tb $end
+$var wire 4 ! status_output [3:0] $end
+$var wire 5 " sensor_output [4:0] $end
+$var parameter 32 # WIDTH $end
+$var reg 1 $ event0 $end
+$var reg 1 % event1 $end
+$var reg 1 & event2 $end
+$var reg 1 ' event3 $end
+$var reg 5 ( sensor0_data [4:0] $end
+$var reg 5 ) sensor1_data [4:0] $end
+$var reg 5 * sensor2_data [4:0] $end
+$var reg 5 + sensor3_data [4:0] $end
+$scope module dut $end
+$var wire 1 $ event0 $end
+$var wire 1 % event1 $end
+$var wire 1 & event2 $end
+$var wire 1 ' event3 $end
+$var wire 5 , sensor0_data [4:0] $end
+$var wire 5 - sensor1_data [4:0] $end
+$var wire 5 . sensor2_data [4:0] $end
+$var wire 5 / sensor3_data [4:0] $end
+$var wire 4 0 status_output [3:0] $end
+$var wire 5 1 sensor_output [4:0] $end
+$var wire 2 2 select_event [1:0] $end
+$var parameter 32 3 WIDTH $end
+$scope module demux_i $end
+$var wire 2 4 sel [1:0] $end
+$var parameter 32 5 WIDTH $end
+$var reg 1 6 demux_out0 $end
+$var reg 1 7 demux_out1 $end
+$var reg 1 8 demux_out2 $end
+$var reg 1 9 demux_out3 $end
+$upscope $end
+$scope module encode_priority_i $end
+$var wire 1 $ in0 $end
+$var wire 1 % in1 $end
+$var wire 1 & in2 $end
+$var wire 1 ' in3 $end
+$var reg 2 : sel [1:0] $end
+$upscope $end
+$scope module mux_i $end
+$var wire 5 ; in0 [4:0] $end
+$var wire 5 < in1 [4:0] $end
+$var wire 5 = in2 [4:0] $end
+$var wire 5 > in3 [4:0] $end
+$var wire 2 ? sel [1:0] $end
+$var parameter 32 @ WIDTH $end
+$var reg 5 A mux_out [4:0] $end
+$upscope $end
+$upscope $end
+$scope task expect $end
+$var reg 5 B exp_output [4:0] $end
+$var reg 4 C exp_status [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b101 @
+b101 5
+b101 3
+b101 #
+$end
+#0
+$dumpvars
+bx C
+bx B
+b0 A
+b1 ?
+b1010 >
+b11111 =
+b0 <
+b10101 ;
+b1 :
+09
+08
+17
+06
+b1 4
+b1 2
+b0 1
+b10 0
+b1010 /
+b11111 .
+b0 -
+b10101 ,
+b1010 +
+b11111 *
+b0 )
+b10101 (
+0'
+0&
+1%
+0$
+b0 "
+b10 !
+$end
+#1
+b10 C
+b0 B
+#2
+b100 !
+b100 0
+18
+07
+b11111 "
+b11111 1
+b11111 A
+b10 2
+b10 4
+b10 :
+b10 ?
+1&
+0%
+#3
+b100 C
+b11111 B
+#4
+b1000 !
+b1000 0
+19
+08
+b1010 "
+b1010 1
+b1010 A
+b11 2
+b11 4
+b11 :
+b11 ?
+1'
+0&
+#5
+1%
+b1000 C
+b1010 B
+#6
+b100 !
+b100 0
+18
+09
+b11111 "
+b11111 1
+b11111 A
+b10 2
+b10 4
+b10 :
+b10 ?
+0'
+1&
+1$
+#7
+b100 C
+b11111 B

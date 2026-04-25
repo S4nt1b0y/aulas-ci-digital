@@ -1,0 +1,5 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(22Mar2026:09:51:06):( xrun alu.v alu_test.v -gui -access +rwc )&&(./xcelium.d/env.d/env.history.22Mar2026_09_51_06)

@@ -1,0 +1,67 @@
+xrun(64): 25.03-s010: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s010: Started on Mar 29, 2026 at 13:44:48 -03
+xrun
+	-timescale 1ns/1ps
+	4bit_reg_file.v
+	4bit_reg.v
+	4bit_ula_behav.v
+	demux12_4bits.v
+	mux21_4bits.v
+	datapath.v
+	datapath_tb.v
+	-gui
+	-access +rwc
+Recompiling... reason: file './datapath_tb.v' is newer than expected.
+	expected: Sun Mar 29 12:10:45 2026
+	actual:   Sun Mar 29 12:43:55 2026
+file: datapath_tb.v
+	module worklib.datapath_tb:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		datapath_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.datapath_tb:v <0x588f368f>
+			streams:  10, words: 11781
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 8       7
+		Registers:              15      14
+		Scalar wires:            5       -
+		Vectored wires:         10       -
+		Always blocks:           7       6
+		Initial blocks:          1       1
+		Cont. assignments:       1       1
+		Pseudo assignments:      8       -
+		Process Clocks:          3       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.datapath_tb:v
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /apps/cds/installs/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm datapath_tb.dut.alu_result datapath_tb.dut.clk datapath_tb.dut.datain datapath_tb.dut.opcode datapath_tb.dut.operandA datapath_tb.dut.operandB datapath_tb.dut.regA_datain datapath_tb.dut.regB_datain datapath_tb.dut.regfile_addr datapath_tb.dut.regfile_input datapath_tb.dut.regfile_output datapath_tb.dut.rst datapath_tb.dut.sel_isOperand_A datapath_tb.dut.sel_regfile_input datapath_tb.dut.write_enable datapath_tb.dut.reg_file.addr datapath_tb.dut.reg_file.clk datapath_tb.dut.reg_file.data_in datapath_tb.dut.reg_file.data_out datapath_tb.dut.reg_file.registers datapath_tb.dut.reg_file.we
+Created probe 1
+xcelium> run
+=== Preenchendo register file ===
+=== Carregando operandos ===
+=== Operação ULA ===
+Resultado ULA =  2
+=== Escrevendo resultado no regfile ===
+=== Segunda rodada ===
+Resultado ULA (rodada 2) =  7
+PASSOU TESTE FINAL
+Simulation stopped via $stop(1) at time 120 NS + 0
+xcelium> ^C
+xcelium> exit
+...Regained control from SimVision
+-------------------------------------
+TOOL:	xrun(64)	25.03-s010: Exiting on Mar 29, 2026 at 14:30:00 -03  (total: 00:45:12)

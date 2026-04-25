@@ -1,0 +1,16 @@
+#e1(12Apr2026:12:33:11): source ./xcelium.d/env.d/env.history.12Apr2026_12_33_11
+s1(12Apr2026:12:33:11):  xrun -timescale 1ns/1ps flipflop_udp.v flipflop_udp_tb.v 
+#e2(12Apr2026:14:21:00): source ./xcelium.d/env.d/env.history.12Apr2026_14_21_00
+s2(12Apr2026:14:21:00):  xrun -timescale 1ns/1ps flipflop_udp.v flipflop_udp_tb.v 
+#e3(12Apr2026:14:23:24): source ./xcelium.d/env.d/env.history.12Apr2026_14_23_24
+s3(12Apr2026:14:23:24):  xrun -timescale 1ns/1ps flipflop_udp.v flipflop_udp_tb.v 
+#e4(12Apr2026:14:33:21): source ./xcelium.d/env.d/env.history.12Apr2026_14_33_21
+s4(12Apr2026:14:33:21):  xrun -timescale 1ns/1ps flipflop_udp.v flipflop_udp_tb.v -gui -timescale 1ps/1ps -access +rwc 
+#e5(12Apr2026:14:33:34): source ./xcelium.d/env.d/env.history.12Apr2026_14_33_34
+s5(12Apr2026:14:33:34):  xrun -timescale 1ns/1ps flipflop_udp.v flipflop_udp_tb.v -gui -access +rwc 
+#e6(12Apr2026:14:38:56): source ./xcelium.d/env.d/env.history.12Apr2026_14_38_56
+s6(12Apr2026:14:38:56):  xrun -timescale 1ns/1ps flipflop_udp.v flipflop_udp_tb.v -gui -access +rwc "-s " 
+#e7(12Apr2026:14:42:52): source ./xcelium.d/env.d/env.history.12Apr2026_14_42_52
+s7(12Apr2026:14:42:52):  xrun -timescale 1ns/1ps flipflop_udp.v flipflop_udp_tb.v -gui -access +rwc 
+#e8(12Apr2026:14:43:18): source ./xcelium.d/env.d/env.history.12Apr2026_14_43_18
+s8(12Apr2026:14:43:18):  xrun -timescale 1ns/1ps flipflop_udp.v flipflop_udp_tb.v -gui -access +rwc 

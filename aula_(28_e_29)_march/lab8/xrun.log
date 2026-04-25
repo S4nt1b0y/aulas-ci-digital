@@ -1,0 +1,19 @@
+xrun(64): 25.03-s010: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s010: Started on Mar 29, 2026 at 12:07:50 -03
+xrun
+	4bit_reg_file.v
+	4bit_reg.v
+	4bit_ula_behav.v
+	demux12_4bits.v
+	mux21_4bits.v
+	datapath.v
+	datapah_tb.v
+	-gui
+	-access +rwc
+xrun: *SE,FILEMIS: Cannot find the provided file 4bit_reg_file.v.
+xrun: *SE,FILEMIS: Cannot find the provided file 4bit_reg.v.
+xrun: *SE,FILEMIS: Cannot find the provided file demux12_4bits.v.
+xrun: *SE,FILEMIS: Cannot find the provided file mux21_4bits.v.
+xrun: *SE,FILEMIS: Cannot find the provided file datapath.v.
+xrun: *SE,FILEMIS: Cannot find the provided file datapah_tb.v.
+TOOL:	xrun(64)	25.03-s010: Exiting on Mar 29, 2026 at 12:07:50 -03  (total: 00:00:00)

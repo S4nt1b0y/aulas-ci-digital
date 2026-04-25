@@ -1,0 +1,83 @@
+xrun(64): 25.03-s010: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s010: Started on Mar 28, 2026 at 14:12:01 -03
+xrun
+	somador_cla.v
+	subtrator.v
+	subtrator_tb.v
+	-gui
+	-access +rwc
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		subtrator_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.subtrator:v <0x4e7c4456>
+			streams:   1, words:   130
+		worklib.subtrator_tb:v <0x644334a3>
+			streams:   5, words:  5053
+		worklib.somador_cla:v <0x1cbe552d>
+			streams:  56, words: 12944
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              3       3
+		Registers:            8       8
+		Scalar wires:        59       -
+		Expanded wires:       8       1
+		Vectored wires:       5       -
+		Initial blocks:       1       1
+		Cont. assignments:   56      12
+		Pseudo assignments:   3       -
+	Writing initial simulation snapshot: worklib.subtrator_tb:v
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /apps/cds/installs/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+TESTE PASSOU
+TESTE PASSOU
+TESTE PASSOU
+TESTE PASSOU
+TESTE PASSOU
+TESTE PASSOU
+TESTE PASSOU
+TESTE PASSOU
+TESTE PASSOU
+TESTE PASSOU
+Simulation complete via $finish(1) at time 100 NS + 0
+./subtrator_tb.v:35         $finish;
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm subtrator_tb.carry_in subtrator_tb.carry_out subtrator_tb.operandA subtrator_tb.operandB subtrator_tb.result subtrator_tb.sub
+Created probe 1
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> stop -create -object subtrator_tb.carry_in -name subtrator_tb.carry_in
+Created stop subtrator_tb.carry_in
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> stop -create -object subtrator_tb.carry_in -name subtrator_tb.carry_in
+xmsim: *E,STCRDP: Stop name subtrator_tb.carry_in already in use.
+xcelium> reset
+Loaded snapshot worklib.subtrator_tb:v
+xcelium> reset
+Loaded snapshot worklib.subtrator_tb:v
+xcelium> reset
+Loaded snapshot worklib.subtrator_tb:v
+xcelium> reset
+Loaded snapshot worklib.subtrator_tb:v
+xcelium> reset
+Loaded snapshot worklib.subtrator_tb:v
+xcelium> run
+0 FS + 0 (stop subtrator_tb.carry_in: subtrator_tb.carry_in = 1)
+xcelium> run
+TESTE PASSOU
+TESTE PASSOU
+20 NS + 0 (stop subtrator_tb.carry_in: subtrator_tb.carry_in = 0)
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	25.03-s010: Exiting on Mar 28, 2026 at 14:23:39 -03  (total: 00:11:38)

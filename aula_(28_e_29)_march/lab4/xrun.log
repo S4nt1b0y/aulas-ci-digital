@@ -1,0 +1,54 @@
+xrun(64): 25.03-s010: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s010: Started on Mar 28, 2026 at 14:48:20 -03
+xrun
+	4bit_ula_behav.v
+	4bit_ula_behav_tb.v
+	-gui
+	-access +rwc
+Recompiling... reason: file './4bit_ula_behav_tb.v' is newer than expected.
+	expected: Sat Mar 28 14:42:42 2026
+	actual:   Sat Mar 28 14:48:17 2026
+file: 4bit_ula_behav_tb.v
+	module worklib.moduleName:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		moduleName
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.moduleName:v <0x5678f6f7>
+			streams:   4, words:  6714
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		             Instances  Unique
+		Modules:             2       2
+		Registers:           4       4
+		Vectored wires:      4       -
+		Always blocks:       1       1
+		Initial blocks:      1       1
+		Pseudo assignments:  3       -
+	Writing initial simulation snapshot: worklib.moduleName:v
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /apps/cds/installs/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm moduleName.ula_i.A moduleName.ula_i.B moduleName.ula_i.resultado moduleName.ula_i.seletor
+Created probe 1
+xcelium> run
+PASSOU teste1
+PASSOU teste2
+PASSOU teste3
+PASSOU teste4
+PASSOU teste5
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> ^C
+xcelium> exit
+...Regained control from SimVision
+-------------------------------------
+TOOL:	xrun(64)	25.03-s010: Exiting on Mar 28, 2026 at 15:13:38 -03  (total: 00:25:18)

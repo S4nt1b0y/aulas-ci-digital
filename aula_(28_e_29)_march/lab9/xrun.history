@@ -1,0 +1,126 @@
+#e1(28Mar2026:16:50:45): source ./xcelium.d/env.d/env.history.28Mar2026_16_50_45
+s1(28Mar2026:16:50:45):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e2(28Mar2026:16:50:58): source ./xcelium.d/env.d/env.history.28Mar2026_16_50_58
+s2(28Mar2026:16:50:58):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e3(28Mar2026:17:09:58): source ./xcelium.d/env.d/env.history.28Mar2026_17_09_58
+s3(28Mar2026:17:09:58):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e4(28Mar2026:17:10:15): source ./xcelium.d/env.d/env.history.28Mar2026_17_10_15
+s4(28Mar2026:17:10:15):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e5(28Mar2026:17:11:58): source ./xcelium.d/env.d/env.history.28Mar2026_17_11_58
+s5(28Mar2026:17:11:58):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e6(28Mar2026:17:15:35): source ./xcelium.d/env.d/env.history.28Mar2026_17_15_35
+s6(28Mar2026:17:15:35):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e7(28Mar2026:17:16:15): source ./xcelium.d/env.d/env.history.28Mar2026_17_16_15
+s7(28Mar2026:17:16:15):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e8(28Mar2026:17:19:14): source ./xcelium.d/env.d/env.history.28Mar2026_17_19_14
+s8(28Mar2026:17:19:14):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e9(28Mar2026:17:20:07): source ./xcelium.d/env.d/env.history.28Mar2026_17_20_07
+s9(28Mar2026:17:20:07):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e10(28Mar2026:17:20:29): source ./xcelium.d/env.d/env.history.28Mar2026_17_20_29
+s10(28Mar2026:17:20:29):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 
+#e11(28Mar2026:17:23:18): source ./xcelium.d/env.d/env.history.28Mar2026_17_23_18
+s11(28Mar2026:17:23:18):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e12(28Mar2026:17:23:52): source ./xcelium.d/env.d/env.history.28Mar2026_17_23_52
+s12(28Mar2026:17:23:52):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 
+#e13(28Mar2026:17:26:29): source ./xcelium.d/env.d/env.history.28Mar2026_17_26_29
+s13(28Mar2026:17:26:29):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e14(28Mar2026:17:27:37): source ./xcelium.d/env.d/env.history.28Mar2026_17_27_37
+s14(28Mar2026:17:27:37):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v 
+#e15(28Mar2026:17:27:48): source ./xcelium.d/env.d/env.history.28Mar2026_17_27_48
+s15(28Mar2026:17:27:48):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 
+#e16(29Mar2026:08:54:06): source ./xcelium.d/env.d/env.history.29Mar2026_08_54_06
+s16(29Mar2026:08:54:06):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 
+#e17(29Mar2026:09:32:55): source ./xcelium.d/env.d/env.history.29Mar2026_09_32_55
+s17(29Mar2026:09:32:55):  xrun somador_cla.v subtrator.v 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 
+#e18(29Mar2026:09:33:38): source ./xcelium.d/env.d/env.history.29Mar2026_09_33_38
+s18(29Mar2026:09:33:38):  xrun somador_cla.v subtrator.v 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 
+#e19(29Mar2026:09:38:39): source ./xcelium.d/env.d/env.history.29Mar2026_09_38_39
+s19(29Mar2026:09:38:39):  xrun somador_cla.v subtrator.v 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 
+#e20(29Mar2026:09:39:46): source ./xcelium.d/env.d/env.history.29Mar2026_09_39_46
+s20(29Mar2026:09:39:46):  xrun somador_cla.v subtrator.v 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 
+#e21(29Mar2026:09:41:19): source ./xcelium.d/env.d/env.history.29Mar2026_09_41_19
+s21(29Mar2026:09:41:19):  xrun somador_cla.v subtrator.v 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 
+#e22(29Mar2026:09:44:36): source ./xcelium.d/env.d/env.history.29Mar2026_09_44_36
+s22(29Mar2026:09:44:36):  xrun somador_cla.v subtrator.v 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 
+#e23(29Mar2026:09:45:34): source ./xcelium.d/env.d/env.history.29Mar2026_09_45_34
+s23(29Mar2026:09:45:34):  xrun somador_cla.v subtrator.v 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 
+#e24(29Mar2026:09:46:23): source ./xcelium.d/env.d/env.history.29Mar2026_09_46_23
+s24(29Mar2026:09:46:23):  xrun somador_cla.v subtrator.v 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 
+#e25(29Mar2026:09:51:32): source ./xcelium.d/env.d/env.history.29Mar2026_09_51_32
+s25(29Mar2026:09:51:32):  xrun somador_cla.v subtrator.v 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 
+#e26(29Mar2026:09:59:17): source ./xcelium.d/env.d/env.history.29Mar2026_09_59_17
+s26(29Mar2026:09:59:17):  xrun somador_cla.v subtrator.v 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc "-s " 
+#e27(29Mar2026:10:17:04): source ./xcelium.d/env.d/env.history.29Mar2026_10_17_04
+s27(29Mar2026:10:17:04):  xrun 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 
+#e28(29Mar2026:10:17:26): source ./xcelium.d/env.d/env.history.29Mar2026_10_17_26
+s28(29Mar2026:10:17:26):  xrun somador_cla.v subtrator.v 4bit_ula_behav.v 4bit_ula_behav_tb.v -gui -access +rwc 
+#e29(29Mar2026:12:07:50): source ./xcelium.d/env.d/env.history.29Mar2026_12_07_50
+s29(29Mar2026:12:07:50):  xrun 4bit_reg_file.v 4bit_reg.v 4bit_ula_behav.v demux12_4bits.v mux21_4bits.v datapath.v datapah_tb.v -gui -access +rwc 
+#e30(29Mar2026:14:31:56): source ./xcelium.d/env.d/env.history.29Mar2026_14_31_56
+s30(29Mar2026:14:31:56):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v 8bit_alu_tb.v 
+#e31(29Mar2026:14:32:27): source ./xcelium.d/env.d/env.history.29Mar2026_14_32_27
+s31(29Mar2026:14:32:27):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v 8bit_alu_tb.v 
+#e32(29Mar2026:14:32:55): source ./xcelium.d/env.d/env.history.29Mar2026_14_32_55
+s32(29Mar2026:14:32:55):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v 8bit_alu_tb.v 
+#e33(29Mar2026:14:33:38): source ./xcelium.d/env.d/env.history.29Mar2026_14_33_38
+s33(29Mar2026:14:33:38):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v 8bit_alu_tb.v 
+#e34(29Mar2026:14:34:23): source ./xcelium.d/env.d/env.history.29Mar2026_14_34_23
+s34(29Mar2026:14:34:23):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v 8bit_alu_tb.v 
+#e35(29Mar2026:14:34:41): source ./xcelium.d/env.d/env.history.29Mar2026_14_34_41
+s35(29Mar2026:14:34:41):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v 8bit_alu_tb.v 
+#e36(29Mar2026:14:35:29): source ./xcelium.d/env.d/env.history.29Mar2026_14_35_29
+s36(29Mar2026:14:35:29):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v 8bit_alu_tb.v 
+#e37(29Mar2026:14:35:35): source ./xcelium.d/env.d/env.history.29Mar2026_14_35_35
+s37(29Mar2026:14:35:35):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v 8bit_alu_tb.v] 
+#e38(29Mar2026:14:35:47): source ./xcelium.d/env.d/env.history.29Mar2026_14_35_47
+s38(29Mar2026:14:35:47):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v 8bit_alu_tb.v] 
+#e39(29Mar2026:14:36:28): source ./xcelium.d/env.d/env.history.29Mar2026_14_36_28
+s39(29Mar2026:14:36:28):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v 8bit_alu_tb.v] 
+#e40(29Mar2026:14:37:18): source ./xcelium.d/env.d/env.history.29Mar2026_14_37_18
+s40(29Mar2026:14:37:18):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v 8bit_alu_tb.v] 
+#e41(29Mar2026:14:37:34): source ./xcelium.d/env.d/env.history.29Mar2026_14_37_34
+s41(29Mar2026:14:37:34):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v alu_8bit_tb.v] 
+#e42(29Mar2026:14:37:36): source ./xcelium.d/env.d/env.history.29Mar2026_14_37_36
+s42(29Mar2026:14:37:36):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v alu_8bit_tb.v 
+#e43(29Mar2026:14:38:32): source ./xcelium.d/env.d/env.history.29Mar2026_14_38_32
+s43(29Mar2026:14:38:32):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v alu_8bit_tb.v 
+#e44(29Mar2026:14:39:00): source ./xcelium.d/env.d/env.history.29Mar2026_14_39_00
+s44(29Mar2026:14:39:00):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v alu_8bit_tb.v 
+#e45(29Mar2026:14:39:13): source ./xcelium.d/env.d/env.history.29Mar2026_14_39_13
+s45(29Mar2026:14:39:13):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 12bit_alu.v alu_12bit_tb.v 
+#e46(29Mar2026:14:40:19): source ./xcelium.d/env.d/env.history.29Mar2026_14_40_19
+s46(29Mar2026:14:40:19):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 12bit_alu.v alu_12bit_tb.v 
+#e47(29Mar2026:14:41:24): source ./xcelium.d/env.d/env.history.29Mar2026_14_41_24
+s47(29Mar2026:14:41:24):  xrun -timescale 1ns/1ps 4bit_ula_behav.v_alu_12bit.v alu_12bit_tb.v 
+#e48(29Mar2026:14:41:38): source ./xcelium.d/env.d/env.history.29Mar2026_14_41_38
+s48(29Mar2026:14:41:38):  xrun -timescale 1ns/1ps 4bit_ula_behav.v alu_12bit.v alu_12bit_tb.v 
+#e49(29Mar2026:14:41:51): source ./xcelium.d/env.d/env.history.29Mar2026_14_41_51
+s49(29Mar2026:14:41:51):  xrun -timescale 1ns/1ps 4bit_ula_behav.v alu12bit.v alu_12bit_tb.v 
+#e50(29Mar2026:14:43:21): source ./xcelium.d/env.d/env.history.29Mar2026_14_43_21
+s50(29Mar2026:14:43:21):  xrun -timescale 1ns/1ps 4bit_ula_behav.v alu12bit.v alu_12bit_tb.v 
+#e51(29Mar2026:14:43:34): source ./xcelium.d/env.d/env.history.29Mar2026_14_43_34
+s51(29Mar2026:14:43:34):  xrun -timescale 1ns/1ps 4bit_ula_behav.v alu12bit.v alu_12bit_tb.v 
+#e52(29Mar2026:14:43:46): source ./xcelium.d/env.d/env.history.29Mar2026_14_43_46
+s52(29Mar2026:14:43:46):  xrun -timescale 1ns/1ps 4bit_ula_behav.v alu12bit.v alu_12bit_tb.v 
+#e53(29Mar2026:14:54:08): source ./xcelium.d/env.d/env.history.29Mar2026_14_54_08
+s53(29Mar2026:14:54:08):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v alu_8bit_tb.v 
+#e54(29Mar2026:14:54:31): source ./xcelium.d/env.d/env.history.29Mar2026_14_54_31
+s54(29Mar2026:14:54:31):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v alu_8bit_tb.v 
+#e55(29Mar2026:14:54:52): source ./xcelium.d/env.d/env.history.29Mar2026_14_54_52
+s55(29Mar2026:14:54:52):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v alu_8bit_tb.v 
+#e56(29Mar2026:14:55:08): source ./xcelium.d/env.d/env.history.29Mar2026_14_55_08
+s56(29Mar2026:14:55:08):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v alu_8bit_tb.v 
+#e57(29Mar2026:14:55:49): source ./xcelium.d/env.d/env.history.29Mar2026_14_55_49
+s57(29Mar2026:14:55:49):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v alu_8bit_tb.v 
+#e58(29Mar2026:14:56:04): source ./xcelium.d/env.d/env.history.29Mar2026_14_56_04
+s58(29Mar2026:14:56:04):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v alu_8bit_tb.v 
+#e59(29Mar2026:15:11:12): source ./xcelium.d/env.d/env.history.29Mar2026_15_11_12
+s59(29Mar2026:15:11:12):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v alu_8bit_tb.v 
+#e60(29Mar2026:15:12:42): source ./xcelium.d/env.d/env.history.29Mar2026_15_12_42
+s60(29Mar2026:15:12:42):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v alu_8bit_tb.v 
+#e61(29Mar2026:15:13:36): source ./xcelium.d/env.d/env.history.29Mar2026_15_13_36
+s61(29Mar2026:15:13:36):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v alu_8bit_tb.v 
+#e62(29Mar2026:15:14:58): source ./xcelium.d/env.d/env.history.29Mar2026_15_14_58
+s62(29Mar2026:15:14:58):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v alu_8bit_tb.v -gui -access +rwc 
+#e63(11Apr2026:08:31:31): source ./xcelium.d/env.d/env.history.11Apr2026_08_31_31
+s63(11Apr2026:08:31:31):  xrun -timescale 1ns/1ps 4bit_ula_behav.v 8bit_alu.v alu_8bit_tb.v 

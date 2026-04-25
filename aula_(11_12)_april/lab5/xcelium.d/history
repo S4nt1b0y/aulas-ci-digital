@@ -1,0 +1,5 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(12Apr2026:10:19:06):( xrun -timescale 1ns/1ps counter.v counter_tb.v )&&(./xcelium.d/env.d/env.history.12Apr2026_10_19_06)

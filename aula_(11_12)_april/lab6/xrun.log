@@ -1,0 +1,44 @@
+xrun(64): 25.03-s010: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s010: Started on Apr 12, 2026 at 14:43:18 -03
+xrun
+	-timescale 1ns/1ps
+	flipflop_udp.v
+	flipflop_udp_tb.v
+	-gui
+	-access +rwc
+Recompiling... reason: file './flipflop_udp.v' is newer than expected.
+	expected: Sun Apr 12 14:23:21 2026
+	actual:   Sun Apr 12 14:43:15 2026
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		flipflop_udp_tb
+	Building instance overlay tables: .................... Done
+	Building instance specific data structures.
+        1    ?   (??) :   ?   :  - ; // Borda de descida do Reset: mantém
+        |
+xmelab: *W,UDPRDT (./flipflop_udp.v,24|8): UDP table entry is redundant.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 1       1
+		UDPs:                    1       1
+		Registers:               3       4
+		Scalar wires:            3       -
+		Always blocks:           1       1
+		Initial blocks:          2       2
+		Pseudo assignments:      3       -
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.flipflop_udp_tb:v
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /apps/cds/installs/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> ^C
+xcelium> ^C
+xcelium> ^C
+xcelium> ^C
+xcelium> xmsim: *W,NCTERM: Simulation received SIGTERM signal from process 16844, user id 1001 (/usr/bin/bash).
+TOOL:	xrun(64)	25.03-s010: Exiting on Apr 12, 2026 at 16:34:46 -03  (total: 01:51:28)

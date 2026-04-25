@@ -1,0 +1,71 @@
+$date
+	Sun Apr 12 13:44:52 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module primitiva_and_tb $end
+$var wire 1 ! out $end
+$var reg 1 " in0 $end
+$var reg 1 # in1 $end
+$scope module and0 $end
+$var wire 1 " in0 $end
+$var wire 1 # in1 $end
+$var wire 1 $ nand_out $end
+$var wire 1 ! out $end
+$scope module u1 $end
+$var wire 1 " a $end
+$var wire 1 # b $end
+$var wire 1 % n1 $end
+$var wire 1 $ y $end
+$upscope $end
+$scope module u2 $end
+$var wire 1 $ a $end
+$var wire 1 ! y $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+z%
+1$
+0#
+0"
+0!
+$end
+#10000
+0%
+1#
+#20000
+z%
+0#
+0!
+1$
+1"
+#30000
+1!
+0$
+0%
+1#
+#40000
+z%
+0#
+0!
+1$
+x"
+#50000
+x%
+x#
+0"
+#60000
+x!
+x$
+x"
+#70000

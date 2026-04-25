@@ -1,0 +1,9 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+alu.v
+alu_test.v
+-gui
+-access
++rwc
