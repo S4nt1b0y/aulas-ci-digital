@@ -36,8 +36,14 @@ always #5 clk = ~clk;
 
 initial begin
     clk = 0;
+    rd_addr1 = 2'd0;
+    rd_addr2 = 2'd0;
+    wr_en = 1'b0;
+    wr_addr = 2'd0;
+    wr_data = 8'h0;
     #10;
     //Escrever o valor 8’hAA nos quatro registros.
+    @(negedge clk);
     wr_data = 8'hAA;
     wr_en = 1'b1;
     wr_addr = 2'd0;
