@@ -15,14 +15,13 @@ module top(
 );
 
     localparam WIDTH=8;
-    wire [WIDTH-1:0] alu_out;
 
     ram_single RAM_SP (
         .clk(clk),
         .cs(cs),
         .we(we_resultado),
         .addr(endereco_saida),
-        .data_in(alu_out),
+        .data_in(s_ula),
         .data_out(saida)
     );
 
@@ -43,7 +42,7 @@ module top(
         .opcode    (opcode ),
         .in_a      (sdadoA ),
         .in_b      (sdadoB ),
-        .alu_out   (alu_out) 
+        .alu_out   (s_ula) 
     );
 
 endmodule

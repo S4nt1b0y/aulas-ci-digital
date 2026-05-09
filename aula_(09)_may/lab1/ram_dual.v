@@ -5,7 +5,7 @@ module ram_dual (
     input  wire [5:0]  addr_wr_a,
     input  wire [7:0]  data_wr_a,
     input  wire [5:0]  addr_rd_b,
-    output reg  [7:0]  data_rd_a
+    output reg  [7:0]  data_rd_a,
     output reg  [7:0]  data_rd_b
 );
 
@@ -14,7 +14,7 @@ module ram_dual (
     always @(posedge clk) begin
         if(cs) begin 
             if (we_a) begin
-                ram[addr_wr] <= data_wr;
+                ram[addr_wr_a] <= data_wr_a;
             end else begin 
                 data_rd_a <= ram[addr_wr_a];
             end

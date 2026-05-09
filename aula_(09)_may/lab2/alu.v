@@ -13,9 +13,9 @@ assign a_is_zero = (in_a == {WIDTH{1'b0}});
 always @(*)
 begin
     case (opcode)
-        3'b000: alu_out = in_a;
+        3'b000: alu_out = (in_a + in_b);
         3'b001: alu_out = in_a;
-        3'b010: alu_out = (in_a + in_b);
+        3'b010: alu_out = in_a;
         3'b011: alu_out = (in_a & in_b);
         3'b100: alu_out = (in_a ^ in_b);
         3'b101: alu_out = in_b;

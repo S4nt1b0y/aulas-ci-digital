@@ -2,14 +2,14 @@ module ram_dual (
     input  wire        clk,
     input  wire        we_a,
     input  wire        cs,
-    input  wire [5:0]  addr_wr_a,
+    input  wire [4:0]  addr_wr_a,
     input  wire [7:0]  data_wr_a,
-    input  wire [5:0]  addr_rd_b,
+    input  wire [4:0]  addr_rd_b,
     output reg  [7:0]  data_rd_a,
     output reg  [7:0]  data_rd_b
 );
 
-    reg [7:0] ram [0:63];
+    reg [7:0] ram [0:31];
 
     always @(posedge clk) begin
         if(cs) begin 
@@ -24,7 +24,7 @@ module ram_dual (
     end
 
     initial begin
-        $readme("mem_dados.txt",ram);
+        $readmemh("mem_dados.txt",ram);
     end
 
 endmodule

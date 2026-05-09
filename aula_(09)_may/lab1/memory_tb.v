@@ -40,17 +40,18 @@ module memory_tb;
 
     reg [5:0]  dp_addr_rd;
     wire [7:0] dp_data_rd;
+    wire [7:0] dp_data_rd_a;
 
     ram_dual RAM_DP (
         .clk(clk),
         .cs(cs),
         
         .we_a(dp_we),
-        .addr_wr(dp_addr_wr),
-        .data_wr(dp_data_wr),
-
-        .addr_rd(dp_addr_rd),
-        .data_rd(dp_data_rd)
+        .addr_wr_a(dp_addr_wr),
+        .data_wr_a(dp_data_wr),
+        .data_rd_a(dp_data_rd_a),
+        .addr_rd_b(dp_addr_rd),
+        .data_rd_b(dp_data_rd)
     );
 
     // =====================================================
@@ -212,6 +213,11 @@ module memory_tb;
             dp_addr_rd,
             dp_data_rd
         );
+    end
+
+    initial begin
+        $dumpfile("wave.vcd");
+        $dumpvars(0, memory_tb);
     end
 
 endmodule

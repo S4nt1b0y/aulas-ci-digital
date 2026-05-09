@@ -23,7 +23,7 @@ module ram_single (
     end
 
     initial begin
-        $readme("mem_s_dados.txt",ram);
+        $readmemh("mem_s_dados.txt",ram);
     end
 
 endmodule
