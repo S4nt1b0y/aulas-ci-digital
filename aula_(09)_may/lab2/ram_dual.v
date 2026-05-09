@@ -23,4 +23,8 @@ module ram_dual (
         end
     end
 
+    initial begin
+        $readme("mem_dados.txt",ram);
+    end
+
 endmodule
