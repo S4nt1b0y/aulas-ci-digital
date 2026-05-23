@@ -35,69 +35,37 @@ module restoring_division_datapath
 
  // lógica principal
 
- always @(posedge clk or posedge rst)
- begin
+ always @(posedge clk or posedge rst) begin
+    if(rst) begin
+        A <= 0;
+        Q <= 0;
+        M <= 0;
+        N <= 0;
 
- if(rst)
- begin
-
- A <= 0;
- Q <= 0;
- M <= 0;
- N <= 0;
-
- end
-
- else
- begin
- // LOAD
- if(load)
- begin
- A <= 0;
- Q <= dividendo;
- M <= divisor;
- N <= WIDTH;
- end
-
+    end else begin
+    // LOAD
+    if(load) begin
+        A = 0;
+        Q = dividendo;
+        M = divisor;
+        N = WIDTH;
+    end else begin 
+        case(opcode)
+            3'b001:begin
+                A = {A[WIDTH-1:0], Q[WIDTH-1]};
+                Q = {Q[WIDTH-2:0], 1'b0};
+            end
+            3'b010: A = A + {1'b0, M};
+            3'b011: A = A - {1'b0, M};
+            3'b100: Q[0] = 1'b1;
+            3'b101: Q[0] = 1'b0;
+            3'b110: N = N - 1'b1;
+        endcase
+    end
+    end
+end
  // OPCODES
 
- case(opcode)
- // 000 -> NOP
- 3'b000:
- begin
- end
- // 001 -> SHIFT LEFT AQ
- 3'b001:
- begin
- A <= {A[WIDTH-1:0], Q[WIDTH-1]};
- Q <= {Q[WIDTH-2:0], 1'b0};
- end
- // 010 -> A = A + M
- 3'b010:
- begin
- A <= A + {1'b0, M};
- end
- // 011 -> A = A - M
- 3'b011:
- begin
- A <= A - {1'b0, M};
- end
- // 100 -> Q[0] = 1
- 3'b100:
- begin
- Q[0] <= 1'b1;
- end
- // 101 -> Q[0] = 0
- 3'b101:
- begin
- Q[0] <= 1'b0;
- end
- // 110 -> N = N - 1
- 3'b110:
- begin
- N <= N - 1'b1;
- end
- endcase
- end
- end
+
+ 
 endmodule
