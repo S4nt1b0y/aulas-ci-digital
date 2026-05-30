@@ -1,6 +1,11 @@
 `timescale 1ns / 1ps
 
-module uart_tx (
+module uart_tx 
+#(
+    parameter BOUD_RATE = 9600,
+    parameter PARIRT_MODE = 0
+)
+(
     input wire clk,
     input wire reset,
     input wire [7:0] data_in,
@@ -11,7 +16,10 @@ module uart_tx (
 
     // Estados da maquina
     localparam IDLE = 3'd0, START = 3'd1, DATA = 3'd2, STOP = 3'd3, DONE = 3'd4;
-    localparam CLK_PER_BIT = 16'd5208; // Assumindo 9600 baud rate e 50MHz clock
+    localparam CLK_PER_BIT_9600 = 16'd5208; // Assumindo 9600 baud rate e 50MHz clock
+    localparam CLK_PER_BIT_115200 = 16'd434;  // Assumindo 115200 baud rate e 50MHz clock
+
+    localparam CLK_PER_BIT = (BOUD_RATE == 9600) ? CLK_PER_BIT_9600 : CLK_PER_BIT_115200;
 
     reg [2:0] state;
     reg [7:0] shift_reg;
@@ -20,6 +28,7 @@ module uart_tx (
 	reg load_data;
 	reg enable_counter;
 	reg enable_shift;
+    reg enable_parity_bit;
 	reg tx_reg;
 	 
 	// Contagem dos ciclos de clock
@@ -46,6 +55,14 @@ module uart_tx (
 		    shift_reg <= data_in;
             tx_reg <= 0;
 		end
+        else if (enable_parity_bit) begin
+            if(PARIRT_MODE==1) tx_reg <= ^(data_in);
+            if(PARIRT_MODE==2) tx_reg <= !(^(data_in));
+            tx_reg <= 1;
+        end
+        else if(tx_done) begin 
+            tx_reg <= 1;
+        end
     end
 	 
 	// Logica sequencial para determinar o proximo estado
@@ -100,6 +117,7 @@ module uart_tx (
 		tx = 1;
         enable_counter = 0;
 		enable_shift = 0;
+        enable_parity_bit = 0;
 		load_data = 0;
         case (state)
             IDLE: begin
@@ -119,6 +137,7 @@ module uart_tx (
 
             STOP: begin
                 enable_counter = 1;
+                enable_parity_bit = 1;
             end
 
             DONE: begin

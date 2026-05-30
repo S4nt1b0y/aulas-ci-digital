@@ -9,7 +9,7 @@ module tb_uart_tx;
     wire tx;
     wire tx_done;
 
-    uart_tx uut (
+    uart_tx #(.BOUD_RATE(9600), .PARIRT_MODE(1)) uut (
         .clk(clk),
         .reset(reset),
         .data_in(data_in),
@@ -66,7 +66,7 @@ module tb_uart_tx;
 
         // Finaliza a simulacao
         $display("Testbench concluido!");
-        $stop;
+        $finish;
     end
 
     // Tarefa para enviar um byte

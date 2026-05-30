@@ -1,17 +1,23 @@
 `timescale 1ns / 1ps
 
-module uart_rx (
+module uart_rx #(
+    parameter BOUD_RATE = 9600,
+    parameter PARIRT_MODE = 0
+)(
     input wire clk,
     input wire reset,
     input wire rx,
     output reg [7:0] data_out,
-    output reg rx_done
+    output reg rx_done,
+    output reg error
 );
 
     // Estados da maquina
     localparam IDLE = 3'b000, START = 3'b001, DATA = 3'b010, STOP = 3'b011, DONE = 3'b100, ERROR = 3'b101;
-    localparam CLK_PER_BIT = 16'd5208; // Assumindo 9600 baud rate e 50MHz clock
+    localparam CLK_PER_BIT_9600 = 16'd5208; // Assumindo 9600 baud rate e 50MHz clock
+    localparam CLK_PER_BIT_115200 = 16'd434;  // Assumindo 115200 baud rate e 50MHz clock
 
+    localparam CLK_PER_BIT = (BOUD_RATE == 9600) ? CLK_PER_BIT_9600 : CLK_PER_BIT_115200;
     reg [2:0] state;
     reg [8:0] shift_reg;
     reg [2:0] bit_counter;
@@ -50,6 +56,7 @@ module uart_rx (
 	    if (reset) begin
 		    state <= IDLE;
 			bit_counter <= 3'b0;
+            error <= 0;
 		end else begin
             case (state)
                 IDLE: begin
@@ -77,20 +84,39 @@ module uart_rx (
 
                 STOP: begin
 				    if (clk_counter == CLK_PER_BIT - 1) begin
-                        if (shift_reg[8] == 1) begin // Verifica o bit de parada
-                            state <= DONE;
-                        end else begin
-                            state <= ERROR; // Erro na recepcao no STOP bit
+                        if(PARIRT_MODE == 1)begin 
+                            if (rx == ^(shift_reg[8:1])) begin // Verifica o bit de parada
+                                state <= DONE;
+                            end else begin
+                                state <= ERROR; // Erro na recepcao no STOP bit
+                            end
+                        end
+                        else if(PARIRT_MODE == 2)begin 
+                            if (rx == !(^(shift_reg[8:1]))) begin // Verifica o bit de paridade
+                                state <= DONE;
+                            end else begin
+                                state <= ERROR; // Erro na recepcao no STOP bit
+                            end
                         end
 				    end
                 end
 
                 DONE: begin
-                    if (clk_counter == CLK_PER_BIT - 1) state <= IDLE;
+                    if (clk_counter == CLK_PER_BIT - 1) begin 
+                        if(rx == 1'b1) begin
+                            state <= IDLE;
+                        end else begin
+                            state <= ERROR;
+                        end
+                    end
+                        
                 end
 				
 			    ERROR: begin
-			        if (clk_counter == CLK_PER_BIT - 1) state <= IDLE;
+			        if (clk_counter == CLK_PER_BIT - 1) begin 
+                        state <= IDLE;
+                        error <= 1;
+                    end
 			    end
 
                 default: begin

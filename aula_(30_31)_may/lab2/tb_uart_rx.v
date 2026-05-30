@@ -8,18 +8,21 @@ module tb_uart_rx;
     wire [7:0] data_out;
     wire rx_done;
     reg clk_rx_tb;
+    wire error;
 	 
     // Parametros para a simulacao
     localparam CLK_PERIOD = 20; // Periodo do clock em ns (50 MHz)
     localparam CLK_PER_BIT = 5208; // Ciclos de clock por bit (9600 baud rate)
 
     // Instanciacao do modulo UART RX
-    uart_rx uut (
+    uart_rx #(.BOUD_RATE(9600), .PARIRT_MODE(1))
+    uut (
         .clk(clk),
         .reset(reset),
         .rx(rx),
         .data_out(data_out),
-        .rx_done(rx_done)
+        .rx_done(rx_done),
+        .error(error)
     );
 
     // Geracao de clock
@@ -73,7 +76,7 @@ module tb_uart_rx;
 		for (i = 0; i <= 255; i = i + 1) begin 
             send_byte_with_error(i);
             wait(rx_done);
-            if ((data_out == i) && (uut.state == 5)) begin
+            if ((data_out == i) && (error)) begin
                 $display("Time = %0t: Teste concluido com sucesso! Dado enviado: %2h. Dado recebido: %h", $time, i, data_out);
                 r_ok = r_ok + 1;
             end else begin
@@ -89,7 +92,7 @@ module tb_uart_rx;
 
         // Finaliza a simulacao
         #(20 * CLK_PER_BIT * CLK_PERIOD);
-        $stop;
+        $finish;
     end
 
     // Procedimento para enviar um byte (start, 8 bits de dados e stop bit)
