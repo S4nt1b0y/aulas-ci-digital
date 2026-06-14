@@ -29,7 +29,7 @@ module mx_encoder (
 
     function automatic signed [63:0] scale_to_m_q16;
         input signed [31:0] a;
-        input integer       e;
+        input signed [7:0]  e;
         reg signed [63:0] t;
         begin
             t = a;
@@ -42,7 +42,7 @@ module mx_encoder (
 
     function automatic [7:0] enc_e5m2;
         input signed [31:0] val_q16;
-        input integer       e;
+        input signed [7:0]  e;
         reg sign;
         reg signed [31:0] a;
         reg signed [63:0] m_q16;
@@ -67,7 +67,7 @@ module mx_encoder (
         end
     endfunction
 
-    integer e;
+    reg signed [7:0] e;
     integer msb_idx;
     reg signed [31:0] a0, a1, a2, a3;
     reg signed [31:0] maxa;
