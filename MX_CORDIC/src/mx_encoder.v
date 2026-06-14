@@ -55,13 +55,12 @@ module mx_encoder (
                 enc_e5m2 = {sign, 7'd0};
             end else begin
                 m_q16 = scale_to_m_q16(a, e);
-                if (m_q16 < (1 <<< 16)) m_q16 = (1 <<< 16);
-                if (m_q16 > (7 <<< 14)) m_q16 = (7 <<< 14);
+                if (m_q16 < (1 <<< 16)) m_q16 = (1 <<< 16); //mantissa < 1.0 → força para 1.0
+                if (m_q16 > (7 <<< 14)) m_q16 = (7 <<< 14); //mantissa > 1.75 → força para 1.75 Como só tem 2bits o intervalo representavel é 1.00,1.25,1.50,1.75
 
-                mant = (m_q16 - (1 <<< 16) + (1 <<< 13)) >>> 14;
-                if (mant > 2'b11) mant = 2'b11;
-
-                exp = 5'd15;
+                mant = (m_q16 - (1 <<< 16) + (1 <<< 13)) >>> 14; //Quantização para 2bits, ou fica 00,01,10 ou 11
+                
+                exp = 5'd15; //Isso aqui parece estar errado
 
                 enc_e5m2 = {sign, exp, mant};
             end
@@ -93,15 +92,15 @@ module mx_encoder (
             msb_idx = msb_index32(maxa[31:0]);
             e = msb_idx - 16;
 
-            if (e > 127) begin
+            if (e > 127) begin //Tratando Overflow
                 e = 127;
                 overflow = 1'b1;
             end
-            if (e < -127)
+            if (e < -127)     //Tratando Underflow
                 e = -127;
 
-            scale_out = e + 127;
-            if (scale_out == 8'hff) begin
+            scale_out = e + 127; //Colocando no formato com bias ocultor
+            if (scale_out == 8'hff) begin //Como ff é reservado para inf ou NaN vamos deixar em fe
                 scale_out = 8'hfe;
                 overflow = 1'b1;
             end

@@ -50,21 +50,16 @@ module mx_decoder (
         input signed [7:0] b;
         reg signed [7:0] scale_exponent_8bit;
         begin
-            if (b == 8'hff || a == 32'sh7fffffff) begin
-                mul_q16 = 32'sh7fffffff
+            if (b == 8'hff || a == 32'sh7fffffff) begin //Tradando + e -Infinito
+                mul_q16 = 32'sh7fffffff;
             end else begin 
-                scale_exponent_8bit = $signed({1'b0, s}) - 8'sd127;
+                scale_exponent_8bit = $signed({1'b0, b}) - 8'sd127;
                 if (scale_exponent_8bit >= 0) begin
                     mul_q16 = a <<< scale_exponent_8bit;    // Multiplicação por 2^exp (Shift para a esquerda)
                 end else begin
                     mul_q16 = a >>> (-scale_exponent_8bit); // Divisão por 2^exp (Shift aritmético para a direita)
                 end
             end
-        end
-
-        begin
-            p = a * b;
-            mul_q16 = p >>> 16;
         end
     endfunction
 
