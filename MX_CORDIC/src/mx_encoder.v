@@ -55,11 +55,16 @@ module mx_encoder (
                 enc_e5m2 = {sign, 7'd0};
             end else begin
                 m_q16 = scale_to_m_q16(a, e);
+
+                //Novo
+                //local_msb = msb_index(norm);
+                //local_exp = local_msb - 16;
+                //exp = local_exp + 15;
+
+                //Antes
                 if (m_q16 < (1 <<< 16)) m_q16 = (1 <<< 16); //mantissa < 1.0 → força para 1.0
                 if (m_q16 > (7 <<< 14)) m_q16 = (7 <<< 14); //mantissa > 1.75 → força para 1.75 Como só tem 2bits o intervalo representavel é 1.00,1.25,1.50,1.75
-
                 mant = (m_q16 - (1 <<< 16) + (1 <<< 13)) >>> 14; //Quantização para 2bits, ou fica 00,01,10 ou 11
-                
                 exp = 5'd15; //Isso aqui parece estar errado
 
                 enc_e5m2 = {sign, exp, mant};
