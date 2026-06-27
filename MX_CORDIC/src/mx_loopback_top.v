@@ -14,18 +14,18 @@ module mx_loopback_top (
     mx_decoder u_decoder (
         .elems_in(elems_in),
         .scale_in(scale_in),
-        .phase0_q16(phase0_q16),
-        .phase1_q16(phase1_q16),
-        .phase2_q16(phase2_q16),
-        .phase3_q16(phase3_q16),
+        .out0_int(phase0_q16),
+        .out1_int(phase1_q16),
+        .out2_int(phase2_q16),
+        .out3_int(phase3_q16),
         .any_nan(any_nan)
     );
 
     mx_encoder u_encoder (
-        .in0_q16(phase0_q16),
-        .in1_q16(phase1_q16),
-        .in2_q16(phase2_q16),
-        .in3_q16(phase3_q16),
+        .in0_int(phase0_q16),
+        .in1_int(phase1_q16),
+        .in2_int(phase2_q16),
+        .in3_int(phase3_q16),
         .elems_out(elems_out),
         .scale_out(scale_out),
         .overflow(overflow)
