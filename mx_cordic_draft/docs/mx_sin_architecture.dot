@@ -1,0 +1,49 @@
+digraph MX_SIN_ARCH {
+  rankdir=LR;
+  splines=ortho;
+  node [shape=box, style="rounded,filled", fillcolor="#f8fbff", color="#4f6b8a", fontname="Helvetica"];
+  edge [color="#3c4b5f", fontname="Helvetica"];
+
+  APB [label="APB4 Host\n(psel,penable,pwrite,paddr,pwdata)"];
+  SLV [label="apb4_slave.v\nAPB Slave FSM"];
+  TGT [label="mx_sin_apb_target.v\nRegmap + Control\n(CMD/STATUS/IN/OUT)"];
+  CORE [label="mx_sin.v\nMX Trig Core"];
+
+  subgraph cluster_core {
+    label="mx_sin Internal Datapath";
+    color="#9db3cc";
+    style="rounded";
+
+    FSM [label="fsm_control.v"];
+    BIN0 [label="buffer_in.v\ninput elems"];
+    BIN1 [label="buffer_in.v\ninput scale"];
+    DEC [label="mx_decoder.v"];
+    TR0 [label="phase_lut_trig.v x4"];
+    LUT [label="LUT.v\n64 entries Q1.15"];
+    ENC [label="mx_encoder.v"];
+    BOUT0 [label="buffer_out.v\nout elems"];
+    BOUT1 [label="buffer_out.v\nout scale"];
+
+    FSM -> BIN0 [label="do_load/clear"];
+    FSM -> BIN1 [label="do_load/clear"];
+    BIN0 -> DEC [label="elems"];
+    BIN1 -> DEC [label="scale"];
+    DEC -> TR0 [label="4x phase_q16"];
+    TR0 -> ENC [label="4x sin/cos q16"];
+    TR0 -> LUT [dir=both, label="index / sin_q15"];
+    FSM -> ENC [label="do_encode"];
+    ENC -> BOUT0 [label="enc_elems"];
+    ENC -> BOUT1 [label="enc_scale"];
+    FSM -> BOUT0 [label="do_write"];
+    FSM -> BOUT1 [label="do_write"];
+  }
+
+  APB -> SLV;
+  SLV -> TGT [label="bus_req/bus_addr/bus_wr_data"];
+  TGT -> SLV [label="bus_ready/bus_rd_data"];
+  TGT -> CORE [label="start, op_mode, in_elems, in_scale"];
+  CORE -> TGT [label="busy/done/output_valid\nout_elems/out_scale"];
+
+  OUT [label="APB4 Readback\n(prdata,pready)", fillcolor="#eef8ee", color="#5f8a5f"];
+  SLV -> OUT;
+}
