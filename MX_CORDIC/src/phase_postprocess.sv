@@ -1,8 +1,8 @@
 module phase_postprocess(
-    input  wire signed [32:0] lut0,
-    input  wire signed [32:0] lut1,
-    input  wire signed [32:0] lut2,
-    input  wire signed [32:0] lut3,
+    input  wire signed [31:0] lut0,
+    input  wire signed [31:0] lut1,
+    input  wire signed [31:0] lut2,
+    input  wire signed [31:0] lut3,
 
     input  wire negate0,
     input  wire negate1,

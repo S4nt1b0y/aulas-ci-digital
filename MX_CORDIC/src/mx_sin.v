@@ -26,10 +26,10 @@ module mx_sin (
     wire signed sin2_signal;
     wire signed sin3_signal;
 
-    wire signed sin0_signed;
-    wire signed sin1_signed;
-    wire signed sin2_signed;
-    wire signed sin3_signed;
+    wire signed [31:0] sin0_signed;
+    wire signed [31:0] sin1_signed;
+    wire signed [31:0] sin2_signed;
+    wire signed [31:0] sin3_signed;
 
     mx_decoder u_decoder (
         .elems_in(elems_in),
@@ -74,11 +74,11 @@ module mx_sin (
         .lut1(sin1_int32),
         .lut2(sin2_int32),
         .lut3(sin3_int32),
-        
+
         .negate0(sin0_signal),
-        .negate1(sin1_index),
-        .negate2(sin2_index),
-        .negate3(sin3_index),
+        .negate1(sin1_signal),
+        .negate2(sin2_signal),
+        .negate3(sin3_signal),
 
         .out0(sin0_signed),
         .out1(sin1_signed),

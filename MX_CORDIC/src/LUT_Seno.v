@@ -3,10 +3,10 @@ module LUT_Seno (
     input  [5:0]  index1,
     input  [5:0]  index2,
     input  [5:0]  index3,
-    output [32:0] sin_value0,
-    output [32:0] sin_value1,
-    output [32:0] sin_value2,
-    output [32:0] sin_value3
+    output [31:0] sin_value0,
+    output [31:0] sin_value1,
+    output [31:0] sin_value2,
+    output [31:0] sin_value3
 );
 
 reg [32:0] memoria [0:63];
