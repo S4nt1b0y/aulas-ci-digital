@@ -1,0 +1,16 @@
+https://sw23.github.io/fp-conv/?in=fp8_e5m2&out=int32&val=3.140625
+
+
+Modelo alto nivel em python de um decoder MX Floatingpoint: 
+    ->Comparando entradas em txt (já que não tem UVM ainda)
+
+Modelo alto nivel em python de um encoder MX Floatingpoint: 
+    ->Comparando entradas em txt (já que não tem UVM ainda)
+
+Modelo alto nivel em python compando o decoder + Valores da LUT_Seno
+    -> Bastaria acoplar o primeiro modulo feito em python com um 
+    -> normalizador de phase e um vetor de indice comparando os dois
+
+Integrar os 3 modulos: E ver o tempo de execução em python e o tempo
+de simulação em e analise de STA
+
