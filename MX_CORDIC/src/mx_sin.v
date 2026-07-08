@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module mx_sin (
     input  wire [31:0] elems_in,
     input  wire [7:0]  scale_in,
@@ -30,6 +32,16 @@ module mx_sin (
     wire signed [31:0] sin1_signed;
     wire signed [31:0] sin2_signed;
     wire signed [31:0] sin3_signed;
+
+    wire signed [15:0] sin0_q1_15;
+    wire signed [15:0] sin1_q1_15;
+    wire signed [15:0] sin2_q1_15;
+    wire signed [15:0] sin3_q1_15;
+
+    assign sin0_q1_15 = sin0_signed[15:0];
+    assign sin1_q1_15 = sin1_signed[15:0];
+    assign sin2_q1_15 = sin2_signed[15:0];
+    assign sin3_q1_15 = sin3_signed[15:0];
 
     mx_decoder u_decoder (
         .elems_in(elems_in),
@@ -87,13 +99,13 @@ module mx_sin (
     );
 
     mx_encoder u_encoder (
-        .in0_int(sin0_signed),
-        .in1_int(sin1_signed),
-        .in2_int(sin2_signed),
-        .in3_int(sin3_signed),
+        .in0_int(sin0_q1_15),
+        .in1_int(sin1_q1_15),
+        .in2_int(sin2_q1_15),
+        .in3_int(sin3_q1_15),
         .elems_out(elems_out),
         .scale_out(scale_out),
         .overflow(overflow)
     );
 
-endmodule    
+endmodule
