@@ -15,10 +15,11 @@ module phase_preprocess (
     output reg negate3
 );
 
-    localparam integer PI_DIV2  = 16384;
-    localparam integer PI       = 32768;
-    localparam integer PI3_DIV2 = 49152;
-    localparam integer TWO_PI   = 65536;
+    // Constantes em radianos Q16.16, arredondadas para o inteiro mais proximo.
+    localparam integer PI_DIV2  = 102944;
+    localparam integer PI       = 205887;
+    localparam integer PI3_DIV2 = 308831;
+    localparam integer TWO_PI   = 411775;
 
     task automatic process_angle;
         input  signed [31:0] angle;
@@ -54,7 +55,9 @@ module phase_preprocess (
                 neg = 1'b1;
             end
 
-            idx = (angle_q1 * 63) / PI_DIV2;
+            // Arredonda para a amostra mais proxima da LUT. Com 64 pontos
+            // entre 0 e pi/2, o erro angular maximo e aproximadamente 0,7143°.
+            idx = ((angle_q1 * 63) + (PI_DIV2 / 2)) / PI_DIV2;
 
             if (idx < 0)
                 idx = 0;
