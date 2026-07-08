@@ -1,3 +1,10 @@
+import sys
+
+
+INT32_MAX = 0x7FFFFFFF
+INT32_MIN = -0x80000000
+
+
 def decode_e5m2_base(fp):
     sign = (fp >> 7) & 0x1
     exp  = (fp >> 2) & 0x1F
@@ -26,11 +33,9 @@ def decode_e5m2_base(fp):
 
         return value, real_exp
 
-INT32_MAX = 0x7FFFFFFF
-INT32_MIN = -0x80000000
-
-
 def apply_scale_to_int(base_val, total_exp):
+    if base_val == 0:
+        return 0
 
     if total_exp > 30:
         return INT32_MIN if base_val < 0 else INT32_MAX
@@ -49,7 +54,10 @@ def apply_scale_to_int(base_val, total_exp):
 
         return shifted
 
-    return base_val >> (-total_exp)
+    # Deslocar diretamente um valor negativo arredonda em direcao a -infinito.
+    # A conversao para int32 definida para este decoder trunca em direcao a zero.
+    magnitude = abs(base_val) >> (-total_exp)
+    return -magnitude if base_val < 0 else magnitude
 
 def mx_decode(elems_in, scale_in):
 
@@ -81,30 +89,51 @@ def mx_decode(elems_in, scale_in):
 
     return [out0, out1, out2, out3], False
 
+def parse_input_line(line, line_number):
+    fields = line.split()
+    if not fields:
+        return None
+    if len(fields) != 2:
+        raise ValueError(
+            f"linha {line_number}: esperado '<elems_hex> <scale_hex>'"
+        )
+
+    try:
+        elems_in = int(fields[0], 16)
+        scale_in = int(fields[1], 16)
+    except ValueError as exc:
+        raise ValueError(f"linha {line_number}: valor hexadecimal invalido") from exc
+
+    if not 0 <= elems_in <= 0xFFFFFFFF:
+        raise ValueError(f"linha {line_number}: elems_in excede 32 bits")
+    if not 0 <= scale_in <= 0xFF:
+        raise ValueError(f"linha {line_number}: scale_in excede 8 bits")
+
+    return elems_in, scale_in
+
+
 def generate_output(input_file, output_file):
+    with open(input_file, encoding="utf-8") as fin, open(
+        output_file, "w", encoding="utf-8"
+    ) as fout:
+        for line_number, line in enumerate(fin, start=1):
+            parsed = parse_input_line(line, line_number)
+            if parsed is None:
+                continue
 
-    with open(input_file) as fin, open(output_file, "w") as fout:
-
-        for line in fin:
-
-            elems_hex, scale_hex = line.split()
-
-            elems_in = int(elems_hex, 16)
-            scale_in = int(scale_hex, 16)
-
-            result, nan = mx_decode(elems_in, scale_in)
-
+            result, any_nan = mx_decode(*parsed)
             fout.write(
-                f"{result[0]} {result[1]} {result[2]} {result[3]}\n"
+                f"{result[0]} {result[1]} {result[2]} {result[3]} "
+                f"{int(any_nan)}\n"
             )
-
-
-
-import sys
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Uso: decoder.py <entrada.txt> <saida.txt>")
         sys.exit(1)
 
-    generate_output(sys.argv[1], sys.argv[2])
+    try:
+        generate_output(sys.argv[1], sys.argv[2])
+    except (OSError, ValueError) as exc:
+        print(f"Erro: {exc}", file=sys.stderr)
+        sys.exit(1)

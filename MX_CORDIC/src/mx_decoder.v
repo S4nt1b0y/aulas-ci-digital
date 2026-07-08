@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module mx_decoder (
     input  wire [31:0] elems_in,   // 4 elementos de 8 bits (E5M2)
     input  wire [7:0]  scale_in,   // Fator de escala compartilhado (E8M0)
@@ -54,7 +56,10 @@ module mx_decoder (
         input integer total_exponent;
         reg signed [63:0] shifted;
         begin
-            if (total_exponent > 30) begin
+            // Zero permanece zero para qualquer escala finita.
+            if (base_val == 0) begin
+                apply_scale_to_int = 32'sd0;
+            end else if (total_exponent > 30) begin
                 // Saturação caso mude de escala além do limite de um int32 assinado
                 apply_scale_to_int = (base_val < 0) ? 32'sh80000000 : 32'sh7fffffff;
             end else if (total_exponent < -32) begin
@@ -68,7 +73,12 @@ module mx_decoder (
                     else if (shifted < 64'shffffffff80000000) apply_scale_to_int = 32'sh80000000;
                     else apply_scale_to_int = shifted[31:0];
                 end else begin
-                    apply_scale_to_int = $signed(base_val) >>> (-total_exponent);
+                    // Trunca valores fracionarios em direcao a zero. Um shift
+                    // aritmetico direto de um negativo arredondaria para -infinito.
+                    if (base_val < 0)
+                        apply_scale_to_int = -((-base_val) >>> (-total_exponent));
+                    else
+                        apply_scale_to_int = base_val >>> (-total_exponent);
                 end
             end
         end
