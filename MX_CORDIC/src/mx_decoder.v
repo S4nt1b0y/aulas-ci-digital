@@ -3,10 +3,10 @@
 module mx_decoder (
     input  wire [31:0] elems_in,   // 4 elementos de 8 bits (E5M2)
     input  wire [7:0]  scale_in,   // Fator de escala compartilhado (E8M0)
-    output reg  signed [31:0] out0_int,
-    output reg  signed [31:0] out1_int,
-    output reg  signed [31:0] out2_int,
-    output reg  signed [31:0] out3_int,
+    output reg  signed [31:0] out0_int, // Valor raw Q16.16
+    output reg  signed [31:0] out1_int, // Valor raw Q16.16
+    output reg  signed [31:0] out2_int, // Valor raw Q16.16
+    output reg  signed [31:0] out3_int, // Valor raw Q16.16
     output reg               any_nan
 );
 
@@ -50,35 +50,35 @@ module mx_decoder (
         end
     endtask
 
-    // Aplica a escala combinada deslocando os bits diretamente para o alvo inteiro
-    function automatic signed [31:0] apply_scale_to_int;
+    // Aplica a escala combinada e produz um valor signed Q16.16 saturado.
+    function automatic signed [31:0] apply_scale_to_q16_16;
         input signed [31:0] base_val;
         input integer total_exponent;
         reg signed [63:0] shifted;
         begin
             // Zero permanece zero para qualquer escala finita.
             if (base_val == 0) begin
-                apply_scale_to_int = 32'sd0;
+                apply_scale_to_q16_16 = 32'sd0;
             end else if (total_exponent > 30) begin
-                // Saturação caso mude de escala além do limite de um int32 assinado
-                apply_scale_to_int = (base_val < 0) ? 32'sh80000000 : 32'sh7fffffff;
+                // Saturacao nos limites raw de Q16.16 signed.
+                apply_scale_to_q16_16 = (base_val < 0) ? 32'sh80000000 : 32'sh7fffffff;
             end else if (total_exponent < -32) begin
-                // Underflow absoluto
-                apply_scale_to_int = 32'sd0;
+                // Magnitude menor que um LSB de Q16.16.
+                apply_scale_to_q16_16 = 32'sd0;
             end else begin
                 if (total_exponent >= 0) begin
                     shifted = $signed(base_val) <<< total_exponent;
                     // Checa saturação pós-shift
-                    if (shifted > 64'sh000000007fffffff) apply_scale_to_int = 32'sh7fffffff;
-                    else if (shifted < 64'shffffffff80000000) apply_scale_to_int = 32'sh80000000;
-                    else apply_scale_to_int = shifted[31:0];
+                    if (shifted > 64'sh000000007fffffff) apply_scale_to_q16_16 = 32'sh7fffffff;
+                    else if (shifted < 64'shffffffff80000000) apply_scale_to_q16_16 = 32'sh80000000;
+                    else apply_scale_to_q16_16 = shifted[31:0];
                 end else begin
                     // Trunca valores fracionarios em direcao a zero. Um shift
                     // aritmetico direto de um negativo arredondaria para -infinito.
                     if (base_val < 0)
-                        apply_scale_to_int = -((-base_val) >>> (-total_exponent));
+                        apply_scale_to_q16_16 = -((-base_val) >>> (-total_exponent));
                     else
-                        apply_scale_to_int = base_val >>> (-total_exponent);
+                        apply_scale_to_q16_16 = base_val >>> (-total_exponent);
                 end
             end
         end
@@ -99,11 +99,12 @@ module mx_decoder (
         // Despolariza o expoente da escala compartilhada (E8M0 bias é 127) 
         scale_unbias = $signed({1'b0, scale_in}) - 127;
 
-        // Calcula as saídas aplicando o shift combinado (expoente do elemento + expoente da escala)
-        out0_int = apply_scale_to_int(b0, exp0 + scale_unbias);
-        out1_int = apply_scale_to_int(b1, exp1 + scale_unbias);
-        out2_int = apply_scale_to_int(b2, exp2 + scale_unbias);
-        out3_int = apply_scale_to_int(b3, exp3 + scale_unbias);
+        // Q16.16 multiplica o valor MX por 2^16; por isso 16 e somado
+        // ao expoente combinado do elemento e da escala compartilhada.
+        out0_int = apply_scale_to_q16_16(b0, exp0 + scale_unbias + 16);
+        out1_int = apply_scale_to_q16_16(b1, exp1 + scale_unbias + 16);
+        out2_int = apply_scale_to_q16_16(b2, exp2 + scale_unbias + 16);
+        out3_int = apply_scale_to_q16_16(b3, exp3 + scale_unbias + 16);
 
         // Tratamento de NaNs/Infinidades da escala ou dos elementos [cite: 147, 158, 218]
         if (scale_in == 8'hFF || exp0 == 999 || exp1 == 999 || exp2 == 999 || exp3 == 999) begin

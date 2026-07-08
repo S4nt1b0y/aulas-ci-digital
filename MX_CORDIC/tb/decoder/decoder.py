@@ -33,7 +33,7 @@ def decode_e5m2_base(fp):
 
         return value, real_exp
 
-def apply_scale_to_int(base_val, total_exp):
+def apply_scale_to_q16_16(base_val, total_exp):
     if base_val == 0:
         return 0
 
@@ -82,10 +82,11 @@ def mx_decode(elems_in, scale_in):
 
     scale_unbias = scale_in - 127
 
-    out0 = apply_scale_to_int(b0, exp0 + scale_unbias)
-    out1 = apply_scale_to_int(b1, exp1 + scale_unbias)
-    out2 = apply_scale_to_int(b2, exp2 + scale_unbias)
-    out3 = apply_scale_to_int(b3, exp3 + scale_unbias)
+    # Um valor raw Q16.16 representa valor_real * 2^16.
+    out0 = apply_scale_to_q16_16(b0, exp0 + scale_unbias + 16)
+    out1 = apply_scale_to_q16_16(b1, exp1 + scale_unbias + 16)
+    out2 = apply_scale_to_q16_16(b2, exp2 + scale_unbias + 16)
+    out3 = apply_scale_to_q16_16(b3, exp3 + scale_unbias + 16)
 
     return [out0, out1, out2, out3], False
 

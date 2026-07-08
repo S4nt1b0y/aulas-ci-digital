@@ -3,6 +3,7 @@
 module mx_decoder_tb;
     reg  [31:0] elems_in;
     reg  [7:0]  scale_in;
+    // Os ports mantem o nome legado, mas carregam valores raw signed Q16.16.
     wire signed [31:0] out0_int;
     wire signed [31:0] out1_int;
     wire signed [31:0] out2_int;
