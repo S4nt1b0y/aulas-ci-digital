@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module phase_postprocess(
     input  wire signed [31:0] lut0,
     input  wire signed [31:0] lut1,

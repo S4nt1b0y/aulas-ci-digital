@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module phase_preprocess (
     input  signed [31:0] angle0,
     input  signed [31:0] angle1,

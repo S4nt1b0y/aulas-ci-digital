@@ -97,6 +97,6 @@ module seno_tb;
 
         $fclose(input_fd);
         $fclose(output_fd);
-        $finish;
+        $finish(0);
     end
 endmodule

@@ -31,9 +31,9 @@ python3 "$SCRIPT_DIR/get_seno_q1_15.py" "$INPUT_FILE" "$PYTHON_OUTPUT"
 iverilog -g2012 -Wall \
     -s seno_tb \
     -o "$SIMULATION_FILE" \
-    "$PROJECT_DIR/src/phase_preprocess.sv" \
+    "$PROJECT_DIR/src/phase_preprocess.v" \
     "$PROJECT_DIR/src/LUT_Seno.v" \
-    "$PROJECT_DIR/src/phase_postprocess.sv" \
+    "$PROJECT_DIR/src/phase_postprocess.v" \
     "$SCRIPT_DIR/seno_tb.v"
 
 vvp "$SIMULATION_FILE" \

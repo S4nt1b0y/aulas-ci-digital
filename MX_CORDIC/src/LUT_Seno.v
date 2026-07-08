@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module LUT_Seno (
     input  [5:0]  index0,
     input  [5:0]  index1,
