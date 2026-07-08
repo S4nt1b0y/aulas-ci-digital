@@ -2,3 +2,5 @@
 **/.simvision/**
 **/waves.shm/**
 **/xrun*
+**/__pycache__/
+**/*.pyc
