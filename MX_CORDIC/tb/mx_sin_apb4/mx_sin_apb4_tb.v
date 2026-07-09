@@ -22,10 +22,13 @@ module mx_sin_apb4_tb;
 
     reg  [31:0] ref_elems_in;
     reg  [7:0]  ref_scale_in;
+    reg         ref_start;
     wire [31:0] ref_elems_out;
     wire [7:0]  ref_scale_out;
     wire        ref_any_nan;
     wire        ref_overflow;
+    wire        ref_busy;
+    wire        ref_done;
 
     integer errors;
     reg [31:0] rd_data;
@@ -44,12 +47,17 @@ module mx_sin_apb4_tb;
     );
 
     mx_sin ref_model (
+        .clk(clk),
+        .rst_n(rst_n),
+        .start(ref_start),
         .elems_in(ref_elems_in),
         .scale_in(ref_scale_in),
         .elems_out(ref_elems_out),
         .scale_out(ref_scale_out),
         .any_nan(ref_any_nan),
-        .overflow(ref_overflow)
+        .overflow(ref_overflow),
+        .busy(ref_busy),
+        .done(ref_done)
     );
 
     always #5 clk = ~clk;
@@ -162,6 +170,12 @@ module mx_sin_apb4_tb;
         begin
             ref_elems_in = elems;
             ref_scale_in = scale;
+
+            @(negedge clk);
+            ref_start = 1'b1;
+            @(negedge clk);
+            ref_start = 1'b0;
+            wait (ref_done);
             #1;
 
             apb_write(ADDR_ELEMS_IN, elems, 1'b0);
@@ -203,6 +217,7 @@ module mx_sin_apb4_tb;
         pwdata = 32'd0;
         ref_elems_in = 32'd0;
         ref_scale_in = 8'd0;
+        ref_start = 1'b0;
         errors = 0;
 
         repeat (4) @(posedge clk);

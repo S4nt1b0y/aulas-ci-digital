@@ -33,25 +33,25 @@ module mx_sin_apb4_top #(
 
     reg [31:0] elems_in_reg;
     reg [7:0]  scale_in_reg;
-    reg [31:0] elems_active_reg;
-    reg [7:0]  scale_active_reg;
     reg [31:0] elems_out_reg;
     reg [7:0]  scale_out_reg;
     reg        any_nan_reg;
     reg        overflow_reg;
-    reg        busy_reg;
     reg        done_reg;
-    reg        compute_pending_reg;
+    reg        mx_start_reg;
 
     wire [31:0] sin_elems_out;
     wire [7:0]  sin_scale_out;
     wire        sin_any_nan;
     wire        sin_overflow;
+    wire        sin_busy;
+    wire        sin_done;
 
     wire access_valid;
     wire write_access;
     wire start_pulse;
     wire clear_done_pulse;
+    wire busy_status;
 
     apb4_slave #(
         .ADDR_WIDTH(ADDR_WIDTH),
@@ -78,12 +78,17 @@ module mx_sin_apb4_top #(
     );
 
     mx_sin u_mx_sin (
-        .elems_in(elems_active_reg),
-        .scale_in(scale_active_reg),
+        .clk(clk),
+        .rst_n(rst_n),
+        .start(mx_start_reg),
+        .elems_in(elems_in_reg),
+        .scale_in(scale_in_reg),
         .elems_out(sin_elems_out),
         .scale_out(sin_scale_out),
         .any_nan(sin_any_nan),
-        .overflow(sin_overflow)
+        .overflow(sin_overflow),
+        .busy(busy_status),
+        .done(sin_done)
     );
 
     assign access_valid = (bus_addr == ADDR_CTRL)      ||
@@ -94,7 +99,7 @@ module mx_sin_apb4_top #(
                           (bus_addr == ADDR_SCALE_OUT);
 
     assign write_access     = bus_req && bus_req_is_wr && access_valid;
-    assign start_pulse      = write_access && (bus_addr == ADDR_CTRL) && bus_wr_data[0] && !busy_reg;
+    assign start_pulse      = write_access && (bus_addr == ADDR_CTRL) && bus_wr_data[0] && !busy_status;
     assign clear_done_pulse = write_access && (bus_addr == ADDR_CTRL) && bus_wr_data[1];
     assign bus_ready        = 1'b1;
     assign bus_err          = bus_req && !access_valid;
@@ -108,7 +113,7 @@ module mx_sin_apb4_top #(
                     bus_rd_data = {DATA_WIDTH{1'b0}};
                 ADDR_STATUS:
                     bus_rd_data = {{(DATA_WIDTH-4){1'b0}},
-                                   overflow_reg, any_nan_reg, done_reg, busy_reg};
+                                   overflow_reg, any_nan_reg, done_reg, busy_status};
                 ADDR_ELEMS_IN:
                     bus_rd_data = elems_in_reg;
                 ADDR_SCALE_IN:
@@ -127,24 +132,21 @@ module mx_sin_apb4_top #(
         if (!rst_n) begin
             elems_in_reg        <= 32'd0;
             scale_in_reg        <= 8'd0;
-            elems_active_reg    <= 32'd0;
-            scale_active_reg    <= 8'd0;
             elems_out_reg       <= 32'd0;
             scale_out_reg       <= 8'd0;
             any_nan_reg         <= 1'b0;
             overflow_reg        <= 1'b0;
-            busy_reg            <= 1'b0;
             done_reg            <= 1'b0;
-            compute_pending_reg <= 1'b0;
+            mx_start_reg        <= 1'b0;
         end else begin
-            if (compute_pending_reg) begin
+            mx_start_reg <= 1'b0;
+
+            if (sin_done) begin
                 elems_out_reg       <= sin_elems_out;
                 scale_out_reg       <= sin_scale_out;
                 any_nan_reg         <= sin_any_nan;
                 overflow_reg        <= sin_overflow;
-                busy_reg            <= 1'b0;
                 done_reg            <= 1'b1;
-                compute_pending_reg <= 1'b0;
             end
 
             if (clear_done_pulse) begin
@@ -163,11 +165,8 @@ module mx_sin_apb4_top #(
             end
 
             if (start_pulse) begin
-                elems_active_reg    <= elems_in_reg;
-                scale_active_reg    <= scale_in_reg;
-                busy_reg            <= 1'b1;
-                done_reg            <= 1'b0;
-                compute_pending_reg <= 1'b1;
+                mx_start_reg <= 1'b1;
+                done_reg     <= 1'b0;
             end
         end
     end

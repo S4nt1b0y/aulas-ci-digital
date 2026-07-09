@@ -1,12 +1,17 @@
 `timescale 1ns/1ps
 
 module mx_sin_tb;
+    reg         clk;
+    reg         rst_n;
+    reg         start;
     reg  [31:0] elems_in;
     reg  [7:0]  scale_in;
     wire [31:0] elems_out;
     wire [7:0]  scale_out;
     wire        any_nan;
     wire        overflow;
+    wire        busy;
+    wire        done;
 
     integer input_fd;
     integer output_fd;
@@ -19,18 +24,32 @@ module mx_sin_tb;
     reg [8*1024-1:0] extra_field;
 
     mx_sin dut (
+        .clk(clk),
+        .rst_n(rst_n),
+        .start(start),
         .elems_in(elems_in),
         .scale_in(scale_in),
         .elems_out(elems_out),
         .scale_out(scale_out),
         .any_nan(any_nan),
-        .overflow(overflow)
+        .overflow(overflow),
+        .busy(busy),
+        .done(done)
     );
 
+    always #5 clk = ~clk;
+
     initial begin
+        clk = 1'b0;
+        rst_n = 1'b0;
+        start = 1'b0;
         elems_in = 32'd0;
         scale_in = 8'd0;
         line_number = 0;
+
+        repeat (4) @(posedge clk);
+        rst_n = 1'b1;
+        repeat (2) @(posedge clk);
 
         if (!$value$plusargs("INPUT=%s", input_path))
             $fatal(1, "Use +INPUT=<arquivo de entrada>");
@@ -59,6 +78,11 @@ module mx_sin_tb;
                 end else if (parsed_fields != 2) begin
                     $fatal(1, "Entrada invalida na linha %0d", line_number);
                 end else begin
+                    @(negedge clk);
+                    start = 1'b1;
+                    @(negedge clk);
+                    start = 1'b0;
+                    wait (done);
                     #1;
                     $fdisplay(output_fd, "%08x %02x %0d %0d",
                               elems_out, scale_out, any_nan, overflow);
