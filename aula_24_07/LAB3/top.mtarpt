@@ -1,0 +1,1343 @@
+VERSION {1.0}
+PTDEF {instance} {pin} {cell} {edge} {clock_edge} {clock} {phase}
+BANNER
+  {Module} {x3_curto}
+  {Timing} {LATE}
+  {Slew Propagation} {WORST}
+  {PVT Mode} {max}
+  {Tree Type} {balanced_tree}
+  {Process} {1.0}
+  {Voltage} {1.1}
+  {Temperature} {0.0}
+  {time unit} {1.000 ns}
+  {capacitance unit} {1.000 pF}
+  {resistance unit} {1.000 kOhm}
+  {TOOL} {Genus(TM) Synthesis Solution v25.12-s067_1}
+  {DATE} {Sat Jul 25 11:40:51 -03 2026}
+END_BANNER
+
+PATH 1
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {XPower_reg[7]} {CK}
+  ENDPT {XPower_reg[7]} {D} {DFFQXL} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X2_reg[0]} {Q} {DFFHQX1} {^} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.006}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.894}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.3819999999999997}
+    {=} {Slack Time} {9.512}
+  END_SLK_CLC
+  SLK 9.512
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.512} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.512} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X2_reg[0]} {CK} {^} {Q} {^} {} {DFFHQX1} {0.094} {0.000} {0.032} {} {0.094} {9.607} {} {14} {}
+    NET {} {} {} {} {} {X2[0]} {} {0.000} {0.000} {0.032} {0.004} {0.094} {9.607} {} {} {}
+    INST {mul_20_24_g532__5477} {B} {^} {Y} {v} {} {NAND2XL} {0.027} {0.000} {0.027} {} {0.121} {9.634} {} {2} {}
+    NET {} {} {} {} {} {mul_20_24_n_11} {} {0.000} {0.000} {0.027} {0.001} {0.121} {9.634} {} {} {}
+    INST {mul_20_24_g502__7410} {B} {v} {Y} {^} {} {XOR2XL} {0.030} {0.000} {0.011} {} {0.151} {9.664} {} {1} {}
+    NET {} {} {} {} {} {mul_20_24_n_36} {} {0.000} {0.000} {0.011} {0.001} {0.151} {9.664} {} {} {}
+    INST {mul_20_24_g493__5115} {CI} {^} {S} {v} {} {ADDFX1} {0.061} {0.000} {0.012} {} {0.212} {9.725} {} {1} {}
+    NET {} {} {} {} {} {mul_20_24_n_48} {} {0.000} {0.000} {0.012} {0.001} {0.212} {9.725} {} {} {}
+    INST {mul_20_24_g484__3680} {CI} {v} {CO} {v} {} {ADDFX1} {0.044} {0.000} {0.014} {} {0.257} {9.769} {} {1} {}
+    NET {} {} {} {} {} {mul_20_24_n_61} {} {0.000} {0.000} {0.014} {0.001} {0.257} {9.769} {} {} {}
+    INST {mul_20_24_g482__5526} {B} {v} {CO} {v} {} {ADDFX1} {0.046} {0.000} {0.014} {} {0.303} {9.815} {} {1} {}
+    NET {} {} {} {} {} {mul_20_24_n_64} {} {0.000} {0.000} {0.014} {0.001} {0.303} {9.815} {} {} {}
+    INST {mul_20_24_g481__8428} {B} {v} {CO} {v} {} {ADDFX1} {0.044} {0.000} {0.010} {} {0.347} {9.859} {} {1} {}
+    NET {} {} {} {} {} {mul_20_24_n_66} {} {0.000} {0.000} {0.010} {0.001} {0.347} {9.859} {} {} {}
+    INST {mul_20_24_g480__4319} {B} {v} {Y} {^} {} {XNOR2X1} {0.034} {0.000} {0.006} {} {0.381} {9.894} {} {1} {}
+    NET {} {} {} {} {} {n_45} {} {0.000} {0.000} {0.006} {0.000} {0.381} {9.894} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.512} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.512} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 1
+
+PATH 2
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {XPower_reg[6]} {CK}
+  ENDPT {XPower_reg[6]} {D} {DFFQXL} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X2_reg[0]} {Q} {DFFHQX1} {^} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.007}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.893}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.3680000000000003}
+    {=} {Slack Time} {9.525}
+  END_SLK_CLC
+  SLK 9.525
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.525} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.525} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X2_reg[0]} {CK} {^} {Q} {^} {} {DFFHQX1} {0.094} {0.000} {0.032} {} {0.094} {9.619} {} {14} {}
+    NET {} {} {} {} {} {X2[0]} {} {0.000} {0.000} {0.032} {0.004} {0.094} {9.619} {} {} {}
+    INST {mul_20_24_g532__5477} {B} {^} {Y} {v} {} {NAND2XL} {0.027} {0.000} {0.027} {} {0.121} {9.646} {} {2} {}
+    NET {} {} {} {} {} {mul_20_24_n_11} {} {0.000} {0.000} {0.027} {0.001} {0.121} {9.646} {} {} {}
+    INST {mul_20_24_g502__7410} {B} {v} {Y} {^} {} {XOR2XL} {0.030} {0.000} {0.011} {} {0.151} {9.676} {} {1} {}
+    NET {} {} {} {} {} {mul_20_24_n_36} {} {0.000} {0.000} {0.011} {0.001} {0.151} {9.676} {} {} {}
+    INST {mul_20_24_g493__5115} {CI} {^} {S} {v} {} {ADDFX1} {0.061} {0.000} {0.012} {} {0.212} {9.738} {} {1} {}
+    NET {} {} {} {} {} {mul_20_24_n_48} {} {0.000} {0.000} {0.012} {0.001} {0.212} {9.738} {} {} {}
+    INST {mul_20_24_g484__3680} {CI} {v} {CO} {v} {} {ADDFX1} {0.044} {0.000} {0.014} {} {0.257} {9.782} {} {1} {}
+    NET {} {} {} {} {} {mul_20_24_n_61} {} {0.000} {0.000} {0.014} {0.001} {0.257} {9.782} {} {} {}
+    INST {mul_20_24_g482__5526} {B} {v} {CO} {v} {} {ADDFX1} {0.046} {0.000} {0.014} {} {0.303} {9.828} {} {1} {}
+    NET {} {} {} {} {} {mul_20_24_n_64} {} {0.000} {0.000} {0.014} {0.001} {0.303} {9.828} {} {} {}
+    INST {mul_20_24_g481__8428} {B} {v} {S} {^} {} {ADDFX1} {0.065} {0.000} {0.008} {} {0.368} {9.893} {} {1} {}
+    NET {} {} {} {} {} {n_46} {} {0.000} {0.000} {0.008} {0.000} {0.368} {9.893} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.525} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.525} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 2
+
+PATH 3
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {XPower_reg[5]} {CK}
+  ENDPT {XPower_reg[5]} {D} {DFFQXL} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X2_reg[0]} {Q} {DFFHQX1} {^} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.007}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.893}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.32200000000000095}
+    {=} {Slack Time} {9.571}
+  END_SLK_CLC
+  SLK 9.571
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.571} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.571} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X2_reg[0]} {CK} {^} {Q} {^} {} {DFFHQX1} {0.094} {0.000} {0.032} {} {0.094} {9.665} {} {14} {}
+    NET {} {} {} {} {} {X2[0]} {} {0.000} {0.000} {0.032} {0.004} {0.094} {9.665} {} {} {}
+    INST {mul_20_24_g532__5477} {B} {^} {Y} {v} {} {NAND2XL} {0.027} {0.000} {0.027} {} {0.121} {9.692} {} {2} {}
+    NET {} {} {} {} {} {mul_20_24_n_11} {} {0.000} {0.000} {0.027} {0.001} {0.121} {9.692} {} {} {}
+    INST {mul_20_24_g502__7410} {B} {v} {Y} {^} {} {XOR2XL} {0.030} {0.000} {0.011} {} {0.151} {9.722} {} {1} {}
+    NET {} {} {} {} {} {mul_20_24_n_36} {} {0.000} {0.000} {0.011} {0.001} {0.151} {9.722} {} {} {}
+    INST {mul_20_24_g493__5115} {CI} {^} {S} {v} {} {ADDFX1} {0.061} {0.000} {0.012} {} {0.212} {9.784} {} {1} {}
+    NET {} {} {} {} {} {mul_20_24_n_48} {} {0.000} {0.000} {0.012} {0.001} {0.212} {9.784} {} {} {}
+    INST {mul_20_24_g484__3680} {CI} {v} {CO} {v} {} {ADDFX1} {0.044} {0.000} {0.014} {} {0.257} {9.828} {} {1} {}
+    NET {} {} {} {} {} {mul_20_24_n_61} {} {0.000} {0.000} {0.014} {0.001} {0.257} {9.828} {} {} {}
+    INST {mul_20_24_g482__5526} {B} {v} {S} {^} {} {ADDFX1} {0.065} {0.000} {0.008} {} {0.322} {9.893} {} {1} {}
+    NET {} {} {} {} {} {n_47} {} {0.000} {0.000} {0.008} {0.000} {0.322} {9.893} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.571} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.571} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 3
+
+PATH 4
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {XPower2_reg[7]} {CK}
+  ENDPT {XPower2_reg[7]} {D} {DFFQXL} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X1_reg[2]} {Q} {DFFQXL} {^} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.006}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.894}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.3000000000000007}
+    {=} {Slack Time} {9.594}
+  END_SLK_CLC
+  SLK 9.594
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.594} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.594} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X1_reg[2]} {CK} {^} {Q} {^} {} {DFFQXL} {0.080} {0.000} {0.019} {} {0.080} {9.674} {} {3} {}
+    NET {} {} {} {} {} {X1[2]} {} {0.000} {0.000} {0.019} {0.001} {0.080} {9.674} {} {} {}
+    INST {g1076} {A} {^} {Y} {v} {} {INVX1} {0.014} {0.000} {0.013} {} {0.095} {9.689} {} {4} {}
+    NET {} {} {} {} {} {n_1} {} {0.000} {0.000} {0.013} {0.001} {0.095} {9.689} {} {} {}
+    INST {g1062__7410} {B} {v} {Y} {^} {} {NOR2XL} {0.017} {0.000} {0.020} {} {0.112} {9.706} {} {2} {}
+    NET {} {} {} {} {} {n_12} {} {0.000} {0.000} {0.020} {0.001} {0.112} {9.706} {} {} {}
+    INST {g1048__9945} {AN} {^} {Y} {^} {} {NAND2BX1} {0.021} {0.000} {0.013} {} {0.133} {9.727} {} {3} {}
+    NET {} {} {} {} {} {n_14} {} {0.000} {0.000} {0.013} {0.001} {0.133} {9.727} {} {} {}
+    INST {g1041__5115} {B} {^} {Y} {^} {} {AND2XL} {0.022} {0.000} {0.006} {} {0.154} {9.748} {} {1} {}
+    NET {} {} {} {} {} {n_19} {} {0.000} {0.000} {0.006} {0.000} {0.154} {9.748} {} {} {}
+    INST {g1037__8246} {A1N} {^} {Y} {^} {} {OAI2BB1X1} {0.026} {0.000} {0.012} {} {0.180} {9.774} {} {2} {}
+    NET {} {} {} {} {} {n_24} {} {0.000} {0.000} {0.012} {0.001} {0.180} {9.774} {} {} {}
+    INST {g1032__1617} {B} {^} {Y} {^} {} {AND2XL} {0.024} {0.000} {0.010} {} {0.204} {9.798} {} {2} {}
+    NET {} {} {} {} {} {n_27} {} {0.000} {0.000} {0.010} {0.001} {0.204} {9.798} {} {} {}
+    INST {g1028__5526} {B} {^} {Y} {v} {} {NAND2XL} {0.015} {0.000} {0.017} {} {0.219} {9.813} {} {2} {}
+    NET {} {} {} {} {} {n_30} {} {0.000} {0.000} {0.017} {0.001} {0.219} {9.813} {} {} {}
+    INST {g1024__6260} {B0} {v} {Y} {^} {} {OAI21XL} {0.014} {0.000} {0.026} {} {0.233} {9.827} {} {1} {}
+    NET {} {} {} {} {} {n_33} {} {0.000} {0.000} {0.026} {0.001} {0.233} {9.827} {} {} {}
+    INST {g1022__5107} {B} {^} {Y} {v} {} {XNOR2X1} {0.033} {0.000} {0.008} {} {0.266} {9.860} {} {1} {}
+    NET {} {} {} {} {} {n_34} {} {0.000} {0.000} {0.008} {0.001} {0.266} {9.860} {} {} {}
+    INST {g1021__2398} {B} {v} {Y} {^} {} {XNOR2X1} {0.034} {0.000} {0.006} {} {0.300} {9.894} {} {1} {}
+    NET {} {} {} {} {} {n_35} {} {0.000} {0.000} {0.006} {0.000} {0.300} {9.894} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.594} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.594} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 4
+
+PATH 5
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {XPower_reg[4]} {CK}
+  ENDPT {XPower_reg[4]} {D} {DFFQXL} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X2_reg[0]} {Q} {DFFHQX1} {^} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.007}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.893}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.27300000000000146}
+    {=} {Slack Time} {9.620}
+  END_SLK_CLC
+  SLK 9.620
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.620} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.620} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X2_reg[0]} {CK} {^} {Q} {^} {} {DFFHQX1} {0.094} {0.000} {0.032} {} {0.094} {9.714} {} {14} {}
+    NET {} {} {} {} {} {X2[0]} {} {0.000} {0.000} {0.032} {0.004} {0.094} {9.714} {} {} {}
+    INST {mul_20_24_g532__5477} {B} {^} {Y} {v} {} {NAND2XL} {0.027} {0.000} {0.027} {} {0.121} {9.741} {} {2} {}
+    NET {} {} {} {} {} {mul_20_24_n_11} {} {0.000} {0.000} {0.027} {0.001} {0.121} {9.741} {} {} {}
+    INST {mul_20_24_g502__7410} {B} {v} {Y} {^} {} {XOR2XL} {0.030} {0.000} {0.011} {} {0.151} {9.771} {} {1} {}
+    NET {} {} {} {} {} {mul_20_24_n_36} {} {0.000} {0.000} {0.011} {0.001} {0.151} {9.771} {} {} {}
+    INST {mul_20_24_g493__5115} {CI} {^} {S} {v} {} {ADDFX1} {0.061} {0.000} {0.012} {} {0.212} {9.832} {} {1} {}
+    NET {} {} {} {} {} {mul_20_24_n_48} {} {0.000} {0.000} {0.012} {0.001} {0.212} {9.832} {} {} {}
+    INST {mul_20_24_g484__3680} {CI} {v} {S} {^} {} {ADDFX1} {0.061} {0.000} {0.008} {} {0.274} {9.893} {} {1} {}
+    NET {} {} {} {} {} {n_48} {} {0.000} {0.000} {0.008} {0.000} {0.274} {9.893} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.620} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.620} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 5
+
+PATH 6
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {XPower2_reg[6]} {CK}
+  ENDPT {XPower2_reg[6]} {D} {DFFQXL} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X1_reg[2]} {Q} {DFFQXL} {v} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.006}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.894}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.23199999999999932}
+    {=} {Slack Time} {9.662}
+  END_SLK_CLC
+  SLK 9.662
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.662} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.662} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X1_reg[2]} {CK} {^} {Q} {v} {} {DFFQXL} {0.081} {0.000} {0.015} {} {0.081} {9.743} {} {3} {}
+    NET {} {} {} {} {} {X1[2]} {} {0.000} {0.000} {0.015} {0.001} {0.081} {9.743} {} {} {}
+    INST {g1076} {A} {v} {Y} {^} {} {INVX1} {0.014} {0.000} {0.014} {} {0.095} {9.757} {} {4} {}
+    NET {} {} {} {} {} {n_1} {} {0.000} {0.000} {0.014} {0.002} {0.095} {9.757} {} {} {}
+    INST {g1062__7410} {B} {^} {Y} {v} {} {NOR2XL} {0.012} {0.000} {0.014} {} {0.108} {9.769} {} {2} {}
+    NET {} {} {} {} {} {n_12} {} {0.000} {0.000} {0.014} {0.001} {0.108} {9.769} {} {} {}
+    INST {g1048__9945} {AN} {v} {Y} {v} {} {NAND2BX1} {0.027} {0.000} {0.019} {} {0.134} {9.796} {} {3} {}
+    NET {} {} {} {} {} {n_14} {} {0.000} {0.000} {0.019} {0.001} {0.134} {9.796} {} {} {}
+    INST {g1041__5115} {B} {v} {Y} {v} {} {AND2XL} {0.017} {0.000} {0.006} {} {0.151} {9.812} {} {1} {}
+    NET {} {} {} {} {} {n_19} {} {0.000} {0.000} {0.006} {0.000} {0.151} {9.812} {} {} {}
+    INST {g1037__8246} {A1N} {v} {Y} {v} {} {OAI2BB1X1} {0.023} {0.000} {0.015} {} {0.174} {9.835} {} {2} {}
+    NET {} {} {} {} {} {n_24} {} {0.000} {0.000} {0.015} {0.001} {0.174} {9.835} {} {} {}
+    INST {g1032__1617} {B} {v} {Y} {v} {} {AND2XL} {0.018} {0.000} {0.008} {} {0.192} {9.853} {} {2} {}
+    NET {} {} {} {} {} {n_27} {} {0.000} {0.000} {0.008} {0.001} {0.192} {9.853} {} {} {}
+    INST {g1028__5526} {B} {v} {Y} {^} {} {NAND2XL} {0.011} {0.000} {0.015} {} {0.202} {9.864} {} {2} {}
+    NET {} {} {} {} {} {n_30} {} {0.000} {0.000} {0.015} {0.001} {0.202} {9.864} {} {} {}
+    INST {g1027__8428} {B0} {^} {Y} {^} {} {OA21X1} {0.030} {0.000} {0.006} {} {0.232} {9.894} {} {1} {}
+    NET {} {} {} {} {} {n_31} {} {0.000} {0.000} {0.006} {0.000} {0.232} {9.894} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.662} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.662} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 6
+
+PATH 7
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {XPower_reg[3]} {CK}
+  ENDPT {XPower_reg[3]} {D} {DFFQXL} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X2_reg[0]} {Q} {DFFHQX1} {v} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.007}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.893}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.20800000000000018}
+    {=} {Slack Time} {9.685}
+  END_SLK_CLC
+  SLK 9.685
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.685} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.685} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X2_reg[0]} {CK} {^} {Q} {v} {} {DFFHQX1} {0.095} {0.000} {0.026} {} {0.095} {9.781} {} {14} {}
+    NET {} {} {} {} {} {X2[0]} {} {0.000} {0.000} {0.026} {0.004} {0.095} {9.781} {} {} {}
+    INST {mul_20_24_g531__6417} {B} {v} {Y} {^} {} {NAND2X1} {0.016} {0.000} {0.015} {} {0.112} {9.797} {} {2} {}
+    NET {} {} {} {} {} {mul_20_24_n_12} {} {0.000} {0.000} {0.015} {0.001} {0.112} {9.797} {} {} {}
+    INST {mul_20_24_g504__5477} {B} {^} {Y} {v} {} {XOR2XL} {0.035} {0.000} {0.011} {} {0.147} {9.832} {} {1} {}
+    NET {} {} {} {} {} {mul_20_24_n_34} {} {0.000} {0.000} {0.011} {0.001} {0.147} {9.832} {} {} {}
+    INST {mul_20_24_g489__8246} {CI} {v} {S} {^} {} {ADDFX1} {0.061} {0.000} {0.008} {} {0.208} {9.893} {} {1} {}
+    NET {} {} {} {} {} {n_49} {} {0.000} {0.000} {0.008} {0.000} {0.208} {9.893} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.685} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.685} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 7
+
+PATH 8
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {XPower2_reg[5]} {CK}
+  ENDPT {XPower2_reg[5]} {D} {DFFQXL} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X1_reg[2]} {Q} {DFFQXL} {v} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.010}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.890}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.19599999999999973}
+    {=} {Slack Time} {9.694}
+  END_SLK_CLC
+  SLK 9.694
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.694} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.694} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X1_reg[2]} {CK} {^} {Q} {v} {} {DFFQXL} {0.081} {0.000} {0.015} {} {0.081} {9.775} {} {3} {}
+    NET {} {} {} {} {} {X1[2]} {} {0.000} {0.000} {0.015} {0.001} {0.081} {9.775} {} {} {}
+    INST {g1076} {A} {v} {Y} {^} {} {INVX1} {0.014} {0.000} {0.014} {} {0.095} {9.789} {} {4} {}
+    NET {} {} {} {} {} {n_1} {} {0.000} {0.000} {0.014} {0.002} {0.095} {9.789} {} {} {}
+    INST {g1062__7410} {B} {^} {Y} {v} {} {NOR2XL} {0.012} {0.000} {0.014} {} {0.108} {9.802} {} {2} {}
+    NET {} {} {} {} {} {n_12} {} {0.000} {0.000} {0.014} {0.001} {0.108} {9.802} {} {} {}
+    INST {g1048__9945} {AN} {v} {Y} {v} {} {NAND2BX1} {0.027} {0.000} {0.019} {} {0.134} {9.828} {} {3} {}
+    NET {} {} {} {} {} {n_14} {} {0.000} {0.000} {0.019} {0.001} {0.134} {9.828} {} {} {}
+    INST {g1041__5115} {B} {v} {Y} {v} {} {AND2XL} {0.017} {0.000} {0.006} {} {0.151} {9.845} {} {1} {}
+    NET {} {} {} {} {} {n_19} {} {0.000} {0.000} {0.006} {0.000} {0.151} {9.845} {} {} {}
+    INST {g1037__8246} {A1N} {v} {Y} {v} {} {OAI2BB1X1} {0.023} {0.000} {0.015} {} {0.174} {9.868} {} {2} {}
+    NET {} {} {} {} {} {n_24} {} {0.000} {0.000} {0.015} {0.001} {0.174} {9.868} {} {} {}
+    INST {g1029__6783} {A1} {v} {Y} {^} {} {OAI22XL} {0.022} {0.000} {0.030} {} {0.196} {9.890} {} {1} {}
+    NET {} {} {} {} {} {n_29} {} {0.000} {0.000} {0.030} {0.000} {0.196} {9.890} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.694} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.694} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 8
+
+PATH 9
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {XPower2_reg[4]} {CK}
+  ENDPT {XPower2_reg[4]} {D} {SDFFQX1} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X1_reg[2]} {Q} {DFFQXL} {^} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.022}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.878}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.1330000000000009}
+    {=} {Slack Time} {9.745}
+  END_SLK_CLC
+  SLK 9.745
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.745} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.745} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X1_reg[2]} {CK} {^} {Q} {^} {} {DFFQXL} {0.080} {0.000} {0.019} {} {0.080} {9.825} {} {3} {}
+    NET {} {} {} {} {} {X1[2]} {} {0.000} {0.000} {0.019} {0.001} {0.080} {9.825} {} {} {}
+    INST {g1076} {A} {^} {Y} {v} {} {INVX1} {0.014} {0.000} {0.013} {} {0.095} {9.839} {} {4} {}
+    NET {} {} {} {} {} {n_1} {} {0.000} {0.000} {0.013} {0.001} {0.095} {9.839} {} {} {}
+    INST {g1062__7410} {B} {v} {Y} {^} {} {NOR2XL} {0.017} {0.000} {0.020} {} {0.112} {9.857} {} {2} {}
+    NET {} {} {} {} {} {n_12} {} {0.000} {0.000} {0.020} {0.001} {0.112} {9.857} {} {} {}
+    INST {g1048__9945} {AN} {^} {Y} {^} {} {NAND2BX1} {0.021} {0.000} {0.013} {} {0.133} {9.878} {} {3} {}
+    NET {} {} {} {} {} {n_14} {} {0.000} {0.000} {0.013} {0.001} {0.133} {9.878} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.745} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.745} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 9
+
+PATH 10
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {XPower_reg[2]} {CK}
+  ENDPT {XPower_reg[2]} {D} {DFFQXL} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X2_reg[0]} {Q} {DFFHQX1} {v} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.008}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.892}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.14599999999999902}
+    {=} {Slack Time} {9.746}
+  END_SLK_CLC
+  SLK 9.746
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.746} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.746} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X2_reg[0]} {CK} {^} {Q} {v} {} {DFFHQX1} {0.095} {0.000} {0.026} {} {0.095} {9.841} {} {14} {}
+    NET {} {} {} {} {} {X2[0]} {} {0.000} {0.000} {0.026} {0.004} {0.095} {9.841} {} {} {}
+    INST {mul_20_24_g514__2802} {B} {v} {Y} {^} {} {NAND2XL} {0.018} {0.000} {0.016} {} {0.113} {9.859} {} {2} {}
+    NET {} {} {} {} {} {mul_20_24_n_27} {} {0.000} {0.000} {0.016} {0.001} {0.113} {9.859} {} {} {}
+    INST {mul_20_24_g510__5526} {A} {^} {Y} {v} {} {NOR2X1} {0.015} {0.000} {0.014} {} {0.128} {9.875} {} {2} {}
+    NET {} {} {} {} {} {mul_20_24_n_28} {} {0.000} {0.000} {0.014} {0.001} {0.128} {9.875} {} {} {}
+    INST {mul_20_24_g498__9945} {B0} {v} {Y} {^} {} {AOI21XL} {0.017} {0.000} {0.018} {} {0.145} {9.892} {} {1} {}
+    NET {} {} {} {} {} {n_50} {} {0.000} {0.000} {0.018} {0.000} {0.145} {9.892} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.746} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.746} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 10
+
+PATH 11
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {XPower2_reg[3]} {CK}
+  ENDPT {XPower2_reg[3]} {D} {DFFHQX1} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X1_reg[1]} {Q} {DFFHQX1} {v} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.008}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.892}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.1399999999999988}
+    {=} {Slack Time} {9.752}
+  END_SLK_CLC
+  SLK 9.752
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.752} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.752} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X1_reg[1]} {CK} {^} {Q} {v} {} {DFFHQX1} {0.094} {0.000} {0.024} {} {0.094} {9.845} {} {9} {}
+    NET {} {} {} {} {} {X1[1]} {} {0.000} {0.000} {0.024} {0.003} {0.094} {9.845} {} {} {}
+    INST {g1063__6417} {A} {v} {Y} {^} {} {NOR2X1} {0.020} {0.000} {0.015} {} {0.113} {9.865} {} {2} {}
+    NET {} {} {} {} {} {n_11} {} {0.000} {0.000} {0.015} {0.001} {0.113} {9.865} {} {} {}
+    INST {g1046__6161} {B0} {^} {Y} {v} {} {AOI21XL} {0.012} {0.000} {0.020} {} {0.125} {9.876} {} {1} {}
+    NET {} {} {} {} {} {n_13} {} {0.000} {0.000} {0.020} {0.000} {0.125} {9.876} {} {} {}
+    INST {g1039__6131} {B} {v} {Y} {^} {} {NOR2X1} {0.015} {0.000} {0.013} {} {0.140} {9.892} {} {1} {}
+    NET {} {} {} {} {} {n_21} {} {0.000} {0.000} {0.013} {0.000} {0.140} {9.892} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.752} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.752} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 11
+
+PATH 12
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {XPower2_reg[4]} {CK}
+  ENDPT {XPower2_reg[4]} {SI} {SDFFQX1} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X1_reg[1]} {Q} {DFFHQX1} {v} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.023}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.877}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.11300000000000132}
+    {=} {Slack Time} {9.764}
+  END_SLK_CLC
+  SLK 9.764
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.764} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.764} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X1_reg[1]} {CK} {^} {Q} {v} {} {DFFHQX1} {0.094} {0.000} {0.024} {} {0.094} {9.858} {} {9} {}
+    NET {} {} {} {} {} {X1[1]} {} {0.000} {0.000} {0.024} {0.003} {0.094} {9.858} {} {} {}
+    INST {g1063__6417} {A} {v} {Y} {^} {} {NOR2X1} {0.020} {0.000} {0.015} {} {0.113} {9.877} {} {2} {}
+    NET {} {} {} {} {} {n_11} {} {0.000} {0.000} {0.015} {0.001} {0.113} {9.877} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.764} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.764} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 12
+
+PATH 13
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {XPower2_reg[4]} {CK}
+  ENDPT {XPower2_reg[4]} {SE} {SDFFQX1} {v} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X1_reg[0]} {Q} {DFFHQX1} {^} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.024}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.876}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.10200000000000031}
+    {=} {Slack Time} {9.774}
+  END_SLK_CLC
+  SLK 9.774
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.774} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.774} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X1_reg[0]} {CK} {^} {Q} {^} {} {DFFHQX1} {0.087} {0.000} {0.020} {} {0.087} {9.861} {} {6} {}
+    NET {} {} {} {} {} {X1[0]} {} {0.000} {0.000} {0.020} {0.003} {0.087} {9.861} {} {} {}
+    INST {g1077} {A} {^} {Y} {v} {} {INVX1} {0.015} {0.000} {0.013} {} {0.102} {9.876} {} {3} {}
+    NET {} {} {} {} {} {n_0} {} {0.000} {0.000} {0.013} {0.001} {0.102} {9.876} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.774} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.774} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 13
+
+PATH 14
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {XPower_reg[1]} {CK}
+  ENDPT {XPower_reg[1]} {D} {DFFQXL} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X2_reg[0]} {Q} {DFFHQX1} {^} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.006}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.894}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.11899999999999977}
+    {=} {Slack Time} {9.775}
+  END_SLK_CLC
+  SLK 9.775
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.775} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.775} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X2_reg[0]} {CK} {^} {Q} {^} {} {DFFHQX1} {0.094} {0.000} {0.032} {} {0.094} {9.869} {} {14} {}
+    NET {} {} {} {} {} {X2[0]} {} {0.000} {0.000} {0.032} {0.004} {0.094} {9.869} {} {} {}
+    INST {mul_20_24_g511__6783} {B} {^} {Y} {^} {} {AND2XL} {0.025} {0.000} {0.006} {} {0.119} {9.893} {} {1} {}
+    NET {} {} {} {} {} {n_51} {} {0.000} {0.000} {0.006} {0.000} {0.119} {9.893} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.775} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.775} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 14
+
+PATH 15
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {XPower2_reg[2]} {CK}
+  ENDPT {XPower2_reg[2]} {D} {DFFHQX1} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X1_reg[1]} {Q} {DFFHQX1} {^} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.008}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.892}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.11399999999999899}
+    {=} {Slack Time} {9.778}
+  END_SLK_CLC
+  SLK 9.778
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.778} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.778} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X1_reg[1]} {CK} {^} {Q} {^} {} {DFFHQX1} {0.090} {0.000} {0.024} {} {0.090} {9.868} {} {9} {}
+    NET {} {} {} {} {} {X1[1]} {} {0.000} {0.000} {0.024} {0.003} {0.090} {9.868} {} {} {}
+    INST {g1059__2883} {AN} {^} {Y} {^} {} {NOR2BX1} {0.024} {0.000} {0.013} {} {0.114} {9.892} {} {1} {}
+    NET {} {} {} {} {} {n_4} {} {0.000} {0.000} {0.013} {0.000} {0.114} {9.892} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.778} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.778} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 15
+
+PATH 16
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {XPower_reg[0]} {CK}
+  ENDPT {XPower_reg[0]} {D} {DFFQXL} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X2_reg[0]} {Q} {DFFHQX1} {^} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.011}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.889}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.09399999999999942}
+    {=} {Slack Time} {9.795}
+  END_SLK_CLC
+  SLK 9.795
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.795} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.795} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X2_reg[0]} {CK} {^} {Q} {^} {} {DFFHQX1} {0.094} {0.000} {0.032} {} {0.094} {9.889} {} {14} {}
+    NET {} {} {} {} {} {X2[0]} {} {0.000} {0.000} {0.032} {0.004} {0.094} {9.889} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.795} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.795} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 16
+
+PATH 17
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {X2_reg[1]} {CK}
+  ENDPT {X2_reg[1]} {D} {DFFHQX1} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X1_reg[1]} {Q} {DFFHQX1} {^} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.010}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.890}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.08999999999999986}
+    {=} {Slack Time} {9.800}
+  END_SLK_CLC
+  SLK 9.800
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.800} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.800} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X1_reg[1]} {CK} {^} {Q} {^} {} {DFFHQX1} {0.090} {0.000} {0.024} {} {0.090} {9.890} {} {9} {}
+    NET {} {} {} {} {} {X1[1]} {} {0.000} {0.000} {0.024} {0.003} {0.090} {9.890} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.800} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.800} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 17
+
+PATH 18
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {X2_reg[0]} {CK}
+  ENDPT {X2_reg[0]} {D} {DFFHQX1} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X1_reg[0]} {Q} {DFFHQX1} {^} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.009}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.891}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.08699999999999974}
+    {=} {Slack Time} {9.804}
+  END_SLK_CLC
+  SLK 9.804
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.804} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.804} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X1_reg[0]} {CK} {^} {Q} {^} {} {DFFHQX1} {0.087} {0.000} {0.020} {} {0.087} {9.891} {} {6} {}
+    NET {} {} {} {} {} {X1[0]} {} {0.000} {0.000} {0.020} {0.003} {0.087} {9.891} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.804} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.804} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 18
+
+PATH 19
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {X2_reg[4]} {CK}
+  ENDPT {X2_reg[4]} {D} {DFFQXL} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X1_reg[4]} {Q} {DFFHQX1} {^} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.008}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.892}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.08399999999999963}
+    {=} {Slack Time} {9.808}
+  END_SLK_CLC
+  SLK 9.808
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.808} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.808} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X1_reg[4]} {CK} {^} {Q} {^} {} {DFFHQX1} {0.084} {0.000} {0.014} {} {0.084} {9.892} {} {5} {}
+    NET {} {} {} {} {} {X1[4]} {} {0.000} {0.000} {0.014} {0.002} {0.084} {9.892} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.808} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.808} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 19
+
+PATH 20
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {X2_reg[3]} {CK}
+  ENDPT {X2_reg[3]} {D} {DFFHQX1} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X1_reg[3]} {Q} {DFFQXL} {^} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.009}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.891}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.08300000000000018}
+    {=} {Slack Time} {9.808}
+  END_SLK_CLC
+  SLK 9.808
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.808} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.808} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X1_reg[3]} {CK} {^} {Q} {^} {} {DFFQXL} {0.082} {0.000} {0.022} {} {0.082} {9.890} {} {4} {}
+    NET {} {} {} {} {} {X1[3]} {} {0.000} {0.000} {0.022} {0.002} {0.082} {9.890} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.808} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.808} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 20
+
+PATH 21
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {X2_reg[2]} {CK}
+  ENDPT {X2_reg[2]} {D} {DFFHQX1} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X1_reg[2]} {Q} {DFFQXL} {^} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.009}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.891}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.08000000000000007}
+    {=} {Slack Time} {9.811}
+  END_SLK_CLC
+  SLK 9.811
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.811} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.811} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X1_reg[2]} {CK} {^} {Q} {^} {} {DFFQXL} {0.080} {0.000} {0.019} {} {0.080} {9.891} {} {3} {}
+    NET {} {} {} {} {} {X1[2]} {} {0.000} {0.000} {0.019} {0.001} {0.080} {9.891} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.811} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.811} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 21
+
+PATH 22
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {X2_reg[5]} {CK}
+  ENDPT {X2_reg[5]} {D} {DFFQXL} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X1_reg[5]} {Q} {DFFQXL} {^} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.007}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.893}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.07800000000000118}
+    {=} {Slack Time} {9.815}
+  END_SLK_CLC
+  SLK 9.815
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.815} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.815} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X1_reg[5]} {CK} {^} {Q} {^} {} {DFFQXL} {0.077} {0.000} {0.013} {} {0.077} {9.893} {} {3} {}
+    NET {} {} {} {} {} {X1[5]} {} {0.000} {0.000} {0.013} {0.001} {0.077} {9.893} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.815} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.815} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 22
+
+PATH 23
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {X2_reg[6]} {CK}
+  ENDPT {X2_reg[6]} {D} {DFFQXL} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X1_reg[6]} {Q} {DFFQXL} {^} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.007}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.893}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.07500000000000107}
+    {=} {Slack Time} {9.818}
+  END_SLK_CLC
+  SLK 9.818
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.818} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.818} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X1_reg[6]} {CK} {^} {Q} {^} {} {DFFQXL} {0.075} {0.000} {0.010} {} {0.075} {9.893} {} {2} {}
+    NET {} {} {} {} {} {X1[6]} {} {0.000} {0.000} {0.010} {0.001} {0.075} {9.893} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.818} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.818} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 23
+
+PATH 24
+  VIEW default
+  CHECK_TYPE {Setup Check}
+  REF {X2_reg[7]} {CK}
+  ENDPT {X2_reg[7]} {D} {DFFQXL} {^} {leading} {clk} {clk(C)(P)}
+  BEGINPT {X1_reg[7]} {Q} {DFFQXL} {^} {leading} {clk} {clk(D)(P) }
+  REQ_CLC
+    {} {Other End Arrival Time} {0.000}
+    {-} {Setup} {0.006}
+    {+} {Phase Shift} {10.000}
+    {-} {Uncertainty} {0.100}
+    {=} {Required Time} {9.894}
+  END_REQ_CLC
+
+  SLK_CLC
+    {-} {Arrival Time} {0.07399999999999984}
+    {=} {Slack Time} {9.820}
+  END_SLK_CLC
+  SLK 9.820
+
+  ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_ARR_CLC
+
+  LAUNCH_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {9.820} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {9.820} {} {} {}
+  END_LAUNCH_CLK_PATH
+
+  DATA_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    INST {X1_reg[7]} {CK} {^} {Q} {^} {} {DFFQXL} {0.073} {0.000} {0.006} {} {0.073} {9.893} {} {1} {}
+    NET {} {} {} {} {} {X1[7]} {} {0.000} {0.000} {0.006} {0.000} {0.073} {9.893} {} {} {}
+  END_DATA_PATH
+
+  OTHER_ARR_CLC
+    {} {Clock Rise Edge} {0.000}
+    {=} {Beginpoint Arrival Time} {0.000}
+  END_OTHER_ARR_CLC
+
+  CAP_CLK_PATH
+    COLUMNS {instance} {fpin} {fedge} {tpin} {tedge} {net} {cell} {delay} {incr_delay} {slew} {load} {arrival} {required} {stolen} {fanout} {pin_location}
+    PORT {} {clk} {^} {} {} {} {} {} {} {} {} {0.000} {-9.820} {} {} {}
+    NET {} {} {} {} {} {clk} {} {0.000} {0.000} {0.000} {0.009} {0.000} {-9.820} {} {} {}
+  END_CAP_CLK_PATH
+
+END_PATH 24
+
+

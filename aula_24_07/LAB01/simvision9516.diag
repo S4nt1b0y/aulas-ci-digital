@@ -1,0 +1,88 @@
+*** Message Type: info ***
+When: Fri Jul 24 21:01:34 -03 2026
+SimVision started.
+Version: TOOL:  simvision(64)   25.03-s010
+User: cidigital
+Host: localhost
+Platform: Linux/x86_64/5.14.0-687.17.1.el9_8.x86_64
+Started: Fri Jul 24 21:01:34 -03 2026
+Command: /apps/cds/installs/XCELIUM2503/tools.lnx86/simvision/bin/64bit/simvision.exe -connect dc:localhost:38045 -64BIT -nocopyright
+Work Directory: /home/cidigital/projects/aulas-ci-digital/aula_24_07/LAB01
+ 
+*** Message Type: info ***
+When: Fri Jul 24 21:01:34 -03 2026
+Create browser window: "Design Browser 1"
+ 
+*** Message Type: info ***
+When: Fri Jul 24 21:01:35 -03 2026
+Create console window: "Console"
+ 
+*** Message Type: info ***
+When: Fri Jul 24 21:01:36 -03 2026
+Connect to Simulator
+      Design: worklib.XOR3XL:v
+   Languages: verilog
+   Simulator: XM-Sim
+     Version: TOOL:   xmsim(64)       25.03-s010
+        User: cidigital
+        Host: localhost
+Time Started: Fri Jul 24 21:01:32 -03 2026
+  Process ID: 9475
+   Directory: /home/cidigital/projects/aulas-ci-digital/aula_24_07/LAB01
+     Command: xrun -timescale 1ns/1ps ../LIB/fast_vdd1v0_basicCells.v design_syn.v counter_tb.v -gui -access +rwc
+
+ 
+*** Message Type: info ***
+When: Fri Jul 24 21:01:36 -03 2026
+Create utility window: "Properties"
+ 
+*** Message Type: info ***
+When: Fri Jul 24 21:01:38 -03 2026
+Create waveform window: "Waveform 1"
+ 
+*** Message Type: info ***
+When: Fri Jul 24 21:04:46 -03 2026
+Exit XM-Sim: user
+      Design: worklib.XOR3XL:v
+   Languages: verilog
+   Simulator: XM-Sim
+     Version: TOOL:   xmsim(64)       25.03-s010
+        User: cidigital
+        Host: localhost
+Time Started: Fri Jul 24 21:01:32 -03 2026
+  Process ID: 9475
+   Directory: /home/cidigital/projects/aulas-ci-digital/aula_24_07/LAB01
+     Command: xrun -timescale 1ns/1ps ../LIB/fast_vdd1v0_basicCells.v design_syn.v counter_tb.v -gui -access +rwc
+
+ 
+*** Message Type: error ***
+When: Fri Jul 24 21:04:47 -03 2026
+XM-Sim Crashed:
+      Design: worklib.XOR3XL:v
+   Languages: verilog
+   Simulator: XM-Sim
+     Version: TOOL:   xmsim(64)       25.03-s010
+        User: cidigital
+        Host: localhost
+Time Started: Fri Jul 24 21:01:32 -03 2026
+  Process ID: 9475
+   Directory: /home/cidigital/projects/aulas-ci-digital/aula_24_07/LAB01
+     Command: xrun -timescale 1ns/1ps ../LIB/fast_vdd1v0_basicCells.v design_syn.v counter_tb.v -gui -access +rwc
+      Design: worklib.XOR3XL:v
+   Languages: verilog
+   Simulator: XM-Sim
+     Version: TOOL:       xmsim(64)       25.03-s010
+        User: cidigital
+        Host: localhost
+Time Started: Fri Jul 24 21:01:32 -03 2026
+  Process ID: 9475
+   Directory: /home/cidigital/projects/aulas-ci-digital/aula_24_07/LAB01
+     Command: xrun -timescale 1ns/1ps ../LIB/fast_vdd1v0_basicCells.v design_syn.v counter_tb.v -gui -access +rwc
+
+Outstanding STRAP Requests:
+        strap::report enable out
+ 
+*** Message Type: info ***
+When: Fri Jul 24 21:04:51 -03 2026
+SimVision Exit.
+ 
