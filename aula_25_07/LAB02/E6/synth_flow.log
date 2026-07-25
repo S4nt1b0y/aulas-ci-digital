@@ -1575,3 +1575,10 @@ Output file: reports/report_power.rpt
 @file(script.tcl) 19: report_qor > reports/report_qor.rpt
 #@ End verbose source ./script.tcl
 WARNING: This version of the tool is 250 days old.
+@genus:root: 2> exit
+
+Lic Summary:
+[15:53:53.508699] Cdslmd servers: ip-10-0-0-94
+[15:53:53.508713] Feature usage summary:
+[15:53:53.508714] Genus_Synthesis  
+Normal exit.

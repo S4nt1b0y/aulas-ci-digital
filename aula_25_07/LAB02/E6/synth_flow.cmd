@@ -5,3 +5,4 @@
 # OS:   Rocky Linux 9.8 (Blue Onyx)
 
 source ./script.tcl
+exit
