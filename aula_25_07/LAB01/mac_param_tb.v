@@ -1,117 +1,167 @@
 `timescale 1ns/1ps
 
-module tb_mac_param;
+module mac_param_tb;
 
-    localparam DATA_WIDTH = 8;
-    localparam NUM_TERMS  = 16;
-    localparam ACC_WIDTH  = 2*DATA_WIDTH + $clog2(NUM_TERMS);
+    //============================================================
+    // Configurações
+    //============================================================
+    localparam DW1  = 8;
+    localparam NT1  = 16;
+    localparam AW1  = 2*DW1 + $clog2(NT1);
 
+    localparam DW2  = 12;
+    localparam NT2  = 1024;
+    localparam AW2  = 2*DW2 + $clog2(NT2);
+
+    //============================================================
+    // Clock
+    //============================================================
     reg clk;
-    reg rst_n;
-    reg start;
-    reg valid;
-    reg [DATA_WIDTH-1:0] a;
-    reg [DATA_WIDTH-1:0] b;
 
-    wire busy;
-    wire done;
-    wire [ACC_WIDTH-1:0] result;
-
-    //=========================================================
-    // Instância do DUT
-    //=========================================================
-    mac_param #(
-        .DATA_WIDTH(DATA_WIDTH),
-        .NUM_TERMS(NUM_TERMS)
-    ) dut (
-        .clk(clk),
-        .rst_n(rst_n),
-        .start(start),
-        .valid(valid),
-        .a(a),
-        .b(b),
-        .busy(busy),
-        .done(done),
-        .result(result)
-    );
-
-    //=========================================================
-    // Clock (100 MHz)
-    //=========================================================
     initial begin
         clk = 0;
         forever #5 clk = ~clk;
     end
 
-    //=========================================================
-    // Variável de referência
-    //=========================================================
+    //============================================================
+    // DUT 1 (8 bits, 16 termos)
+    //============================================================
+    reg rst1, start1, valid1;
+    reg [DW1-1:0] a1, b1;
+    wire busy1, done1;
+    wire [AW1-1:0] result1;
+
+    mac_param #(
+        .DATA_WIDTH(DW1),
+        .NUM_TERMS (NT1)
+    ) dut1 (
+        .clk(clk),
+        .rst_n(rst1),
+        .start(start1),
+        .valid(valid1),
+        .a(a1),
+        .b(b1),
+        .busy(busy1),
+        .done(done1),
+        .result(result1)
+    );
+
+    //============================================================
+    // DUT 2 (12 bits, 1024 termos)
+    //============================================================
+    reg rst2, start2, valid2;
+    reg [DW2-1:0] a2, b2;
+    wire busy2, done2;
+    wire [AW2-1:0] result2;
+
+    mac_param #(
+        .DATA_WIDTH(DW2),
+        .NUM_TERMS (NT2)
+    ) dut2 (
+        .clk(clk),
+        .rst_n(rst2),
+        .start(start2),
+        .valid(valid2),
+        .a(a2),
+        .b(b2),
+        .busy(busy2),
+        .done(done2),
+        .result(result2)
+    );
+
     integer i;
     integer expected;
 
-    //=========================================================
-    // Estímulos
-    //=========================================================
+    //============================================================
+    // Teste da configuração 1
+    //============================================================
     initial begin
 
-        rst_n = 0;
-        start = 0;
-        valid = 0;
-        a = 0;
-        b = 0;
+        rst1   = 0;
+        start1 = 0;
+        valid1 = 0;
+        a1     = 0;
+        b1     = 0;
+
+        #20 rst1 = 1;
+
+        @(posedge clk);
+        start1 <= 1;
+
+        @(posedge clk);
+        start1 <= 0;
+
         expected = 0;
 
-        // Reset
-        #20;
-        rst_n = 1;
-
-        // Inicia operação
-        @(posedge clk);
-        start <= 1;
-
-        @(posedge clk);
-        start <= 0;
-
-        // Envia NUM_TERMS multiplicações
-        for(i=0; i<NUM_TERMS; i=i+1) begin
+        for(i=0; i<NT1; i=i+1) begin
             @(posedge clk);
-
-            valid <= 1;
-            a <= i;
-            b <= 2;
-
-            expected = expected + (i*2);
+            valid1 <= 1;
+            a1 <= i;
+            b1 <= 2;
+            expected = expected + i*2;
         end
 
         @(posedge clk);
-        valid <= 0;
+        valid1 <= 0;
 
-        // Espera término
-        wait(done);
+        wait(done1);
 
-        #10;
-
-        $display("-------------------------------------");
-        $display("Resultado esperado = %0d", expected);
-        $display("Resultado obtido   = %0d", result);
-
-        if(result == expected)
-            $display("TESTE PASSOU!");
+        if(result1 == expected)
+            $display("[PASS] DATA_WIDTH=%0d NUM_TERMS=%0d Result=%0d",
+                     DW1, NT1, result1);
         else
-            $display("TESTE FALHOU!");
+            $display("[FAIL] DATA_WIDTH=%0d NUM_TERMS=%0d Esperado=%0d Obtido=%0d",
+                     DW1, NT1, expected, result1);
 
-        $display("-------------------------------------");
+    end
+
+    //============================================================
+    // Teste da configuração 2
+    //============================================================
+    initial begin
+
+        rst2   = 0;
+        start2 = 0;
+        valid2 = 0;
+        a2     = 0;
+        b2     = 0;
+
+        #20 rst2 = 1;
+
+        @(posedge clk);
+        start2 <= 1;
+
+        @(posedge clk);
+        start2 <= 0;
+
+        expected = 0;
+
+        for(i=0; i<NT2; i=i+1) begin
+            @(posedge clk);
+            valid2 <= 1;
+            a2 <= i % 100;    // evita overflow da entrada
+            b2 <= 3;
+            expected = expected + (i % 100)*3;
+        end
+
+        @(posedge clk);
+        valid2 <= 0;
+
+        wait(done2);
+
+        if(result2 == expected)
+            $display("[PASS] DATA_WIDTH=%0d NUM_TERMS=%0d Result=%0d",
+                     DW2, NT2, result2);
+        else
+            $display("[FAIL] DATA_WIDTH=%0d NUM_TERMS=%0d Esperado=%0d Obtido=%0d",
+                     DW2, NT2, expected, result2);
 
         #20;
         $finish;
     end
 
-    //=========================================================
-    // Monitor
-    //=========================================================
     initial begin
-        $monitor("[%0t] start=%b valid=%b busy=%b done=%b a=%0d b=%0d result=%0d",
-                  $time, start, valid, busy, done, a, b, result);
+        #10000; //TIMEOUT
+        $finish;
     end
-
 endmodule

@@ -1,7 +1,7 @@
 module mac_param #(
     parameter DATA_WIDTH = 8,
     parameter NUM_TERMS = 1024,
-    localparam ACC_WIDTH  = 2*DATA_WIDTH + $clog2(NUM_TERMS)
+    parameter ACC_WIDTH  = 2*DATA_WIDTH + $clog2(NUM_TERMS)
 ) (
     input wire clk,
     input wire rst_n,
