@@ -69,8 +69,8 @@ module mac_param_tb;
         .result(result2)
     );
 
-    integer i;
-    integer expected;
+    integer i,j;
+    integer expected1, expected2;
 
     //============================================================
     // Teste da configuração 1
@@ -91,14 +91,14 @@ module mac_param_tb;
         @(posedge clk);
         start1 <= 0;
 
-        expected = 0;
+        expected1 = 0;
 
         for(i=0; i<NT1; i=i+1) begin
             @(posedge clk);
             valid1 <= 1;
             a1 <= i;
             b1 <= 2;
-            expected = expected + i*2;
+            expected1 = expected1 + i*2;
         end
 
         @(posedge clk);
@@ -106,12 +106,12 @@ module mac_param_tb;
 
         wait(done1);
 
-        if(result1 == expected)
+        if(result1 == expected1)
             $display("[PASS] DATA_WIDTH=%0d NUM_TERMS=%0d Result=%0d",
                      DW1, NT1, result1);
         else
             $display("[FAIL] DATA_WIDTH=%0d NUM_TERMS=%0d Esperado=%0d Obtido=%0d",
-                     DW1, NT1, expected, result1);
+                     DW1, NT1, expected1, result1);
 
     end
 
@@ -134,14 +134,14 @@ module mac_param_tb;
         @(posedge clk);
         start2 <= 0;
 
-        expected = 0;
+        expected2 = 0;
 
-        for(i=0; i<NT2; i=i+1) begin
+        for(j=0; j<NT2; j=j+1) begin
             @(posedge clk);
             valid2 <= 1;
-            a2 <= i % 100;    // evita overflow da entrada
+            a2 <= j;    // evita overflow da entrada
             b2 <= 3;
-            expected = expected + (i % 100)*3;
+            expected2 = expected2 + (j)*3;
         end
 
         @(posedge clk);
@@ -149,19 +149,16 @@ module mac_param_tb;
 
         wait(done2);
 
-        if(result2 == expected)
+        if(result2 == expected2)
             $display("[PASS] DATA_WIDTH=%0d NUM_TERMS=%0d Result=%0d",
                      DW2, NT2, result2);
         else
             $display("[FAIL] DATA_WIDTH=%0d NUM_TERMS=%0d Esperado=%0d Obtido=%0d",
-                     DW2, NT2, expected, result2);
+                     DW2, NT2, expected2, result2);
 
         #20;
         $finish;
     end
 
-    initial begin
-        #10000; //TIMEOUT
-        $finish;
-    end
+ 
 endmodule
