@@ -1,0 +1,65 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2025 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[20:27:15.171913] Configured Lic search path (25.01-s002): 5280@ec2-44-229-184-69.us-west-2.compute.amazonaws.com
+
+Version: 25.12-s067_1, built Mon Nov 17 08:10:10 PST 2025
+Options: -log synth_flow.log -files ./script.tcl 
+Date:    Fri Aug 07 20:27:15 2026
+Host:    localhost.localdomain (x86_64 w/Linux 5.14.0-687.29.1.el9_8.x86_64) (8cores*16cpus*1physical cpu*AMD Ryzen 7 5700G with Radeon Graphics 512KB) (31967232KB)
+PID:     6389
+OS:      Rocky Linux 9.8 (Blue Onyx)
+
+Checking out license: Genus_Synthesis
+[20:27:18.266947] Periodic Lic check successful
+[20:27:18.266961] Feature usage summary:
+[20:27:18.266961] Genus_Synthesis  
+License checkout complete (3 seconds elapsed).
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (9 seconds elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (13 seconds elapsed).
+
+#@ Processing -files option
+@genus:root: 1> source ./script.tcl
+#@ Begin verbose source ./script.tcl
+@file(script.tcl) 1: read_libs {./slow_vdd1v0_basicCells.v }
+Error   : Fail to load library file. [LBR-522] [::legacy::set_attribute]
+        : Attempt to read .lib library '/home/cidigital/projects/aulas-ci-digital/aula_07_08/slow_vdd1v0_basicCells.v' failed
+        : Fix the library read error, then reload the library.
+Error   : Parsing error. [LBR-130] [::legacy::set_attribute]
+        : Syntax error/unsupported construct 'Invalid identifier found.' (File /home/cidigital/projects/aulas-ci-digital/aula_07_08/slow_vdd1v0_basicCells.v, Line 4)
+        : Invalid liberty syntax is parsed, or unsupported liberty syntax is encountered.
+Error   : Fail to load library file. [LBR-522] [::legacy::set_attribute]
+        : Attempt to read .lib library '/home/cidigital/projects/aulas-ci-digital/aula_07_08/slow_vdd1v0_basicCells.v' failed (File /home/cidigital/projects/aulas-ci-digital/aula_07_08/slow_vdd1v0_basicCells.v)
+
+  Message Summary for Library slow_vdd1v0_basicCells.v:
+  *****************************************************
+  Fail to load library file. [LBR-522]: 2
+  Parsing error. [LBR-130]: 1
+  *****************************************************
+ 
+Bad technology libraries.
+Error   : The data value for this attribute is invalid. [TUI-24] [::legacy::set_attribute]
+        : The value '  { ./slow_vdd1v0_basicCells.v } ' cannot be set for attribute 'library'.
+        : To see the usage/description for this attribute, type '::legacy::set_attribute -h <attr_name> *' (in legacy UI mode) or 'help * <attr_name> -detail' (in CUI mode).
+#@ End verbose source ./script.tcl
+1
+Encountered problems processing file: ./script.tcl
+WARNING: This version of the tool is 263 days old.
+@genus:root: 2> exit
+
+Lic Summary:
+[20:32:18.209088] Cdslmd servers: ip-10-0-0-94
+[20:32:18.209097] Feature usage summary:
+[20:32:18.209098] Genus_Synthesis  
+Normal exit.
