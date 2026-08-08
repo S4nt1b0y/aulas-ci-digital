@@ -29,8 +29,7 @@ module mac_param_tb;
 
 `ifdef SDF_TEST
     initial begin
-        $sdf_annotate("delays.sdf", \
-        counter_test.counter1,,"sdf.log","MAXIMUM");
+        $sdf_annotate("design.sdf", dut);
     end
 `endif
 
