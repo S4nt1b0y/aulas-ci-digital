@@ -1,0 +1,13 @@
+======================================================================
+
+Annotating SDF timing data:
+  Compiled SDF file:     delays.sdf.X
+  Log file:              sdf.log
+  Backannotation scope:  x3_curto_tb.dut
+  Configuration file:    
+  MTM control:           MAXIMUM
+  Scale factors:         
+  Scale type:            
+
+Time units: 1ns
+

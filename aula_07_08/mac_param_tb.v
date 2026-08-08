@@ -27,13 +27,9 @@ module mac_param_tb;
     wire busy1, done1;
     wire [AW1-1:0] result1;
 
-`ifdef SDF_TEST
-    initial begin
-        $sdf_annotate("design.sdf", dut);
-    end
-`endif
+ 
 
-    mac_param dut1 (
+    mac_param dut (
         .clk(clk),
         .rst_n(rst1),
         .start(start1),
@@ -45,8 +41,12 @@ module mac_param_tb;
         .result(result1)
     );
 
-    integer i,j;
-    integer expected1, expected2;
+    integer i;
+    integer expected1;
+
+    initial begin
+        $sdf_annotate("delays.sdf", mac_param_tb.dut, ,"sdf.log","MAXIMUM");
+    end
 
     //============================================================
     // Teste da configuração 1
