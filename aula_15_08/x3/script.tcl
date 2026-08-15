@@ -2,7 +2,7 @@ read_libs {../slow_vdd1v0_basicCells.lib }
 read_hdl "./x3_curto.v"
 elaborate
 check_design -unresolved
-read_sdc ./constrain.sdc
+read_sdc ../constraint.sdc
 set_db / .syn_generic_effort medium
 set_db / .syn_map_effort medium
 set_db / .syn_opt_effort medium

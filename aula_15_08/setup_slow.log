@@ -1,0 +1,108 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2025 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[11:05:19.171913] Configured Lic search path (25.01-s002): 5280@ec2-44-229-184-69.us-west-2.compute.amazonaws.com
+
+Version: 25.12-s067_1, built Mon Nov 17 08:10:10 PST 2025
+Options: -files sta_setup.tcl -log setup_slow -overwrite 
+Date:    Sat Aug 15 11:05:19 2026
+Host:    localhost.localdomain (x86_64 w/Linux 5.14.0-687.29.1.el9_8.x86_64) (8cores*16cpus*1physical cpu*AMD Ryzen 7 5700G with Radeon Graphics 512KB) (31967228KB)
+PID:     22367
+OS:      Rocky Linux 9.8 (Blue Onyx)
+
+Checking out license: Genus_Synthesis
+[11:05:22.338042] Periodic Lic check successful
+[11:05:22.862339] Feature usage summary:
+[11:05:22.862339] Genus_Synthesis  
+License checkout complete (3 seconds elapsed).
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (8 seconds elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (14 seconds elapsed).
+
+#@ Processing -files option
+@genus:root: 1> source sta_setup.tcl
+#@ Begin verbose source ./sta_setup.tcl
+@file(sta_setup.tcl) 2: set DESIGN mac
+@file(sta_setup.tcl) 3: set CORNER slow
+@file(sta_setup.tcl) 4: set_db init_lib_search_path ./
+  Setting attribute of root '/': 'init_lib_search_path' = ./
+@file(sta_setup.tcl) 5: if {$CORNER eq "slow"} {
+set LIB slow_vdd1v0_basicCells.lib
+} elseif {$CORNER eq "fast"} {
+set LIB fast_vdd1v0_basicCells.lib
+} else {
+error "CORNER deve ser slow ou fast"
+}
+@file(sta_setup.tcl) 12: set_db library $LIB
+
+  Message Summary for Library slow_vdd1v0_basicCells.lib:
+  *******************************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  *******************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.900000, 125.000000) in library 'slow_vdd1v0_basicCells.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+  Setting attribute of root '/': 'library' = slow_vdd1v0_basicCells.lib
+@file(sta_setup.tcl) 13: set NETLIST ./mac/${DESIGN}_netlist.v
+@file(sta_setup.tcl) 14: set SDC ./mac/${DESIGN}.sdc
+@file(sta_setup.tcl) 15: file mkdir ./reports
+@file(sta_setup.tcl) 16: read_netlist $NETLIST
+  Library has 324 usable logic and 128 usable sequential lib-cells.
+  Done reading and elaborating the structural design 'mac_param'.
+Checking for source RTL...
+Check completed for source RTL.
+@file(sta_setup.tcl) 17: read_sdc $SDC
+Statistics for commands executed by read_sdc:
+ "create_clock"             - successful      1 , failed      0 (runtime  0.01)
+ "current_design"           - successful      1 , failed      0 (runtime  0.01)
+ "get_clocks"               - successful     50 , failed      0 (runtime  0.00)
+ "get_ports"                - successful     95 , failed      0 (runtime  0.01)
+ "set_clock_gating_check"   - successful      1 , failed      0 (runtime  0.00)
+ "set_clock_transition"     - successful      1 , failed      0 (runtime  0.00)
+ "set_clock_uncertainty"    - successful      2 , failed      0 (runtime  0.01)
+ "set_input_delay"          - successful     19 , failed      0 (runtime  0.01)
+ "set_input_transition"     - successful     19 , failed      0 (runtime  0.00)
+ "set_load"                 - successful     28 , failed      0 (runtime  0.01)
+ "set_output_delay"         - successful     28 , failed      0 (runtime  0.00)
+ "set_units"                - successful      2 , failed      0 (runtime  0.00)
+ "set_wire_load_mode"       - successful      1 , failed      0 (runtime  0.02)
+read_sdc completed in 00:00:00 (hh:mm:ss)
+@file(sta_setup.tcl) 18: check_design -unresolved
+
+
+ 	 Check Design Report (c)
+	 ------------------- 
+
+  Unresolved References & Empty Modules
+  ------------------------------------- 
+No unresolved references in design 'mac_param'
+
+No empty modules in design 'mac_param'
+
+  Done Checking the design.
+@file(sta_setup.tcl) 19: report timing -lint > ./reports/${DESIGN}_lint_${CORNER}.rpt
+@file(sta_setup.tcl) 20: report_timing -max_paths 10 > ./reports/${DESIGN}_setup_${CORNER}.rpt
+@file(sta_setup.tcl) 21: report_timing_summary > ./reports/${DESIGN}_setup_summary_${CORNER}.rpt
+@file(sta_setup.tcl) 22: exit
+
+Lic Summary:
+[11:05:38.279203] Cdslmd servers: ip-10-0-0-94
+[11:05:38.803497] Feature usage summary:
+[11:05:38.803498] Genus_Synthesis  
+Normal exit.
