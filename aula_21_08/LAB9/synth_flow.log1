@@ -1,0 +1,70 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2025 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[18:32:38.171977] Configured Lic search path (25.01-s002): 5280@ec2-44-229-184-69.us-west-2.compute.amazonaws.com
+
+Version: 25.12-s067_1, built Mon Nov 17 08:10:10 PST 2025
+Options: -log synth_flow.log -files ./genus_dft_script.tcl 
+Date:    Fri Aug 21 18:32:38 2026
+Host:    localhost.localdomain (x86_64 w/Linux 5.14.0-687.39.1.el9_8.x86_64) (8cores*16cpus*1physical cpu*AMD Ryzen 7 5700G with Radeon Graphics 512KB) (31967224KB)
+PID:     51224
+OS:      Rocky Linux 9.8 (Blue Onyx)
+
+Checking out license: Genus_Synthesis
+[18:32:41.504288] Periodic Lic check successful
+[18:32:41.504297] Feature usage summary:
+[18:32:41.504298] Genus_Synthesis  
+License checkout complete (3 seconds elapsed).
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (9 seconds elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (13 seconds elapsed).
+
+#@ Processing -files option
+@genus:root: 1> source ./genus_dft_script.tcl
+#@ Begin verbose source ./genus_dft_script.tcl
+@file(genus_dft_script.tcl) 1: set_db init_lib_search_path ./LIB/
+  Setting attribute of root '/': 'init_lib_search_path' = ./LIB/
+@file(genus_dft_script.tcl) 2: set_db init_hdl_search_path ./RTL/
+  Setting attribute of root '/': 'init_hdl_search_path' = ./RTL/
+@file(genus_dft_script.tcl) 3: read_libs slow_vdd1v0_basicCells.lib
+
+  Message Summary for Library slow_vdd1v0_basicCells.lib:
+  *******************************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  *******************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.900000, 125.000000) in library 'slow_vdd1v0_basicCells.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+@file(genus_dft_script.tcl) 4: read_hdl {top.v ALU.v control.v memory.v mux4.v mux4_registered.v register_bank.v}
+assign memoryOutData = memoryRead ? mem[memoryAddress] : {WIDTH{1'b0}};
+       |
+Error   : The register declaration is not allowed in this context. [VLOGPT-85] [read_hdl]
+        : Reg 'memoryOutData' in file 'RTL/memory.v' on line 15, column 8.
+        : See 'HDL Modeling Guide' for examples on modeling the 'reg' data type.
+#@ End verbose source ./genus_dft_script.tcl
+1
+Encountered problems processing file: ./genus_dft_script.tcl
+WARNING: This version of the tool is 277 days old.
+@genus:root: 2> exit
+
+Lic Summary:
+[18:33:10.142146] Cdslmd servers: ip-10-0-0-94
+[18:33:10.666440] Feature usage summary:
+[18:33:10.666441] Genus_Synthesis  
+Normal exit.
