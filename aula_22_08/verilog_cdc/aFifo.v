@@ -34,6 +34,8 @@ module aFifo
     wire                                Set_Status, Rst_Status;
     reg                                 Status;
     wire                                PresetFull, PresetEmpty;
+    reg  [ADDRESS_WIDTH:0]            Next_Write_addr_1, Next_Write_addr_2;
+    reg  [ADDRESS_WIDTH:0]            Next_Read_addr_1, Next_Read_addr_2;
     
     //////////////Code///////////////
     //Data ports logic:
@@ -54,7 +56,9 @@ module aFifo
     assign NextReadAddressEn  = ReadEn_in  & ~Empty_out;
            
     //Addreses (Gray counters) logic:
-    GrayCounter GrayCounter_pWr
+    GrayCounter #(
+        .COUNTER_WIDTH(ADDRESS_WIDTH+1)
+    )GrayCounter_pWr
        (.GrayCount_out(pNextWordToWrite),
        
         .Enable_in(NextWriteAddressEn),
@@ -63,47 +67,59 @@ module aFifo
         .clk(WClk)
        );
        
-    GrayCounter GrayCounter_pRd
+    GrayCounter #(
+        .COUNTER_WIDTH(ADDRESS_WIDTH+1)
+     ) GrayCounter_pRd
        (.GrayCount_out(pNextWordToRead),
         .Enable_in(NextReadAddressEn),
         .Clear_in(Clear_in),
         .clk(RClk)
        );
-     
 
-    //'EqualAddresses' logic:
-    assign EqualAddresses = (pNextWordToWrite == pNextWordToRead);
+    wire Empty_next; 
 
-    //'Quadrant selectors' logic:
-    assign Set_Status = (pNextWordToWrite[ADDRESS_WIDTH-2] ~^ pNextWordToRead[ADDRESS_WIDTH-1]) &
-                         (pNextWordToWrite[ADDRESS_WIDTH-1] ^  pNextWordToRead[ADDRESS_WIDTH-2]);
-                            
-    assign Rst_Status = (pNextWordToWrite[ADDRESS_WIDTH-2] ^  pNextWordToRead[ADDRESS_WIDTH-1]) &
-                         (pNextWordToWrite[ADDRESS_WIDTH-1] ~^ pNextWordToRead[ADDRESS_WIDTH-2]);
-                         
-    //'Status' latch logic:
-    always @ (Set_Status, Rst_Status, Clear_in) //D Latch w/ Asynchronous Clear & Preset.
-        if (Rst_Status | Clear_in)
-            Status = 0;  //Going 'Empty'.
-        else if (Set_Status)
-            Status = 1;  //Going 'Full'.
-            
-    //'Full_out' logic for the writing port:
-    assign PresetFull = Status & EqualAddresses;  //'Full' Fifo.
-    
-    always @ (posedge WClk, posedge PresetFull) //D Flip-Flop w/ Asynchronous Preset.
-        if (PresetFull)
-            Full_out <= 1;
+    always @ (posedge RClk) begin //D Flip-Flop For Read Sincronization
+        if (Clear_in) begin
+            Next_Write_addr_1 <= {ADDRESS_WIDTH{1'b 0}};
+            Next_Write_addr_2 <= {ADDRESS_WIDTH{1'b 0}};
+        end else begin 
+            Next_Write_addr_1 <= pNextWordToWrite;
+            Next_Write_addr_2 <= Next_Write_addr_1;
+        end
+    end
+
+    assign Empty_next = (pNextWordToRead == Next_Write_addr_2);
+
+    always @(posedge RClk) begin
+        if (Clear_in)
+            Empty_out <= 1'b1;
         else
-            Full_out <= 0;
-            
-    //'Empty_out' logic for the reading port:
-    assign PresetEmpty = ~Status & EqualAddresses;  //'Empty' Fifo.
+            Empty_out <= Empty_next;
+    end
+
+    wire Full_next;
+
+    always @ (posedge WClk) begin //D Flip-Flop For Write Sincronization
+        if (Clear_in) begin
+            Next_Read_addr_1 <= {ADDRESS_WIDTH{1'b 0}};
+            Next_Read_addr_2 <= {ADDRESS_WIDTH{1'b 0}};
+        end else begin 
+            Next_Read_addr_1 <= pNextWordToRead;
+            Next_Read_addr_2 <= Next_Read_addr_1;
+        end
+    end
+
+    assign Full_next =
+    (pNextWordToWrite ==
+     {~Next_Read_addr_2[ADDRESS_WIDTH],
+      ~Next_Read_addr_2[ADDRESS_WIDTH-1],
+       Next_Read_addr_2[ADDRESS_WIDTH-2:0]});
     
-    always @ (posedge RClk, posedge PresetEmpty)  //D Flip-Flop w/ Asynchronous Preset.
-        if (PresetEmpty)
-            Empty_out <= 1;
+    always @(posedge WClk) begin
+        if (Clear_in)
+            Full_out <= 1'b0;
         else
-            Empty_out <= 0;
+            Full_out <= Full_next;
+    end
             
 endmodule
