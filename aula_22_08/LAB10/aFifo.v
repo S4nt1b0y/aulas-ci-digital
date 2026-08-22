@@ -28,7 +28,7 @@ module aFifo
 
     /////Internal connections & variables//////
     reg   [DATA_WIDTH-1:0]              Mem [FIFO_DEPTH-1:0];
-    wire  [ADDRESS_WIDTH-1:0]           pNextWordToWrite, pNextWordToRead;
+    wire  [ADDRESS_WIDTH:0]           pNextWordToWrite, pNextWordToRead;
     wire                                EqualAddresses;
     wire                                NextWriteAddressEn, NextReadAddressEn;
     wire                                Set_Status, Rst_Status;
