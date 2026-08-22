@@ -32,6 +32,11 @@ module aFifo_TB
 		.Clear_in(Clear_in)
 		);
 
+	initial begin
+		$dumpfile("aFifo_TB.vcd");
+		$dumpvars(0, aFifo_TB);
+	end
+
 	// Aplicando os estimulos
 	always 
 		if(Read_more_fast) begin
@@ -101,7 +106,7 @@ module aFifo_TB
 		Read_more_fast <= 1;
 		#5;
 		test_concurrent;
-		$stop;
+		$finish;
 	end
 	
 	initial begin
@@ -208,7 +213,7 @@ module aFifo_TB
 	endtask
 
 	initial 
-		#40000	$stop;
+		#40000	$finish;
 		
 endmodule
 
