@@ -67,13 +67,17 @@ always @(posedge clk or negedge rst_n) begin
 end
 
 function signed [ACC_WIDTH-1:0] expected_corr;
+    input dummy;
     integer k;
     reg signed [ACC_WIDTH-1:0] acc;
+
     begin
         acc = {ACC_WIDTH{1'b0}};
+
         for (k = 0; k < N; k = k + 1) begin
             acc = acc + (window[k] * coeff[k]);
         end
+
         expected_corr = acc;
     end
 endfunction
@@ -179,10 +183,10 @@ initial begin
     send_sample(16'sd6);
     send_sample(16'sd7);
     send_sample(-16'sd8);
-    wait_and_check_result(expected_corr());
+    wait_and_check_result(expected_corr(1'b0));
 
     send_sample(16'sd9);
-    wait_and_check_result(expected_corr());
+    wait_and_check_result(expected_corr(1'b0));
 
     if (errors == 0) begin
         $display("TESTE OK");
