@@ -1,7 +1,7 @@
 # LAB8 - Pattern detector constraints
 # Valores em ns e pF. Analise solicitada: setup, corner Slow.
 
-set CLOCK_PERIOD 10.0
+set CLOCK_PERIOD 9.05
 
 create_clock -name clk -period $CLOCK_PERIOD [get_ports clk]
 set_clock_transition 0.10 [get_clocks clk]
