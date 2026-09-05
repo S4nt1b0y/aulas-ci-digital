@@ -39,3 +39,4 @@ report_timing > reports/report_timing_scan.rpt
 report_power  > reports/report_power_scan.rpt
 report_area   > reports/report_area_scan.rpt
 report_qor    > reports/report_qor_scan.rpt
+exit
