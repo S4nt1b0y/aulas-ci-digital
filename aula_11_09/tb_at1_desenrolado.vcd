@@ -1,0 +1,102 @@
+$date
+	Fri Sep 11 21:01:24 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_at1_desenrolado $end
+$var wire 8 ! XPower [7:0] $end
+$var reg 8 " X [7:0] $end
+$var reg 1 # clk $end
+$var reg 8 $ previous_x [7:0] $end
+$var integer 32 % errors [31:0] $end
+$scope function cube8 $end
+$var reg 8 & value [7:0] $end
+$upscope $end
+$scope module dut $end
+$var wire 8 ' X [7:0] $end
+$var wire 1 # clk $end
+$var reg 8 ( X1 [7:0] $end
+$var reg 8 ) XPower [7:0] $end
+$upscope $end
+$scope task apply_and_check $end
+$var reg 8 * value [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx *
+bx )
+bx (
+b10 '
+bx &
+b0 %
+bx $
+0#
+b10 "
+bx !
+$end
+#5000
+b10 (
+1#
+#6000
+b11 "
+b11 '
+b11 *
+b10 $
+#10000
+0#
+#15000
+b1000 !
+b1000 )
+b11 (
+1#
+#16000
+b100 "
+b100 '
+b100 *
+b11 $
+b10 &
+#20000
+0#
+#25000
+b11011 !
+b11011 )
+b100 (
+1#
+#26000
+b101 "
+b101 '
+b101 *
+b100 $
+b11 &
+#30000
+0#
+#35000
+b1000000 !
+b1000000 )
+b101 (
+1#
+#36000
+b1010 "
+b1010 '
+b1010 *
+b101 $
+b100 &
+#40000
+0#
+#45000
+b1111101 !
+b1111101 )
+b1010 (
+1#
+#46000
+b1010 $
+b101 &
