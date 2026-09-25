@@ -1,0 +1,102 @@
+*** Message Type: info ***
+When: Sat Sep 05 01:37:01 PM -03 2026
+SimVision started.
+Version: TOOL:  simvision(64)   24.09-s013
+User: ci-digital
+Host: cademics-cepedi.localdomain
+Platform: Linux/x86_64/6.6.87.2-microsoft-standard-WSL2
+Started: Sat Sep 05 01:37:01 PM -03 2026
+Command: /cadence/XCELIUM2409/tools.lnx86/simvision/bin/64bit/simvision.exe -connect dc:cademics-cepedi.localdomain:52655 -64BIT -nocopyright
+Work Directory: /mnt/c/Users/gusta/projects/aulas-ci-digital/aula_04_09
+ 
+*** Message Type: info ***
+When: Sat Sep 05 01:37:01 PM -03 2026
+Create browser window: "Design Browser 1"
+ 
+*** Message Type: info ***
+When: Sat Sep 05 01:37:02 PM -03 2026
+Create console window: "Console"
+ 
+*** Message Type: info ***
+When: Sat Sep 05 01:37:04 PM -03 2026
+Connect to Simulator
+      Design: worklib.tb_lab9_mac_funcional:v
+   Languages: verilog
+   Simulator: XM-Sim
+     Version: TOOL:    xmsim(64)       24.09-s013
+        User: ci-digital
+        Host: cademics-cepedi.localdomain
+Time Started: Sat Sep 05 01:36:57 PM -03 2026
+  Process ID: 397
+   Directory: /mnt/c/Users/gusta/projects/aulas-ci-digital/aula_04_09
+     Command: xrun -timescale 1ns/1ps mac_param.v tb_lab9_mac_funcional.v -gui -access +rwc
+
+ 
+*** Message Type: info ***
+When: Sat Sep 05 01:37:12 PM -03 2026
+Create utility window: "Properties"
+ 
+*** Message Type: info ***
+When: Sat Sep 05 01:37:16 PM -03 2026
+Create waveform window: "Waveform 1"
+ 
+*** Message Type: error ***
+When: Sat Sep 05 01:38:13 PM -03 2026
+invalid command name ".waveWindow0.work.user.waveset.popup"
+    while executing
+"$popup delete 0 last "
+    (object "::.waveWindow0.work.user.waveset" method "::WaveSet::_popupCallback" body line 84)
+    invoked from within
+"::.waveWindow0.work.user.waveset _popupCallback signaldata 39 314 2574 537"
+    (in namespace inscope "::WaveSet" script line 1)
+    invoked from within
+"namespace inscope ::WaveSet {::.waveWindow0.work.user.waveset _popupCallback signaldata 39 314 2574 537}"
+    (command bound to event)
+ 
+*** Message Type: error ***
+When: Sat Sep 05 01:38:22 PM -03 2026
+invalid command name ".waveWindow0.work.user.waveset.popup"
+    while executing
+"$popup delete 0 last "
+    (object "::.waveWindow0.work.user.waveset" method "::WaveSet::_popupCallback" body line 84)
+    invoked from within
+"::.waveWindow0.work.user.waveset _popupCallback signaldata 49 307 2584 530"
+    (in namespace inscope "::WaveSet" script line 1)
+    invoked from within
+"namespace inscope ::WaveSet {::.waveWindow0.work.user.waveset _popupCallback signaldata 49 307 2584 530}"
+    (command bound to event)
+ 
+*** Message Type: error ***
+When: Sat Sep 05 01:38:31 PM -03 2026
+invalid command name ".waveWindow0.work.user.waveset.popup"
+    while executing
+"$popup delete 0 last "
+    (object "::.waveWindow0.work.user.waveset" method "::WaveSet::_popupCallback" body line 84)
+    invoked from within
+"::.waveWindow0.work.user.waveset _popupCallback signaldata 11 312 2546 535"
+    (in namespace inscope "::WaveSet" script line 1)
+    invoked from within
+"namespace inscope ::WaveSet {::.waveWindow0.work.user.waveset _popupCallback signaldata 11 312 2546 535}"
+    (command bound to event)
+ 
+*** Message Type: error ***
+When: Sat Sep 05 01:38:40 PM -03 2026
+invalid command name ".waveWindow0.work.user.waveset.popup"
+    while executing
+"$popup delete 0 last "
+    (object "::.waveWindow0.work.user.waveset" method "::WaveSet::_popupCallback" body line 84)
+    invoked from within
+"::.waveWindow0.work.user.waveset _popupCallback signaldata 43 315 2578 538"
+    (in namespace inscope "::WaveSet" script line 1)
+    invoked from within
+"namespace inscope ::WaveSet {::.waveWindow0.work.user.waveset _popupCallback signaldata 43 315 2578 538}"
+    (command bound to event)
+ 
+*** Message Type: info ***
+When: Sat Sep 05 01:40:35 PM -03 2026
+Delete browser window: "Design Browser 1"
+ 
+*** Message Type: info ***
+When: Sat Sep 05 01:40:41 PM -03 2026
+SimVision Exit.
+ 

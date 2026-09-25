@@ -1,0 +1,50 @@
+Reporting 1 scan chain (muxed_scan)
+ 
+Chain 1: mac_chain 
+  scan_in:      scan_in 
+  scan_out:     scan_out   
+  shift_enable: SE (active high) 
+  clock_domain: clk (edge: rise)
+  length: 40
+    bit 1 	dut/busy_reg  <clk (rise)>  
+    bit 2 	dut/count_reg[0]  <clk (rise)>  
+    bit 3 	dut/count_reg[1]  <clk (rise)>  
+    bit 4 	dut/count_reg[2]  <clk (rise)>  
+    bit 5 	dut/count_reg[3]  <clk (rise)>  
+    bit 6 	dut/count_reg[4]  <clk (rise)>  
+    bit 7 	dut/count_reg[5]  <clk (rise)>  
+    bit 8 	dut/count_reg[6]  <clk (rise)>  
+    bit 9 	dut/count_reg[7]  <clk (rise)>  
+    bit 10 	dut/count_reg[8]  <clk (rise)>  
+    bit 11 	dut/count_reg[9]  <clk (rise)>  
+    bit 12 	dut/count_reg[10]  <clk (rise)>  
+    bit 13 	dut/done_reg  <clk (rise)>  
+    bit 14 	dut/result_reg[0]  <clk (rise)>  
+    bit 15 	dut/result_reg[1]  <clk (rise)>  
+    bit 16 	dut/result_reg[2]  <clk (rise)>  
+    bit 17 	dut/result_reg[3]  <clk (rise)>  
+    bit 18 	dut/result_reg[4]  <clk (rise)>  
+    bit 19 	dut/result_reg[5]  <clk (rise)>  
+    bit 20 	dut/result_reg[6]  <clk (rise)>  
+    bit 21 	dut/result_reg[7]  <clk (rise)>  
+    bit 22 	dut/result_reg[8]  <clk (rise)>  
+    bit 23 	dut/result_reg[9]  <clk (rise)>  
+    bit 24 	dut/result_reg[10]  <clk (rise)>  
+    bit 25 	dut/result_reg[11]  <clk (rise)>  
+    bit 26 	dut/result_reg[12]  <clk (rise)>  
+    bit 27 	dut/result_reg[13]  <clk (rise)>  
+    bit 28 	dut/result_reg[14]  <clk (rise)>  
+    bit 29 	dut/result_reg[15]  <clk (rise)>  
+    bit 30 	dut/result_reg[16]  <clk (rise)>  
+    bit 31 	dut/result_reg[17]  <clk (rise)>  
+    bit 32 	dut/result_reg[18]  <clk (rise)>  
+    bit 33 	dut/result_reg[19]  <clk (rise)>  
+    bit 34 	dut/result_reg[20]  <clk (rise)>  
+    bit 35 	dut/result_reg[21]  <clk (rise)>  
+    bit 36 	dut/result_reg[22]  <clk (rise)>  
+    bit 37 	dut/result_reg[23]  <clk (rise)>  
+    bit 38 	dut/result_reg[24]  <clk (rise)>  
+    bit 39 	dut/result_reg[25]  <clk (rise)>  
+    bit 40 	dut/result_reg[26]  <clk (rise)>  
+------------------------
+
