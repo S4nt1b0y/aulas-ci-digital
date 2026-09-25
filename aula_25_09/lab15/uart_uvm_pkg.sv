@@ -8,6 +8,7 @@ package uart_uvm_pkg;
 
     `include "./uart_item.sv"
     `include "./uart_basic_seq.sv"
+    `include "./uart_directed_seq.sv"
     `include "./uart_sequencer.sv"
     `include "./uart_driver.sv"
     `include "./uart_agent.sv"
