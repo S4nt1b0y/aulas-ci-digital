@@ -1,5 +1,4 @@
-interface uart_if(
-    input logic clk); 
+interface uart_if( input logic clk); 
 
     logic rst_n;
     logic tx_start;
