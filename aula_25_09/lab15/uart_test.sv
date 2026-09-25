@@ -1,6 +1,7 @@
 class uart_test extends uvm_test;
-    `uvm_component_utils(hello_test)
+    `uvm_component_utils(uart_test)
 
+    uart_agent agent;
     function new(string name = "uart_test", uvm_component parent = null);
         super.new(name,parent);       
     endfunction
