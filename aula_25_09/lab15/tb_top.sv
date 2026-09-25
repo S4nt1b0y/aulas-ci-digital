@@ -27,6 +27,6 @@ module tb_top;
 
     initial begin 
         uart_vif_bridge::vif = uart_bus;
-        run_test();
+        run_test(uart_test);
     end
 endmodule
