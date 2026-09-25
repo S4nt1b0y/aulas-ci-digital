@@ -6,6 +6,7 @@ package uart_uvm_pkg;
         static virtual uart_if vif;
     endclass
 
+    `include "./uart_item.sv"
     `include "./uart_basic_seq.sv"
     `include "./uart_sequencer.sv"
     `include "./uart_driver.sv"

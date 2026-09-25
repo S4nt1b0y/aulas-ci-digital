@@ -1,4 +1,4 @@
-class uart_agent extens uvm_agent;
+class uart_agent extends uvm_agent;
     `uvm_component_utils(uart_agent)
 
     uart_sequencer sequencer;

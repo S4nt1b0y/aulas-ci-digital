@@ -8,9 +8,9 @@ class uart_driver extends uvm_driver #(uart_item);
     endfunction
 
     function void build_phase(uvm_phase phase);
-        super.build_phase(phase)
+        super.build_phase(phase);
         
-        vif = uart_if_bridge::vif;
+        vif = uart_vif_bridge::vif;
         if(vif == null)
             `uvm_fatal("NOIF","uart_if was not assigned")
     endfunction

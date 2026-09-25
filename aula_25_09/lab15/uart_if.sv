@@ -21,7 +21,7 @@ interface uart_if( input logic clk);
         @(posedge clk)
         tx_start <= 1'b0;
 
-        do @(posedge clk)
+        do @(posedge clk);
         while (tx_done !== 1'b1);
     endtask
 endinterface

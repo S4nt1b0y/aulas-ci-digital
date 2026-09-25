@@ -1,5 +1,5 @@
 class uart_basic_seq extends uvm_sequence #(uart_item);
-    `uvm_object_util(uart_basic_seq)
+    `uvm_object_utils(uart_basic_seq)
 
     int unsigned num_items = 5;
 

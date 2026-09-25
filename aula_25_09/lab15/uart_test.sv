@@ -5,8 +5,8 @@ class uart_test extends uvm_test;
         super.new(name,parent);       
     endfunction
 
-    function void build_phase(uvm_phase phase) 
-        super.build_phase(phase)
+    function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
         agent = uart_agent::type_id::create("agent",this);
     endfunction
     
