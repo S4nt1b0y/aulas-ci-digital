@@ -1,0 +1,179 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2025 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[11:10:03.171825] Configured Lic search path (25.01-s002): 5280@ec2-44-229-184-69.us-west-2.compute.amazonaws.com
+
+Version: 25.12-s067_1, built Mon Nov 17 08:10:10 PST 2025
+Options: -files mac_dft.tcl 
+Date:    Sat Sep 26 11:10:03 2026
+Host:    localhost.localdomain (x86_64 w/Linux 5.14.0-687.46.1.el9_8.x86_64) (8cores*16cpus*1physical cpu*AMD Ryzen 7 5700G with Radeon Graphics 512KB) (31967240KB)
+PID:     12715
+OS:      Rocky Linux 9.8 (Blue Onyx)
+
+Checking out license: Genus_Synthesis
+[11:10:07.071531] Periodic Lic check successful
+[11:10:07.071536] Feature usage summary:
+[11:10:07.071536] Genus_Synthesis  
+License checkout complete (4 seconds elapsed).
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (9 seconds elapsed).
+
+Loading tool scripts...Using chipware dir from user defined $CW_DIR environment variable set to /apps/cds/installs/DDI251/GENUS251/tools.lnx86/lib/chipware
+Using chipware simulation model dir from user defined $CW_DIR_SIM environment variable set to /apps/cds/installs/DDI251/GENUS251/tools.lnx86/lib/chipware/sim
+
+Finished loading tool scripts (12 seconds elapsed).
+
+#@ Processing -files option
+@genus:root: 1> source mac_dft.tcl
+#@ Begin verbose source ./mac_dft.tcl
+@file(mac_dft.tcl) 5: file mkdir reports
+@file(mac_dft.tcl) 6: file mkdir outputs
+@file(mac_dft.tcl) 12: set_db init_lib_search_path ./aula_21_08/LAB9/LIB/
+  Setting attribute of root '/': 'init_lib_search_path' = ./aula_21_08/LAB9/LIB/
+@file(mac_dft.tcl) 14: read_libs slow_vdd1v0_basicCells.lib
+
+  Message Summary for Library slow_vdd1v0_basicCells.lib:
+  *******************************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  *******************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.900000, 125.000000) in library 'slow_vdd1v0_basicCells.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+@file(mac_dft.tcl) 20: read_hdl mac_param.v
+@file(mac_dft.tcl) 22: elaborate mac_param
+  Library has 324 usable logic and 128 usable sequential lib-cells.
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'mac_param' from file 'mac_param.v'.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'mac_param'.
+Checking for source RTL...
+Check completed for source RTL.
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_elab
+-------------------------------------------------------
+| Trick             | Accepts | Rejects | Runtime (s) | 
+-------------------------------------------------------
+| ume_constant_bmux |       0 |       0 |        0.00 | 
+| ume_merge         |       0 |       0 |        0.00 | 
+| ume_ssm           |       0 |       0 |        0.00 | 
+| ume_cse           |       0 |       0 |        0.00 | 
+| ume_shrink        |       0 |       0 |        0.00 | 
+| ume_sweep         |       0 |       0 |        0.00 | 
+-------------------------------------------------------
+Starting optimize datapath shifters [v1.0] (stage: post_elab, startdef: mac_param, recur: true)
+Completed optimize datapath shifters (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip mux common data inputs [v1.0] (stage: post_elab, startdef: mac_param, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip the non-user hierarchies [v2.0] (stage: post_elab, startdef: mac_param, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting basic netlist cleanup [v1.0] (stage: post_elab, startdef: mac_param, recur: true)
+Completed basic netlist cleanup (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: post_elab
+--------------------------------------------------------------------
+| Transform                      | Accepts | Rejects | Runtime (s) | 
+--------------------------------------------------------------------
+| hlo_optimize_datapath_shifters |       0 |       0 |        0.00 | 
+| hlo_clip_mux_input             |       0 |       0 |        0.00 | 
+| hlo_clip                       |       0 |       0 |        0.00 | 
+| hlo_cleanup                    |       0 |       0 |        0.00 | 
+--------------------------------------------------------------------
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+@file(mac_dft.tcl) 24: check_design -unresolved
+
+
+ 	 Check Design Report (c)
+	 ------------------- 
+
+  Unresolved References & Empty Modules
+  ------------------------------------- 
+No unresolved references in design 'mac_param'
+
+No empty modules in design 'mac_param'
+
+  Done Checking the design.
+@file(mac_dft.tcl) 30: read_sdc constrain_lab12.sdc
+Statistics for commands executed by read_sdc:
+ "all_inputs"               - successful      1 , failed      0 (runtime  0.00)
+ "all_outputs"              - successful      2 , failed      0 (runtime  0.00)
+ "create_clock"             - successful      1 , failed      0 (runtime  0.01)
+ "get_ports"                - successful      2 , failed      0 (runtime  0.01)
+ "remove_from_collection"   - successful      1 , failed      0 (runtime  0.00)
+ "set_input_delay"          - successful      1 , failed      0 (runtime  0.00)
+ "set_load"                 - successful      1 , failed      0 (runtime  0.00)
+ "set_output_delay"         - successful      1 , failed      0 (runtime  0.00)
+read_sdc completed in 00:00:00 (hh:mm:ss)
+@file(mac_dft.tcl) 36: set_db dft_scan_style muxed_scan
+  Setting attribute of root '/': 'dft_scan_style' = muxed_scan
+@file(mac_dft.tcl) 37: set_db dft_prefix dft_
+  Setting attribute of root '/': 'dft_prefix' = dft_
+@file(mac_dft.tcl) 39: define_shift_enable \
+    -name SE \
+    -active high \
+    -create_port SE
+Warning : This command will be obsolete in a next major release. [TUI-37]
+        : command: 'define_shift_enable'
+        : This command is obsolete and the new command define_test_signal should be used.
+@file(mac_dft.tcl) 48: redirect -file reports/check_dft_rules_before.rpt {
+    check_dft_rules
+}
+Error   : A command argument did not match any of the acceptable command options. [TUI-64] [parse_options]
+        : The argument in question is '
+    check_dft_rules
+'.
+        : Check the command usage and correct the input to the command.
+  redirect: redirects stdout to a file or variable temporarily 
+
+Usage: redirect [-append] [-tee] [-stderr] [-variable] [-msg] <string> <string>
+
+    [-append]:
+        appends to the file or variable 
+    [-tee]:
+        writes to stdout also 
+    [-stderr]:
+        redirects stderr also 
+    [-variable]:
+        writes to Tcl variable instead of a file 
+    [-msg]:
+        do not suppress messages 
+    <string>:
+        the file or variable name to write into 
+    <string>:
+        the Tcl code to execute 
+#@ End verbose source ./mac_dft.tcl
+
+Encountered problems processing file: mac_dft.tcl
+WARNING: This version of the tool is 312 days old.
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 57s, ST: 17s, FG: 17s, CPU: 1.3%}, MEM {curr: 1.8G, peak: 1.8G, phys curr: 0.8G, phys peak: 0.8G}, SYS {load: 0.6, cpu: 16, total: 30.5G, free: 18.6G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 140s, ST: 18s, FG: 18s, CPU: 1.3%}, MEM {curr: 1.8G, peak: 1.8G, phys curr: 0.8G, phys peak: 0.8G}, SYS {load: 0.6, cpu: 16, total: 30.5G, free: 18.6G}
+@genus:root: 2> 
+@genus:root: 2> 
+@genus:root: 2> 
+@genus:root: 2> exit
+
+Lic Summary:
+[11:12:22.391122] Cdslmd servers: ip-10-0-0-94
+[11:12:22.915424] Feature usage summary:
+[11:12:22.915425] Genus_Synthesis  
+Normal exit.
