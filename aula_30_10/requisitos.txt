@@ -1,0 +1,9 @@
+Modo configuração
+Start
+Busy
+Done,
+Idle
+
+CONFIG_MODE
+
+xrun -clean -64bit -sv -uvm ../rtl/uart_tx_dut.sv ./uart_uvm_pkg.sv ./tb_top.sv -top tb_top +UVM_TESTNAME=uart_random_test
