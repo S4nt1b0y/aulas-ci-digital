@@ -1,0 +1,27 @@
+Modo configuração
+Start
+Busy
+Done,
+Idle
+
+CONFIG_MODE
+
+xrun -clean -64bit -sv -uvm ../rtl/uart_tx_dut.sv ./uart_uvm_pkg.sv ./tb_top.sv -top tb_top +UVM_TESTNAME=uart_random_test
+
+
+MODE: 0-CONFIG 1-EXECUTION (RW)
+    -> Quando em config, qq pedido de load carrega os pesos
+    -> Quando em execution, qq pedido de load carrega as entradas
+STATUS: IDLE, LOAD, PROCESSING
+    -> Ou parado, ou fazendo load de (peso ou dado), ou em processamento (quando em execution).
+LOAD -> input (carrega peso se em config, carrega peso se em execution)
+START -> input (inicia processamento)
+
+Cada operação, load ou start, ao final escreve o registrador DONE.
+O controlador precisa ler que ele terminou antes de pedir algo.
+Se não pode corromper.
+
+VALID_DATA: Pode ser util, para indicar que os dados são validos. (mas na pratica o Done também indica isso se o programa sabe qual estagio o Systolico estava).
+Systolic não envia dado para lugar nenhum da memoria, só coloca o dado processado no buffer
+de saida para o DMA ler.
+

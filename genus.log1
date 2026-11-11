@@ -1,0 +1,84 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2025 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[11:04:01.171833] Configured Lic search path (25.01-s002): 5280@ec2-44-229-184-69.us-west-2.compute.amazonaws.com
+
+Version: 25.12-s067_1, built Mon Nov 17 08:10:10 PST 2025
+Options: -files mac_dft.tcl 
+Date:    Sat Sep 26 11:04:01 2026
+Host:    localhost.localdomain (x86_64 w/Linux 5.14.0-687.46.1.el9_8.x86_64) (8cores*16cpus*1physical cpu*AMD Ryzen 7 5700G with Radeon Graphics 512KB) (31967240KB)
+PID:     11807
+OS:      Rocky Linux 9.8 (Blue Onyx)
+
+Checking out license: Genus_Synthesis
+[11:04:04.038033] Periodic Lic check successful
+[11:04:04.562329] Feature usage summary:
+[11:04:04.562330] Genus_Synthesis  
+License checkout complete (3 seconds elapsed).
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (9 seconds elapsed).
+
+Loading tool scripts...Using chipware dir from user defined $CW_DIR environment variable set to /apps/cds/installs/DDI251/GENUS251/tools.lnx86/lib/chipware
+Using chipware simulation model dir from user defined $CW_DIR_SIM environment variable set to /apps/cds/installs/DDI251/GENUS251/tools.lnx86/lib/chipware/sim
+
+Finished loading tool scripts (13 seconds elapsed).
+
+#@ Processing -files option
+@genus:root: 1> source mac_dft.tcl
+#@ Begin verbose source ./mac_dft.tcl
+@file(mac_dft.tcl) 9: file mkdir reports
+@file(mac_dft.tcl) 10: file mkdir outputs
+@file(mac_dft.tcl) 16: set_db init_lib_search_path ../aula_21_08/LAB9/LIB/
+  Setting attribute of root '/': 'init_lib_search_path' = ../aula_21_08/LAB9/LIB/
+@file(mac_dft.tcl) 18: read_libs slow_vdd1v0_basicCells.lib
+Error   : File error. [FILE-100] [::legacy::set_attribute]
+        : Cannot open file 'slow_vdd1v0_basicCells.lib'
+        : Make sure that the file is a readable regular file and has the specified name.
+Error   : A library file does not exist. [LBR-68] [::legacy::set_attribute]
+        : File 'slow_vdd1v0_basicCells.lib' could not be found. File '<none>' was the last file that was successfully read in.
+        : Make sure that the library file exists or check for a typo in the file name.
+Error   : The data value for this attribute is invalid. [TUI-24] [::legacy::set_attribute]
+        : The value '  { slow_vdd1v0_basicCells.lib } ' cannot be set for attribute 'library'.
+        : To see the usage/description for this attribute, type '::legacy::set_attribute -h <attr_name> *' (in legacy UI mode) or 'help * <attr_name> -detail' (in CUI mode).
+#@ End verbose source ./mac_dft.tcl
+1
+Encountered problems processing file: mac_dft.tcl
+WARNING: This version of the tool is 312 days old.
+@genus:root: 2> pwd
+/home/cidigital/projects/aulas-ci-digital
+@genus:root: 3> ls -l ../aula_21_08/LAB9/LIB/
+ls: cannot access '../aula_21_08/LAB9/LIB/': No such file or directory
+@genus:root: 4> exec find /home/cidigital/projects -type f -name "slow_vdd1v0_basicCells.lib" 2>/dev/null
+/home/cidigital/projects/aulas-ci-digital/aula_24_07/LIB/slow_vdd1v0_basicCells.lib
+/home/cidigital/projects/aulas-ci-digital/aula_25_07/LAB02/LIB/slow_vdd1v0_basicCells.lib
+/home/cidigital/projects/aulas-ci-digital/aula_07_08/mac_param/slow_vdd1v0_basicCells.lib
+/home/cidigital/projects/aulas-ci-digital/aula_15_08/LAB7/slow_vdd1v0_basicCells.lib
+/home/cidigital/projects/aulas-ci-digital/aula_21_08/LAB9/LIB/slow_vdd1v0_basicCells.lib
+/home/cidigital/projects/aulas-ci-digital/aula_22_08/LAB10/slow_vdd1v0_basicCells.lib
+@genus:root: 5> exec ls -l ./aula_21_08/LAB9/LIB/slow_vdd1v0_basicCells.lib
+-rw-rw-r-- 1 cidigital cidigital 5380514 Aug 21 18:24 ./aula_21_08/LAB9/LIB/slow_vdd1v0_basicCells.lib
+@genus:root: 6> exec ls -l ./aula_21_08/LAB9/LIB/slow_vdd1v0_basiccells.v
+ls: cannot access './aula_21_08/LAB9/LIB/slow_vdd1v0_basiccells.v': No such file or directory
+@genus:root: 7> exec find ./aula_21_08/LAB9/LIB/ -maxdepth 1 -type f -iname "*.v" -printf "%f\n"
+@genus:root: 8> exec find ./aula_21_08/LAB9/LIB/ -maxdepth 1 -type f -iname "*basiccell*" -printf "%f\n"
+slow_vdd1v0_basicCells.lib
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 215s, ST: 17s, FG: 17s, CPU: 1.3%}, MEM {curr: 1.5G, peak: 1.5G, phys curr: 0.6G, phys peak: 0.6G}, SYS {load: 0.6, cpu: 16, total: 30.5G, free: 18.8G}
+@genus:root: 9> exec find ./aula_21_08/LAB9/LIB/ -maxdepth 1 -type f -iname "*basiccell*" -printf "%f\n"
+slow_vdd1v0_basicCells.lib
+@genus:root: 10> exit
+
+Lic Summary:
+[11:09:41.458011] Cdslmd servers: ip-10-0-0-94
+[11:09:41.982312] Feature usage summary:
+[11:09:41.982313] Genus_Synthesis  
+Normal exit.

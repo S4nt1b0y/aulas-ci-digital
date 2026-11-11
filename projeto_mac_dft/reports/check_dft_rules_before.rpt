@@ -1,0 +1,50 @@
+  =================
+   Message Summary
+  =================
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Id   |  Sev  |Count|                                                             Message Text                                                             |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+|ELAB-1 |Info   |    1|Elaborating Design.                                                                                                                   |
+|ELAB-3 |Info   |    1|Done Elaborating Design.                                                                                                              |
+|LBR-9  |Warning|    2|Library cell has no output pins defined.                                                                                              |
+|       |       |     |Add the missing output pin(s)                                                                                                         |
+|       |       |     | , then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does |
+|       |       |     | not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will  |
+|       |       |     | be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for   |
+|       |       |     | synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The  |
+|       |       |     | message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in  |
+|       |       |     | the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.                        |
+|LBR-412|Info   |    1|Created nominal operating condition.                                                                                                  |
+|       |       |     |The nominal operating condition is represented, either by the nominal PVT values specified in the library source                      |
+|       |       |     | (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).                          |
+|TUI-37 |Warning|    1|This command will be obsolete in a next major release.                                                                                |
+|       |       |     |This command is obsolete and the new command define_test_signal should be used.                                                       |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Checking DFT rules for 'mac_param' module under 'muxed_scan' style
+
+Detected 0 DFT rule violation(s)
+	Summary of check_dft_rules
+	**************************
+	Number of usable scan cells: 48
+Clock Rule Violations:
+---------------------
+	  Internally driven clock net: 0
+	      Tied constant clock net: 0
+	           Undriven clock net: 0
+	Conflicting async & clock net: 0
+	              Misc. clock net: 0
+
+Async. set/reset Rule Violations:
+--------------------------------
+	Internally driven async net: 0
+	      Tied active async net: 0
+	         Undriven async net: 0
+	            Misc. async net: 0
+
+   Total number of DFT violations: 0
+
+  Total number of Test Clock Domains: 1
+  Number of user specified non-Scan registers:   0
+      Number of registers that fail DFT rules:   0
+      Number of registers that pass DFT rules:  65
+  Percentage of total registers that are scannable: 100%

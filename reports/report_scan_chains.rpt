@@ -1,0 +1,74 @@
+Reporting 1 scan chain (muxed_scan)
+ 
+Chain 1: mac_chain 
+  scan_in:      scan_in 
+  scan_out:     scan_out   
+  shift_enable: SE (active high) 
+  clock_domain: clk (edge: rise)
+  length: 64
+    bit 1 	acc_reg[0]  <clk (rise)>  
+    bit 2 	acc_reg[1]  <clk (rise)>  
+    bit 3 	acc_reg[2]  <clk (rise)>  
+    bit 4 	acc_reg[3]  <clk (rise)>  
+    bit 5 	acc_reg[4]  <clk (rise)>  
+    bit 6 	acc_reg[5]  <clk (rise)>  
+    bit 7 	acc_reg[6]  <clk (rise)>  
+    bit 8 	acc_reg[7]  <clk (rise)>  
+    bit 9 	acc_reg[8]  <clk (rise)>  
+    bit 10 	acc_reg[9]  <clk (rise)>  
+    bit 11 	acc_reg[10]  <clk (rise)>  
+    bit 12 	acc_reg[11]  <clk (rise)>  
+    bit 13 	acc_reg[12]  <clk (rise)>  
+    bit 14 	acc_reg[13]  <clk (rise)>  
+    bit 15 	acc_reg[14]  <clk (rise)>  
+    bit 16 	acc_reg[15]  <clk (rise)>  
+    bit 17 	acc_reg[16]  <clk (rise)>  
+    bit 18 	acc_reg[17]  <clk (rise)>  
+    bit 19 	acc_reg[18]  <clk (rise)>  
+    bit 20 	acc_reg[19]  <clk (rise)>  
+    bit 21 	acc_reg[20]  <clk (rise)>  
+    bit 22 	acc_reg[21]  <clk (rise)>  
+    bit 23 	acc_reg[22]  <clk (rise)>  
+    bit 24 	acc_reg[23]  <clk (rise)>  
+    bit 25 	acc_reg[24]  <clk (rise)>  
+    bit 26 	acc_reg[25]  <clk (rise)>  
+    bit 27 	busy_reg  <clk (rise)>  
+    bit 28 	cnt_reg[0]  <clk (rise)>  
+    bit 29 	cnt_reg[1]  <clk (rise)>  
+    bit 30 	cnt_reg[2]  <clk (rise)>  
+    bit 31 	cnt_reg[3]  <clk (rise)>  
+    bit 32 	cnt_reg[4]  <clk (rise)>  
+    bit 33 	cnt_reg[5]  <clk (rise)>  
+    bit 34 	cnt_reg[6]  <clk (rise)>  
+    bit 35 	cnt_reg[7]  <clk (rise)>  
+    bit 36 	cnt_reg[8]  <clk (rise)>  
+    bit 37 	cnt_reg[9]  <clk (rise)>  
+    bit 38 	done_reg  <clk (rise)>  
+    bit 39 	result_reg[0]  <clk (rise)>  
+    bit 40 	result_reg[1]  <clk (rise)>  
+    bit 41 	result_reg[2]  <clk (rise)>  
+    bit 42 	result_reg[3]  <clk (rise)>  
+    bit 43 	result_reg[4]  <clk (rise)>  
+    bit 44 	result_reg[5]  <clk (rise)>  
+    bit 45 	result_reg[6]  <clk (rise)>  
+    bit 46 	result_reg[7]  <clk (rise)>  
+    bit 47 	result_reg[8]  <clk (rise)>  
+    bit 48 	result_reg[9]  <clk (rise)>  
+    bit 49 	result_reg[10]  <clk (rise)>  
+    bit 50 	result_reg[11]  <clk (rise)>  
+    bit 51 	result_reg[12]  <clk (rise)>  
+    bit 52 	result_reg[13]  <clk (rise)>  
+    bit 53 	result_reg[14]  <clk (rise)>  
+    bit 54 	result_reg[15]  <clk (rise)>  
+    bit 55 	result_reg[16]  <clk (rise)>  
+    bit 56 	result_reg[17]  <clk (rise)>  
+    bit 57 	result_reg[18]  <clk (rise)>  
+    bit 58 	result_reg[19]  <clk (rise)>  
+    bit 59 	result_reg[20]  <clk (rise)>  
+    bit 60 	result_reg[21]  <clk (rise)>  
+    bit 61 	result_reg[22]  <clk (rise)>  
+    bit 62 	result_reg[23]  <clk (rise)>  
+    bit 63 	result_reg[24]  <clk (rise)>  
+    bit 64 	result_reg[25]  <clk (rise)>  
+------------------------
+

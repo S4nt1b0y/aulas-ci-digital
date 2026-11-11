@@ -1,0 +1,15 @@
+# Cadence Genus(TM) Synthesis Solution, Version 25.12-s067_1, built Nov 17 2025 13:10:10
+
+# Date: Sat Sep 26 11:02:45 2026
+# Host: localhost.localdomain (x86_64 w/Linux 5.14.0-687.46.1.el9_8.x86_64) (8cores*16cpus*1physical cpu*AMD Ryzen 7 5700G with Radeon Graphics 512KB)
+# OS:   Rocky Linux 9.8 (Blue Onyx)
+
+source mac_dft.tcl
+genus -files mac_dft.tcl
+genus -files mac_dft.tcl
+genus -files mac_dft.tcl
+cat reports/report_scan_chains.rpt
+cat reports/report_gates_scan.rpt
+cat reports/report_area_scan.rpt
+cat reports/report_timing_scan.rpt
+exit
