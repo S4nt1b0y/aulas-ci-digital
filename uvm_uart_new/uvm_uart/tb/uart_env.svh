@@ -2,12 +2,12 @@
 `define UART_ENV_SVH
 
 class uart_env extends uvm_env;
-
   `uvm_component_utils(uart_env)
 
   uart_agent agent;
   uart_ref_model ref_model;
   uart_scoreboard scoreboard;
+  int unsigned expected_count = 13;
 
   function new(string name = "uart_env",
                uvm_component parent = null);
@@ -16,7 +16,8 @@ class uart_env extends uvm_env;
 
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
-    
+    void'(uvm_config_db#(int unsigned)::get(
+      this, "", "expected_count", expected_count));
     agent = uart_agent::type_id::create("agent", this);
     ref_model = uart_ref_model::type_id::create("ref_model", this);
     scoreboard = uart_scoreboard::type_id::create("scoreboard", this);
@@ -24,13 +25,18 @@ class uart_env extends uvm_env;
 
   function void connect_phase(uvm_phase phase);
     super.connect_phase(phase);
-
     agent.monitor.cmd_ap.connect(ref_model.cmd_imp);
     ref_model.exp_ap.connect(scoreboard.expected_fifo.analysis_export);
-    agent.monitor.tx_ap.connect(scoreboard.actual_fifo.analysis_export);
-
+    agent.monitor.tx_ap.connect(scoreboard.act_imp);
   endfunction
 
+  function void check_phase(uvm_phase phase);
+    super.check_phase(phase);
+    if (ref_model.num_commands != expected_count)
+      `uvm_error("ENV", $sformatf(
+        "Esperados %0d comandos aceitos, observados %0d",
+        expected_count, ref_model.num_commands))
+  endfunction
 endclass
 
 `endif
