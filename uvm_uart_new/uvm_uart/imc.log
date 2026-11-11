@@ -1,0 +1,4 @@
+IMC(64): 24.09-a001: (c) Copyright 1995-2024 Cadence Design Systems Inc - Simulator version: 24.09-s013 - Coverage engine version: 24.09-s013
+Starting gui mode
+imc: *I,RUNLD: Successfully loaded run /mnt/c/Users/gusta/projects/aulas-ci-digital/uvm_uart_new/uvm_uart/cov_work/scope/b_200_random.
+imc: *I,RUNLD: Successfully loaded run /mnt/c/Users/gusta/projects/aulas-ci-digital/uvm_uart_new/uvm_uart/cov_work/scope/b_200_seed1.
