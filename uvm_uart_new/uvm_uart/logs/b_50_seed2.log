@@ -1,0 +1,360 @@
+xrun(64): 24.09-s013: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s013: Started on Nov 10, 2026 at 23:05:56 -03
+xrun
+	-64bit
+	-sv
+	-uvm
+	-timescale 1ns/1ps
+	+incdir+tb
+	tb/uart_if.sv
+	tb/uart_uvm_pkg.sv
+	rtl/uart_tx_dut.sv
+	tb/tb_top.sv
+	-top tb_top
+	-access +r
+	-coverage all
+	-covworkdir cov_work
+	-covoverwrite
+	+UVM_VERBOSITY=UVM_MEDIUM
+	-covtest b_50_seed2
+	+UVM_TESTNAME=uart_random_test
+	+NUM_ITEMS=50
+	-svseed 2
+	-l logs/b_50_seed2.log
+
+   User defined plus("+") options:
+	+UVM_VERBOSITY=UVM_MEDIUM
+	+NUM_ITEMS=50
+
+Loading snapshot worklib.tb_top:sv .................... Done
+SVSEED set from command line: 2
+xcelium> source /cadence/XCELIUM2409/tools/xcelium/files/xmsimrc
+xcelium> source /cadence/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/additions/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+----------------------------------------------------------------
+CDNS-UVM-1.1d (24.09-s013)
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test uart_random_test...
+UVM_INFO tb/uart_random_test.svh(41) @ 0: uvm_test_top [RANDOM_TEST] NUM_ITEMS=50 FORCE_POKES=0 timeout=10200000000
+UVM_INFO tb/uart_driver.svh(62) @ 450000: uvm_test_top.env.agent.driver [DRV] item=1 data=0xdc idle_cycles=0 poke_busy=0 poke_delay=269
+UVM_INFO tb/uart_monitor.svh(68) @ 650000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xdc
+UVM_INFO tb/uart_ref_model.svh(26) @ 650000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xdc
+UVM_INFO tb/uart_monitor.svh(120) @ 95750000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xdc start_ok=1 stop_ok=1 gap_clks=4
+UVM_INFO tb/uart_scoreboard.svh(88) @ 95750000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xdc
+UVM_INFO tb/uart_driver.svh(62) @ 100750000: uvm_test_top.env.agent.driver [DRV] item=2 data=0xbe idle_cycles=20 poke_busy=0 poke_delay=103
+UVM_INFO tb/uart_monitor.svh(68) @ 102950000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xbe
+UVM_INFO tb/uart_ref_model.svh(26) @ 102950000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xbe
+UVM_INFO tb/uart_monitor.svh(120) @ 198050000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xbe start_ok=1 stop_ok=1 gap_clks=23
+UVM_INFO tb/uart_scoreboard.svh(88) @ 198050000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xbe
+UVM_INFO tb/uart_driver.svh(62) @ 203050000: uvm_test_top.env.agent.driver [DRV] item=3 data=0xfc idle_cycles=0 poke_busy=0 poke_delay=102
+UVM_INFO tb/uart_monitor.svh(68) @ 203250000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xfc
+UVM_INFO tb/uart_ref_model.svh(26) @ 203250000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xfc
+UVM_INFO tb/uart_monitor.svh(120) @ 298350000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xfc start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 298350000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xfc
+UVM_INFO tb/uart_driver.svh(62) @ 303350000: uvm_test_top.env.agent.driver [DRV] item=4 data=0xa6 idle_cycles=0 poke_busy=0 poke_delay=797
+UVM_INFO tb/uart_monitor.svh(68) @ 303550000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xa6
+UVM_INFO tb/uart_ref_model.svh(26) @ 303550000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xa6
+UVM_INFO tb/uart_monitor.svh(120) @ 398650000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xa6 start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 398650000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xa6
+UVM_INFO tb/uart_driver.svh(62) @ 403650000: uvm_test_top.env.agent.driver [DRV] item=5 data=0x40 idle_cycles=28 poke_busy=0 poke_delay=712
+UVM_INFO tb/uart_monitor.svh(68) @ 406650000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x40
+UVM_INFO tb/uart_ref_model.svh(26) @ 406650000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x40
+UVM_INFO tb/uart_monitor.svh(120) @ 501750000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x40 start_ok=1 stop_ok=1 gap_clks=31
+UVM_INFO tb/uart_scoreboard.svh(88) @ 501750000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x40
+UVM_INFO tb/uart_driver.svh(62) @ 506750000: uvm_test_top.env.agent.driver [DRV] item=6 data=0x07 idle_cycles=0 poke_busy=0 poke_delay=296
+UVM_INFO tb/uart_monitor.svh(68) @ 506950000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x07
+UVM_INFO tb/uart_ref_model.svh(26) @ 506950000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x07
+UVM_INFO tb/uart_monitor.svh(120) @ 602050000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x07 start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 602050000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x07
+UVM_INFO tb/uart_driver.svh(62) @ 607050000: uvm_test_top.env.agent.driver [DRV] item=7 data=0x26 idle_cycles=42 poke_busy=0 poke_delay=329
+UVM_INFO tb/uart_monitor.svh(68) @ 611450000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x26
+UVM_INFO tb/uart_ref_model.svh(26) @ 611450000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x26
+UVM_INFO tb/uart_monitor.svh(120) @ 706550000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x26 start_ok=1 stop_ok=1 gap_clks=45
+UVM_INFO tb/uart_scoreboard.svh(88) @ 706550000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x26
+UVM_INFO tb/uart_driver.svh(62) @ 711550000: uvm_test_top.env.agent.driver [DRV] item=8 data=0x62 idle_cycles=112 poke_busy=0 poke_delay=532
+UVM_INFO tb/uart_monitor.svh(68) @ 722950000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x62
+UVM_INFO tb/uart_ref_model.svh(26) @ 722950000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x62
+UVM_INFO tb/uart_monitor.svh(120) @ 818050000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x62 start_ok=1 stop_ok=1 gap_clks=115
+UVM_INFO tb/uart_scoreboard.svh(88) @ 818050000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x62
+UVM_INFO tb/uart_driver.svh(62) @ 823050000: uvm_test_top.env.agent.driver [DRV] item=9 data=0xc7 idle_cycles=31 poke_busy=0 poke_delay=628
+UVM_INFO tb/uart_monitor.svh(68) @ 826350000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xc7
+UVM_INFO tb/uart_ref_model.svh(26) @ 826350000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xc7
+UVM_INFO tb/uart_monitor.svh(120) @ 921450000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xc7 start_ok=1 stop_ok=1 gap_clks=34
+UVM_INFO tb/uart_scoreboard.svh(88) @ 921450000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xc7
+UVM_INFO tb/uart_driver.svh(62) @ 926450000: uvm_test_top.env.agent.driver [DRV] item=10 data=0x49 idle_cycles=473 poke_busy=1 poke_delay=213
+UVM_INFO tb/uart_monitor.svh(68) @ 973950000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x49
+UVM_INFO tb/uart_ref_model.svh(26) @ 973950000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x49
+UVM_INFO tb/uart_driver.svh(44) @ 995250000: uvm_test_top.env.agent.driver [POKE] item=10 time=995250000 original=0x49 intruso=0xb6 delay=213 busy=1
+UVM_INFO tb/uart_monitor.svh(120) @ 1069050000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x49 start_ok=1 stop_ok=1 gap_clks=476
+UVM_INFO tb/uart_scoreboard.svh(88) @ 1069050000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x49
+UVM_INFO tb/uart_driver.svh(62) @ 1074050000: uvm_test_top.env.agent.driver [DRV] item=11 data=0xcb idle_cycles=0 poke_busy=0 poke_delay=599
+UVM_INFO tb/uart_monitor.svh(68) @ 1074250000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xcb
+UVM_INFO tb/uart_ref_model.svh(26) @ 1074250000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xcb
+UVM_INFO tb/uart_monitor.svh(120) @ 1169350000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xcb start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 1169350000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xcb
+UVM_INFO tb/uart_driver.svh(62) @ 1174350000: uvm_test_top.env.agent.driver [DRV] item=12 data=0x4b idle_cycles=0 poke_busy=0 poke_delay=740
+UVM_INFO tb/uart_monitor.svh(68) @ 1174550000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x4b
+UVM_INFO tb/uart_ref_model.svh(26) @ 1174550000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x4b
+UVM_INFO tb/uart_monitor.svh(120) @ 1269650000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x4b start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 1269650000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x4b
+UVM_INFO tb/uart_driver.svh(62) @ 1274650000: uvm_test_top.env.agent.driver [DRV] item=13 data=0xcd idle_cycles=0 poke_busy=0 poke_delay=72
+UVM_INFO tb/uart_monitor.svh(68) @ 1274850000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xcd
+UVM_INFO tb/uart_ref_model.svh(26) @ 1274850000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xcd
+UVM_INFO tb/uart_monitor.svh(120) @ 1369950000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xcd start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 1369950000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xcd
+UVM_INFO tb/uart_driver.svh(62) @ 1374950000: uvm_test_top.env.agent.driver [DRV] item=14 data=0x1b idle_cycles=46 poke_busy=0 poke_delay=730
+UVM_INFO tb/uart_monitor.svh(68) @ 1379750000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x1b
+UVM_INFO tb/uart_ref_model.svh(26) @ 1379750000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x1b
+UVM_INFO tb/uart_monitor.svh(120) @ 1474850000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x1b start_ok=1 stop_ok=1 gap_clks=49
+UVM_INFO tb/uart_scoreboard.svh(88) @ 1474850000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x1b
+UVM_INFO tb/uart_driver.svh(62) @ 1479850000: uvm_test_top.env.agent.driver [DRV] item=15 data=0x82 idle_cycles=41 poke_busy=0 poke_delay=891
+UVM_INFO tb/uart_monitor.svh(68) @ 1484150000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x82
+UVM_INFO tb/uart_ref_model.svh(26) @ 1484150000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x82
+UVM_INFO tb/uart_monitor.svh(120) @ 1579250000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x82 start_ok=1 stop_ok=1 gap_clks=44
+UVM_INFO tb/uart_scoreboard.svh(88) @ 1579250000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x82
+UVM_INFO tb/uart_driver.svh(62) @ 1584250000: uvm_test_top.env.agent.driver [DRV] item=16 data=0x06 idle_cycles=381 poke_busy=1 poke_delay=541
+UVM_INFO tb/uart_monitor.svh(68) @ 1622550000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x06
+UVM_INFO tb/uart_ref_model.svh(26) @ 1622550000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x06
+UVM_INFO tb/uart_driver.svh(44) @ 1676650000: uvm_test_top.env.agent.driver [POKE] item=16 time=1676650000 original=0x06 intruso=0xf9 delay=541 busy=1
+UVM_INFO tb/uart_monitor.svh(120) @ 1717650000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x06 start_ok=1 stop_ok=1 gap_clks=384
+UVM_INFO tb/uart_scoreboard.svh(88) @ 1717650000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x06
+UVM_INFO tb/uart_driver.svh(62) @ 1722650000: uvm_test_top.env.agent.driver [DRV] item=17 data=0xdc idle_cycles=0 poke_busy=0 poke_delay=236
+UVM_INFO tb/uart_monitor.svh(68) @ 1722850000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xdc
+UVM_INFO tb/uart_ref_model.svh(26) @ 1722850000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xdc
+UVM_INFO tb/uart_monitor.svh(120) @ 1817950000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xdc start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 1817950000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xdc
+UVM_INFO tb/uart_driver.svh(62) @ 1822950000: uvm_test_top.env.agent.driver [DRV] item=18 data=0x9e idle_cycles=0 poke_busy=0 poke_delay=43
+UVM_INFO tb/uart_monitor.svh(68) @ 1823150000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x9e
+UVM_INFO tb/uart_ref_model.svh(26) @ 1823150000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x9e
+UVM_INFO tb/uart_monitor.svh(120) @ 1918250000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x9e start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 1918250000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x9e
+UVM_INFO tb/uart_driver.svh(62) @ 1923250000: uvm_test_top.env.agent.driver [DRV] item=19 data=0xbc idle_cycles=6 poke_busy=0 poke_delay=609
+UVM_INFO tb/uart_monitor.svh(68) @ 1924050000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xbc
+UVM_INFO tb/uart_ref_model.svh(26) @ 1924050000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xbc
+UVM_INFO tb/uart_monitor.svh(120) @ 2019150000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xbc start_ok=1 stop_ok=1 gap_clks=9
+UVM_INFO tb/uart_scoreboard.svh(88) @ 2019150000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xbc
+UVM_INFO tb/uart_driver.svh(62) @ 2024150000: uvm_test_top.env.agent.driver [DRV] item=20 data=0x18 idle_cycles=0 poke_busy=0 poke_delay=567
+UVM_INFO tb/uart_monitor.svh(68) @ 2024350000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x18
+UVM_INFO tb/uart_ref_model.svh(26) @ 2024350000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x18
+UVM_INFO tb/uart_monitor.svh(120) @ 2119450000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x18 start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 2119450000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x18
+UVM_INFO tb/uart_driver.svh(62) @ 2124450000: uvm_test_top.env.agent.driver [DRV] item=21 data=0x80 idle_cycles=362 poke_busy=0 poke_delay=793
+UVM_INFO tb/uart_monitor.svh(68) @ 2160850000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x80
+UVM_INFO tb/uart_ref_model.svh(26) @ 2160850000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x80
+UVM_INFO tb/uart_monitor.svh(120) @ 2255950000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x80 start_ok=1 stop_ok=1 gap_clks=365
+UVM_INFO tb/uart_scoreboard.svh(88) @ 2255950000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x80
+UVM_INFO tb/uart_driver.svh(62) @ 2260950000: uvm_test_top.env.agent.driver [DRV] item=22 data=0xfb idle_cycles=0 poke_busy=0 poke_delay=497
+UVM_INFO tb/uart_monitor.svh(68) @ 2261150000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xfb
+UVM_INFO tb/uart_ref_model.svh(26) @ 2261150000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xfb
+UVM_INFO tb/uart_monitor.svh(120) @ 2356250000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xfb start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 2356250000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xfb
+UVM_INFO tb/uart_driver.svh(62) @ 2361250000: uvm_test_top.env.agent.driver [DRV] item=23 data=0xd1 idle_cycles=259 poke_busy=0 poke_delay=765
+UVM_INFO tb/uart_monitor.svh(68) @ 2387350000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xd1
+UVM_INFO tb/uart_ref_model.svh(26) @ 2387350000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xd1
+UVM_INFO tb/uart_monitor.svh(120) @ 2482450000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xd1 start_ok=1 stop_ok=1 gap_clks=262
+UVM_INFO tb/uart_scoreboard.svh(88) @ 2482450000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xd1
+UVM_INFO tb/uart_driver.svh(62) @ 2487450000: uvm_test_top.env.agent.driver [DRV] item=24 data=0xba idle_cycles=70 poke_busy=0 poke_delay=511
+UVM_INFO tb/uart_monitor.svh(68) @ 2494650000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xba
+UVM_INFO tb/uart_ref_model.svh(26) @ 2494650000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xba
+UVM_INFO tb/uart_monitor.svh(120) @ 2589750000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xba start_ok=1 stop_ok=1 gap_clks=73
+UVM_INFO tb/uart_scoreboard.svh(88) @ 2589750000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xba
+UVM_INFO tb/uart_driver.svh(62) @ 2594750000: uvm_test_top.env.agent.driver [DRV] item=25 data=0x8b idle_cycles=0 poke_busy=0 poke_delay=802
+UVM_INFO tb/uart_monitor.svh(68) @ 2594950000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x8b
+UVM_INFO tb/uart_ref_model.svh(26) @ 2594950000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x8b
+UVM_INFO tb/uart_monitor.svh(120) @ 2690050000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x8b start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 2690050000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x8b
+UVM_INFO tb/uart_driver.svh(62) @ 2695050000: uvm_test_top.env.agent.driver [DRV] item=26 data=0x0d idle_cycles=442 poke_busy=0 poke_delay=549
+UVM_INFO tb/uart_monitor.svh(68) @ 2739450000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x0d
+UVM_INFO tb/uart_ref_model.svh(26) @ 2739450000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x0d
+UVM_INFO tb/uart_monitor.svh(120) @ 2834550000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x0d start_ok=1 stop_ok=1 gap_clks=445
+UVM_INFO tb/uart_scoreboard.svh(88) @ 2834550000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x0d
+UVM_INFO tb/uart_driver.svh(62) @ 2839550000: uvm_test_top.env.agent.driver [DRV] item=27 data=0x77 idle_cycles=490 poke_busy=0 poke_delay=839
+UVM_INFO tb/uart_monitor.svh(68) @ 2888750000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x77
+UVM_INFO tb/uart_ref_model.svh(26) @ 2888750000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x77
+UVM_INFO tb/uart_monitor.svh(120) @ 2983850000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x77 start_ok=1 stop_ok=1 gap_clks=493
+UVM_INFO tb/uart_scoreboard.svh(88) @ 2983850000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x77
+UVM_INFO tb/uart_driver.svh(62) @ 2988850000: uvm_test_top.env.agent.driver [DRV] item=28 data=0xf3 idle_cycles=0 poke_busy=0 poke_delay=767
+UVM_INFO tb/uart_monitor.svh(68) @ 2989050000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xf3
+UVM_INFO tb/uart_ref_model.svh(26) @ 2989050000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xf3
+UVM_INFO tb/uart_monitor.svh(120) @ 3084150000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xf3 start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 3084150000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xf3
+UVM_INFO tb/uart_driver.svh(62) @ 3089150000: uvm_test_top.env.agent.driver [DRV] item=29 data=0xe8 idle_cycles=267 poke_busy=0 poke_delay=566
+UVM_INFO tb/uart_monitor.svh(68) @ 3116050000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xe8
+UVM_INFO tb/uart_ref_model.svh(26) @ 3116050000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xe8
+UVM_INFO tb/uart_monitor.svh(120) @ 3211150000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xe8 start_ok=1 stop_ok=1 gap_clks=270
+UVM_INFO tb/uart_scoreboard.svh(88) @ 3211150000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xe8
+UVM_INFO tb/uart_driver.svh(62) @ 3216150000: uvm_test_top.env.agent.driver [DRV] item=30 data=0x78 idle_cycles=0 poke_busy=1 poke_delay=878
+UVM_INFO tb/uart_monitor.svh(68) @ 3216350000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x78
+UVM_INFO tb/uart_ref_model.svh(26) @ 3216350000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x78
+UVM_INFO tb/uart_driver.svh(44) @ 3304150000: uvm_test_top.env.agent.driver [POKE] item=30 time=3304150000 original=0x78 intruso=0x87 delay=878 busy=1
+UVM_INFO tb/uart_monitor.svh(120) @ 3311450000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x78 start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 3311450000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x78
+UVM_INFO tb/uart_driver.svh(62) @ 3316450000: uvm_test_top.env.agent.driver [DRV] item=31 data=0x46 idle_cycles=0 poke_busy=0 poke_delay=70
+UVM_INFO tb/uart_monitor.svh(68) @ 3316650000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x46
+UVM_INFO tb/uart_ref_model.svh(26) @ 3316650000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x46
+UVM_INFO tb/uart_monitor.svh(120) @ 3411750000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x46 start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 3411750000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x46
+UVM_INFO tb/uart_driver.svh(62) @ 3416750000: uvm_test_top.env.agent.driver [DRV] item=32 data=0xa8 idle_cycles=0 poke_busy=0 poke_delay=875
+UVM_INFO tb/uart_monitor.svh(68) @ 3416950000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xa8
+UVM_INFO tb/uart_ref_model.svh(26) @ 3416950000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xa8
+UVM_INFO tb/uart_monitor.svh(120) @ 3512050000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xa8 start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 3512050000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xa8
+UVM_INFO tb/uart_driver.svh(62) @ 3517050000: uvm_test_top.env.agent.driver [DRV] item=33 data=0x0c idle_cycles=0 poke_busy=0 poke_delay=871
+UVM_INFO tb/uart_monitor.svh(68) @ 3517250000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x0c
+UVM_INFO tb/uart_ref_model.svh(26) @ 3517250000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x0c
+UVM_INFO tb/uart_monitor.svh(120) @ 3612350000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x0c start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 3612350000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x0c
+UVM_INFO tb/uart_driver.svh(62) @ 3617350000: uvm_test_top.env.agent.driver [DRV] item=34 data=0x73 idle_cycles=21 poke_busy=0 poke_delay=644
+UVM_INFO tb/uart_monitor.svh(68) @ 3619650000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x73
+UVM_INFO tb/uart_ref_model.svh(26) @ 3619650000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x73
+UVM_INFO tb/uart_monitor.svh(120) @ 3714750000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x73 start_ok=1 stop_ok=1 gap_clks=24
+UVM_INFO tb/uart_scoreboard.svh(88) @ 3714750000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x73
+UVM_INFO tb/uart_driver.svh(62) @ 3719750000: uvm_test_top.env.agent.driver [DRV] item=35 data=0x25 idle_cycles=20 poke_busy=0 poke_delay=382
+UVM_INFO tb/uart_monitor.svh(68) @ 3721950000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x25
+UVM_INFO tb/uart_ref_model.svh(26) @ 3721950000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x25
+UVM_INFO tb/uart_monitor.svh(120) @ 3817050000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x25 start_ok=1 stop_ok=1 gap_clks=23
+UVM_INFO tb/uart_scoreboard.svh(88) @ 3817050000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x25
+UVM_INFO tb/uart_driver.svh(62) @ 3822050000: uvm_test_top.env.agent.driver [DRV] item=36 data=0x2e idle_cycles=31 poke_busy=0 poke_delay=907
+UVM_INFO tb/uart_monitor.svh(68) @ 3825350000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x2e
+UVM_INFO tb/uart_ref_model.svh(26) @ 3825350000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x2e
+UVM_INFO tb/uart_monitor.svh(120) @ 3920450000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x2e start_ok=1 stop_ok=1 gap_clks=34
+UVM_INFO tb/uart_scoreboard.svh(88) @ 3920450000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x2e
+UVM_INFO tb/uart_driver.svh(62) @ 3925450000: uvm_test_top.env.agent.driver [DRV] item=37 data=0xa3 idle_cycles=0 poke_busy=1 poke_delay=618
+UVM_INFO tb/uart_monitor.svh(68) @ 3925650000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xa3
+UVM_INFO tb/uart_ref_model.svh(26) @ 3925650000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xa3
+UVM_INFO tb/uart_driver.svh(44) @ 3987450000: uvm_test_top.env.agent.driver [POKE] item=37 time=3987450000 original=0xa3 intruso=0x5c delay=618 busy=1
+UVM_INFO tb/uart_monitor.svh(120) @ 4020750000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xa3 start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 4020750000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xa3
+UVM_INFO tb/uart_driver.svh(62) @ 4025750000: uvm_test_top.env.agent.driver [DRV] item=38 data=0xa4 idle_cycles=386 poke_busy=0 poke_delay=828
+UVM_INFO tb/uart_monitor.svh(68) @ 4064550000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xa4
+UVM_INFO tb/uart_ref_model.svh(26) @ 4064550000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xa4
+UVM_INFO tb/uart_monitor.svh(120) @ 4159650000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xa4 start_ok=1 stop_ok=1 gap_clks=389
+UVM_INFO tb/uart_scoreboard.svh(88) @ 4159650000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xa4
+UVM_INFO tb/uart_driver.svh(62) @ 4164650000: uvm_test_top.env.agent.driver [DRV] item=39 data=0x69 idle_cycles=0 poke_busy=0 poke_delay=53
+UVM_INFO tb/uart_monitor.svh(68) @ 4164850000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x69
+UVM_INFO tb/uart_ref_model.svh(26) @ 4164850000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x69
+UVM_INFO tb/uart_monitor.svh(120) @ 4259950000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x69 start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 4259950000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x69
+UVM_INFO tb/uart_driver.svh(62) @ 4264950000: uvm_test_top.env.agent.driver [DRV] item=40 data=0x44 idle_cycles=47 poke_busy=0 poke_delay=709
+UVM_INFO tb/uart_monitor.svh(68) @ 4269850000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x44
+UVM_INFO tb/uart_ref_model.svh(26) @ 4269850000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x44
+UVM_INFO tb/uart_monitor.svh(120) @ 4364950000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x44 start_ok=1 stop_ok=1 gap_clks=50
+UVM_INFO tb/uart_scoreboard.svh(88) @ 4364950000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x44
+UVM_INFO tb/uart_driver.svh(62) @ 4369950000: uvm_test_top.env.agent.driver [DRV] item=41 data=0x95 idle_cycles=38 poke_busy=0 poke_delay=615
+UVM_INFO tb/uart_monitor.svh(68) @ 4373950000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x95
+UVM_INFO tb/uart_ref_model.svh(26) @ 4373950000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x95
+UVM_INFO tb/uart_monitor.svh(120) @ 4469050000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x95 start_ok=1 stop_ok=1 gap_clks=41
+UVM_INFO tb/uart_scoreboard.svh(88) @ 4469050000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x95
+UVM_INFO tb/uart_driver.svh(62) @ 4474050000: uvm_test_top.env.agent.driver [DRV] item=42 data=0x9f idle_cycles=318 poke_busy=0 poke_delay=181
+UVM_INFO tb/uart_monitor.svh(68) @ 4506050000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x9f
+UVM_INFO tb/uart_ref_model.svh(26) @ 4506050000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x9f
+UVM_INFO tb/uart_monitor.svh(120) @ 4601150000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x9f start_ok=1 stop_ok=1 gap_clks=321
+UVM_INFO tb/uart_scoreboard.svh(88) @ 4601150000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x9f
+UVM_INFO tb/uart_driver.svh(62) @ 4606150000: uvm_test_top.env.agent.driver [DRV] item=43 data=0x03 idle_cycles=0 poke_busy=0 poke_delay=512
+UVM_INFO tb/uart_monitor.svh(68) @ 4606350000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x03
+UVM_INFO tb/uart_ref_model.svh(26) @ 4606350000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x03
+UVM_INFO tb/uart_monitor.svh(120) @ 4701450000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x03 start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 4701450000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x03
+UVM_INFO tb/uart_driver.svh(62) @ 4706450000: uvm_test_top.env.agent.driver [DRV] item=44 data=0xe7 idle_cycles=0 poke_busy=0 poke_delay=649
+UVM_INFO tb/uart_monitor.svh(68) @ 4706650000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xe7
+UVM_INFO tb/uart_ref_model.svh(26) @ 4706650000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xe7
+UVM_INFO tb/uart_monitor.svh(120) @ 4801750000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xe7 start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 4801750000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xe7
+UVM_INFO tb/uart_driver.svh(62) @ 4806750000: uvm_test_top.env.agent.driver [DRV] item=45 data=0xa4 idle_cycles=5 poke_busy=0 poke_delay=343
+UVM_INFO tb/uart_monitor.svh(68) @ 4807450000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xa4
+UVM_INFO tb/uart_ref_model.svh(26) @ 4807450000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xa4
+UVM_INFO tb/uart_monitor.svh(120) @ 4902550000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xa4 start_ok=1 stop_ok=1 gap_clks=8
+UVM_INFO tb/uart_scoreboard.svh(88) @ 4902550000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xa4
+UVM_INFO tb/uart_driver.svh(62) @ 4907550000: uvm_test_top.env.agent.driver [DRV] item=46 data=0x59 idle_cycles=0 poke_busy=0 poke_delay=593
+UVM_INFO tb/uart_monitor.svh(68) @ 4907750000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x59
+UVM_INFO tb/uart_ref_model.svh(26) @ 4907750000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x59
+UVM_INFO tb/uart_monitor.svh(120) @ 5002850000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x59 start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 5002850000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x59
+UVM_INFO tb/uart_driver.svh(62) @ 5007850000: uvm_test_top.env.agent.driver [DRV] item=47 data=0x5e idle_cycles=0 poke_busy=0 poke_delay=563
+UVM_INFO tb/uart_monitor.svh(68) @ 5008050000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x5e
+UVM_INFO tb/uart_ref_model.svh(26) @ 5008050000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x5e
+UVM_INFO tb/uart_monitor.svh(120) @ 5103150000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x5e start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 5103150000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x5e
+UVM_INFO tb/uart_driver.svh(62) @ 5108150000: uvm_test_top.env.agent.driver [DRV] item=48 data=0xec idle_cycles=0 poke_busy=0 poke_delay=586
+UVM_INFO tb/uart_monitor.svh(68) @ 5108350000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xec
+UVM_INFO tb/uart_ref_model.svh(26) @ 5108350000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xec
+UVM_INFO tb/uart_monitor.svh(120) @ 5203450000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xec start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 5203450000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xec
+UVM_INFO tb/uart_driver.svh(62) @ 5208450000: uvm_test_top.env.agent.driver [DRV] item=49 data=0x7d idle_cycles=279 poke_busy=0 poke_delay=262
+UVM_INFO tb/uart_monitor.svh(68) @ 5236550000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x7d
+UVM_INFO tb/uart_ref_model.svh(26) @ 5236550000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x7d
+UVM_INFO tb/uart_monitor.svh(120) @ 5331650000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x7d start_ok=1 stop_ok=1 gap_clks=282
+UVM_INFO tb/uart_scoreboard.svh(88) @ 5331650000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x7d
+UVM_INFO tb/uart_driver.svh(62) @ 5336650000: uvm_test_top.env.agent.driver [DRV] item=50 data=0xd0 idle_cycles=138 poke_busy=0 poke_delay=299
+UVM_INFO tb/uart_monitor.svh(68) @ 5350650000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xd0
+UVM_INFO tb/uart_ref_model.svh(26) @ 5350650000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xd0
+UVM_INFO tb/uart_monitor.svh(120) @ 5445750000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xd0 start_ok=1 stop_ok=1 gap_clks=141
+UVM_INFO tb/uart_scoreboard.svh(88) @ 5445750000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xd0
+UVM_INFO tb/uart_random_test.svh(66) @ 5450950000: uvm_test_top [TEST_DONE] Cenario aleatorio concluido
+UVM_INFO /cadence/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 5450950000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO tb/uart_driver.svh(72) @ 5450950000: uvm_test_top.env.agent.driver [DRV_SUMMARY] items=50 pokes=4
+UVM_INFO tb/uart_scoreboard.svh(113) @ 5450950000: uvm_test_top.env.scoreboard [SCB_SUMMARY] matches=50 mismatches=0 pending_expected=0 pending_actual=0
+UVM_INFO tb/uart_scoreboard.svh(123) @ 5450950000: uvm_test_top.env.scoreboard [SCB_COV] samples=50 frame coverage=84.09% (data=72.73% parity=100.00% gap=100.00% data_x_gap=63.64%)
+
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  261
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[DRV]    50
+[DRV_SUMMARY]     1
+[MON]   100
+[POKE]     4
+[RANDOM_TEST]     1
+[REF]    50
+[RNTST]     1
+[SCB]    50
+[SCB_COV]     1
+[SCB_SUMMARY]     1
+[TEST_DONE]     2
+Simulation complete via $finish(1) at time 5450950 NS + 45
+/cadence/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
+xcelium> exit
+xmsim: *N,COVCGN: Coverage configuration file command "set_covergroup -new_instance_reporting" can be specified to improve the scoping and naming of covergroup instances. It may be noted that subsequent merging of a coverage database saved with this command and a coverage database saved without this command is not allowed.
+xmsim: *W,CGDEFN: Default name "worklib.uvm_pkg::.cg_frame" will be generated for covergroup instance "cg_frame" as the name of the covergroup instance is not specified explicitly: ./tb/uart_scoreboard.svh, 13.
+
+coverage setup:
+  workdir  :  cov_work
+  dutinst  :  tb_top(tb_top)
+  scope    :  scope
+  testname :  b_50_seed2
+
+coverage files:
+  model(design data) :  cov_work/scope/icc_771a0de3_04f6d3cc.ucm (reused)
+  data               :  cov_work/scope/b_50_seed2/icc_771a0de3_04f6d3cc.ucd
+TOOL:	xrun(64)	24.09-s013: Exiting on Nov 10, 2026 at 23:06:01 -03  (total: 00:00:05)

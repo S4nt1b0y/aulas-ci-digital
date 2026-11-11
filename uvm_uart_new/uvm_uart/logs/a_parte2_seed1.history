@@ -1,0 +1,2 @@
+#e1(10Nov2026:22:48:35): source ./xcelium.d/env.d/env.history.10Nov2026_22_48_35
+s1(10Nov2026:22:48:35):  xrun -64bit -sv -uvm -timescale 1ns/1ps +incdir+tb tb/uart_if.sv tb/uart_uvm_pkg.sv rtl/uart_tx_dut.sv tb/tb_top.sv -top tb_top -access +r -coverage all -covworkdir cov_work -covoverwrite +UVM_VERBOSITY=UVM_MEDIUM -covtest a_parte2_seed1 +UVM_TESTNAME=uart_test -svseed 1 -l logs/a_parte2_seed1.log 

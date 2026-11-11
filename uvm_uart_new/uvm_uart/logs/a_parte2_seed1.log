@@ -1,0 +1,241 @@
+xrun(64): 24.09-s013: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s013: Started on Nov 10, 2026 at 22:48:35 -03
+xrun
+	-64bit
+	-sv
+	-uvm
+	-timescale 1ns/1ps
+	+incdir+tb
+	tb/uart_if.sv
+	tb/uart_uvm_pkg.sv
+	rtl/uart_tx_dut.sv
+	tb/tb_top.sv
+	-top tb_top
+	-access +r
+	-coverage all
+	-covworkdir cov_work
+	-covoverwrite
+	+UVM_VERBOSITY=UVM_MEDIUM
+	-covtest a_parte2_seed1
+	+UVM_TESTNAME=uart_test
+	-svseed 1
+	-l logs/a_parte2_seed1.log
+
+   User defined plus("+") options:
+	+UVM_VERBOSITY=UVM_MEDIUM
+
+Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /cadence/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d
+file: tb/uart_if.sv
+	interface worklib.uart_if:sv
+		errors: 0, warnings: 0
+file: tb/uart_uvm_pkg.sv
+	package worklib.uart_uvm_pkg:sv
+		errors: 0, warnings: 0
+file: rtl/uart_tx_dut.sv
+	module worklib.uart_tx_dut:sv
+		errors: 0, warnings: 0
+file: tb/tb_top.sv
+	module worklib.tb_top:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		uvm_pkg
+		cdns_uvmapi
+		cdns_assert2uvm_pkg
+		cdns_uvm_pkg
+		uart_uvm_pkg
+		tb_top
+
+	Extracting FSMs for coverage:
+		worklib.uart_tx_dut
+			FSM extracted for state register state
+		worklib.tb_top
+	Total FSMs extracted = 1
+	Building instance overlay tables: ....................
+xmelab: *W,COVFDP: FSM description matching across instance of a module for "COVFDM" warning has been moved from elaboration to simulation dumping. To restore old matching behavior, use "set_backward_compat -COVFDM_during_elab". Also, it is recommended to use set_parameterized_module_coverage CCF command to avoid coverage loss due to FSM description difference across instances of a module.
+xmelab: *W,COVFHT: FSM hold transitions (transitions to the current state) are not extracted for any FSM in default mode.
+ Done
+	Enabling instrumentation for coverage types: block expression FSM toggle functional
+xmelab: *W,COVDCL: By default expression coverage is scored only for Verilog logical operators (|| and &&) and VHDL logical operators (OR, AND, NOR, and NAND), and is scored only in condition expressions. To score coverage for other operators and for expressions in other statements, use the "set_expr_coverable_operators" and "set_expr_coverable_statements" coverage configuration file commands with suitable options at elaboration.
+	Generating native compiled code:
+		worklib.uart_tx_dut:sv <0x0d86d20d>
+			streams:  13, words: 10152
+		worklib.tb_top:sv <0x44361e15>
+			streams:  11, words:  6956
+		worklib.uart_uvm_pkg:sv <0x6829f247>
+			streams: 965, words: 1086009
+		worklib.cdns_uvm_pkg:sv <0x445235eb>
+			streams: 179, words: 281542
+		worklib.cdns_uvmapi:svp <0x7cfd1a96>
+			streams:  27, words: 30445
+		worklib.cdns_assert2uvm_pkg:sv <0x01e6fff6>
+			streams:   3, words:  1761
+		worklib.uvm_pkg:sv <0x0d84ed7f>
+			streams: 5098, words: 7911942
+		worklib.uart_if:sv <0x20094643>
+			streams:   1, words:  1068
+xmelab: *W,COVNOEN: By default, toggle coverage is not supported for systemverilog enumerated nets and variables. To enable toggle coverage of these objects, specify the 'set_toggle_scoring -sv_enum' command in the coverage configuration file.
+	Building instance specific data structures.
+xmelab: *W,CGPIDF: Covergroup "per_instance" option , by default, is set as 0.
+xmelab: *N,COVCGN: Coverage configuration file command "set_covergroup -new_instance_reporting" can be specified to improve the scoping and naming of covergroup instances. It may be noted that subsequent merging of a coverage database saved with this command and a coverage database saved without this command is not allowed.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                        Instances  Unique
+		Modules:                        2       2
+		Interfaces:                     1       1
+		Verilog packages:               5       5
+		Registers:                 14,507  10,377
+		Scalar wires:                  10       -
+		Vectored wires:                 1       -
+		Named events:                   4      12
+		Always blocks:                  2       2
+		Initial blocks:               312     165
+		Parallel blocks:               29      30
+		Pseudo assignments:             7       -
+		Assertions:                     2       2
+		Covergroup Instances:           0       1
+		SV Class declarations:        209     322
+		SV Class specializations:     409     409
+		Process Clocks:                 1       1
+		Simulation timescale:         1ps
+	Writing initial simulation snapshot: worklib.tb_top:sv
+Loading snapshot worklib.tb_top:sv .................... Done
+SVSEED set from command line: 1
+xcelium> source /cadence/XCELIUM2409/tools/xcelium/files/xmsimrc
+xcelium> source /cadence/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/additions/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+----------------------------------------------------------------
+CDNS-UVM-1.1d (24.09-s013)
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test uart_test...
+UVM_INFO tb/uart_driver.svh(62) @ 450000: uvm_test_top.env.agent.driver [DRV] item=1 data=0x00 idle_cycles=0 poke_busy=0 poke_delay=0
+UVM_INFO tb/uart_monitor.svh(68) @ 650000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x00
+UVM_INFO tb/uart_ref_model.svh(26) @ 650000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x00
+UVM_INFO tb/uart_monitor.svh(120) @ 95750000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x00 start_ok=1 stop_ok=1 gap_clks=4
+UVM_INFO tb/uart_scoreboard.svh(88) @ 95750000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x00
+UVM_INFO tb/uart_driver.svh(62) @ 100750000: uvm_test_top.env.agent.driver [DRV] item=2 data=0xff idle_cycles=0 poke_busy=0 poke_delay=0
+UVM_INFO tb/uart_monitor.svh(68) @ 100950000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xff
+UVM_INFO tb/uart_ref_model.svh(26) @ 100950000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xff
+UVM_INFO tb/uart_monitor.svh(120) @ 196050000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xff start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 196050000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xff
+UVM_INFO tb/uart_driver.svh(62) @ 201050000: uvm_test_top.env.agent.driver [DRV] item=3 data=0x55 idle_cycles=0 poke_busy=0 poke_delay=0
+UVM_INFO tb/uart_monitor.svh(68) @ 201250000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x55
+UVM_INFO tb/uart_ref_model.svh(26) @ 201250000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x55
+UVM_INFO tb/uart_monitor.svh(120) @ 296350000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x55 start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 296350000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x55
+UVM_INFO tb/uart_driver.svh(62) @ 301350000: uvm_test_top.env.agent.driver [DRV] item=4 data=0xaa idle_cycles=0 poke_busy=0 poke_delay=0
+UVM_INFO tb/uart_monitor.svh(68) @ 301550000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xaa
+UVM_INFO tb/uart_ref_model.svh(26) @ 301550000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xaa
+UVM_INFO tb/uart_monitor.svh(120) @ 396650000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xaa start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 396650000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xaa
+UVM_INFO tb/uart_driver.svh(62) @ 401650000: uvm_test_top.env.agent.driver [DRV] item=5 data=0xa3 idle_cycles=0 poke_busy=0 poke_delay=0
+UVM_INFO tb/uart_monitor.svh(68) @ 401850000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xa3
+UVM_INFO tb/uart_ref_model.svh(26) @ 401850000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xa3
+UVM_INFO tb/uart_monitor.svh(120) @ 496950000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xa3 start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 496950000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xa3
+UVM_INFO tb/uart_driver.svh(62) @ 501950000: uvm_test_top.env.agent.driver [DRV] item=6 data=0xa5 idle_cycles=111 poke_busy=0 poke_delay=358
+UVM_INFO tb/uart_monitor.svh(68) @ 513250000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xa5
+UVM_INFO tb/uart_ref_model.svh(26) @ 513250000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xa5
+UVM_INFO tb/uart_monitor.svh(120) @ 608350000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xa5 start_ok=1 stop_ok=1 gap_clks=114
+UVM_INFO tb/uart_scoreboard.svh(88) @ 608350000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xa5
+UVM_INFO tb/uart_driver.svh(62) @ 613350000: uvm_test_top.env.agent.driver [DRV] item=7 data=0x66 idle_cycles=0 poke_busy=0 poke_delay=942
+UVM_INFO tb/uart_monitor.svh(68) @ 613550000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x66
+UVM_INFO tb/uart_ref_model.svh(26) @ 613550000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x66
+UVM_INFO tb/uart_monitor.svh(120) @ 708650000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x66 start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 708650000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x66
+UVM_INFO tb/uart_driver.svh(62) @ 713650000: uvm_test_top.env.agent.driver [DRV] item=8 data=0x26 idle_cycles=348 poke_busy=0 poke_delay=902
+UVM_INFO tb/uart_monitor.svh(68) @ 748650000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x26
+UVM_INFO tb/uart_ref_model.svh(26) @ 748650000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x26
+UVM_INFO tb/uart_monitor.svh(120) @ 843750000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x26 start_ok=1 stop_ok=1 gap_clks=351
+UVM_INFO tb/uart_scoreboard.svh(88) @ 843750000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x26
+UVM_INFO tb/uart_driver.svh(62) @ 848750000: uvm_test_top.env.agent.driver [DRV] item=9 data=0xa7 idle_cycles=74 poke_busy=0 poke_delay=423
+UVM_INFO tb/uart_monitor.svh(68) @ 856350000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0xa7
+UVM_INFO tb/uart_ref_model.svh(26) @ 856350000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0xa7
+UVM_INFO tb/uart_monitor.svh(120) @ 951450000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0xa7 start_ok=1 stop_ok=1 gap_clks=77
+UVM_INFO tb/uart_scoreboard.svh(88) @ 951450000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0xa7
+UVM_INFO tb/uart_driver.svh(62) @ 956450000: uvm_test_top.env.agent.driver [DRV] item=10 data=0x50 idle_cycles=0 poke_busy=0 poke_delay=279
+UVM_INFO tb/uart_monitor.svh(68) @ 956650000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x50
+UVM_INFO tb/uart_ref_model.svh(26) @ 956650000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x50
+UVM_INFO tb/uart_monitor.svh(120) @ 1051750000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x50 start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 1051750000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x50
+UVM_INFO tb/uart_driver.svh(62) @ 1056750000: uvm_test_top.env.agent.driver [DRV] item=11 data=0x07 idle_cycles=0 poke_busy=0 poke_delay=916
+UVM_INFO tb/uart_monitor.svh(68) @ 1056950000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x07
+UVM_INFO tb/uart_ref_model.svh(26) @ 1056950000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x07
+UVM_INFO tb/uart_monitor.svh(120) @ 1152050000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x07 start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 1152050000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x07
+UVM_INFO tb/uart_driver.svh(62) @ 1157050000: uvm_test_top.env.agent.driver [DRV] item=12 data=0x48 idle_cycles=0 poke_busy=0 poke_delay=582
+UVM_INFO tb/uart_monitor.svh(68) @ 1157250000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x48
+UVM_INFO tb/uart_ref_model.svh(26) @ 1157250000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x48
+UVM_INFO tb/uart_monitor.svh(120) @ 1252350000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x48 start_ok=1 stop_ok=1 gap_clks=3
+UVM_INFO tb/uart_scoreboard.svh(88) @ 1252350000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x48
+UVM_INFO tb/uart_driver.svh(62) @ 1257350000: uvm_test_top.env.agent.driver [DRV] item=13 data=0x67 idle_cycles=14 poke_busy=0 poke_delay=276
+UVM_INFO tb/uart_monitor.svh(68) @ 1258950000: uvm_test_top.env.agent.monitor [MON] Command accepted: 0x67
+UVM_INFO tb/uart_ref_model.svh(26) @ 1258950000: uvm_test_top.env.ref_model [REF] Expected UART frame for 0x67
+UVM_INFO tb/uart_monitor.svh(120) @ 1354050000: uvm_test_top.env.agent.monitor [MON] Observed UART frame: data=0x67 start_ok=1 stop_ok=1 gap_clks=17
+UVM_INFO tb/uart_scoreboard.svh(88) @ 1354050000: uvm_test_top.env.scoreboard [SCB] MATCH: UART transmitted 0x67
+UVM_INFO /cadence/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 1359050000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO tb/uart_driver.svh(72) @ 1359050000: uvm_test_top.env.agent.driver [DRV_SUMMARY] items=13 pokes=0
+UVM_INFO tb/uart_scoreboard.svh(113) @ 1359050000: uvm_test_top.env.scoreboard [SCB_SUMMARY] matches=13 mismatches=0 pending_expected=0 pending_actual=0
+UVM_INFO tb/uart_scoreboard.svh(123) @ 1359050000: uvm_test_top.env.scoreboard [SCB_COV] samples=13 frame coverage=75.76% (data=72.73% parity=100.00% gap=100.00% data_x_gap=30.30%)
+
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   70
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[DRV]    13
+[DRV_SUMMARY]     1
+[MON]    26
+[REF]    13
+[RNTST]     1
+[SCB]    13
+[SCB_COV]     1
+[SCB_SUMMARY]     1
+[TEST_DONE]     1
+Simulation complete via $finish(1) at time 1359050 NS + 57
+/cadence/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
+xcelium> exit
+xmsim: *N,COVCGN: Coverage configuration file command "set_covergroup -new_instance_reporting" can be specified to improve the scoping and naming of covergroup instances. It may be noted that subsequent merging of a coverage database saved with this command and a coverage database saved without this command is not allowed.
+xmsim: *W,CGDEFN: Default name "worklib.uvm_pkg::.cg_frame" will be generated for covergroup instance "cg_frame" as the name of the covergroup instance is not specified explicitly: ./tb/uart_scoreboard.svh, 13.
+
+coverage setup:
+  workdir  :  cov_work
+  dutinst  :  tb_top(tb_top)
+  scope    :  scope
+  testname :  a_parte2_seed1
+
+coverage files:
+  model(design data) :  cov_work/scope/icc_771a0de3_04f6d3cc.ucm
+  data               :  cov_work/scope/a_parte2_seed1/icc_771a0de3_04f6d3cc.ucd
+TOOL:	xrun(64)	24.09-s013: Exiting on Nov 10, 2026 at 22:48:49 -03  (total: 00:00:14)
